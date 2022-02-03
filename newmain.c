@@ -29,6 +29,7 @@ void main(void) {
     pin_init();
     uart_init();
     I2C_init();
+    //Sindri prufar Git!
     
     INTCONbits.GIE = 1;         //Enable Global interrupts
     INTCONbits.PEIE = 1;        //Enable Pheripheral Interrupts

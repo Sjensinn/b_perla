@@ -1,0 +1,27 @@
+//For PCA
+void main(void) {
+    clock_init();
+    pin_init();
+    uart_init();
+    I2C_init();
+    Timer1_Initialize();
+    
+    //Sindri prufar Git!
+    
+    INTCONbits.GIE = 1;         //Enable Global interrupts
+    INTCONbits.PEIE = 1;        //Enable Pheripheral Interrupts
+    
+    PCA_Init(130 ,0x80);     //Initiate PCA driver with the address(0x80) and prescalar (decimal 130)
+    
+    while(1){     
+        LATBbits.LATB2 = 0;             //Min range
+        PCA_write(0, 4000, 95);         //4095 is max resolution, On for 4000/4095, off for 95/4095  
+        __delay_ms(5000);   
+        
+        LATBbits.LATB2 = 1;             //Max range
+        PCA_write(0, 3595, 500);        //4095 is max resolution, On for 500/4095, Off for 3595/4095
+        __delay_ms(5000);   
+    }
+    return;
+}
+

@@ -21,8 +21,8 @@ extern "C" {
 #endif
     
 //Pin macros
-#ifndef LED_Toggle()            
-#define LED_Toggle() do { LATBbits.LATB2 = ~LATBbits.LATB2; } while(0)
+#ifndef LED_TOGGLE()            
+#define LED_TOGGLE() do { LATBbits.LATB2 = ~LATBbits.LATB2; } while(0)
 #endif
 
 #ifndef _XTAL_FREQ

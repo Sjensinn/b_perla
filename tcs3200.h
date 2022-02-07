@@ -34,7 +34,10 @@
 extern "C" {
 #endif
 
-#include "mcc_generated_files/system/system.h"
+#ifndef _XTAL_FREQ
+#define _XTAL_FREQ 16000000
+#endif
+    
 #include <xc.h>
 #include <stdio.h>
 

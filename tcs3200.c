@@ -1,5 +1,6 @@
 
 #include "tcs3200.h"
+#include "timer1.h"
 
 void sensor_init(){
     // TCS3200 Frequency Scale (12KHz)

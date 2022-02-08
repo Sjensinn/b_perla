@@ -11,6 +11,8 @@
       <itemPath>LCD.h</itemPath>
       <itemPath>system_init.h</itemPath>
       <itemPath>timer1.h</itemPath>
+      <itemPath>litaflokkari.h</itemPath>
+      <itemPath>uart.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -26,6 +28,8 @@
       <itemPath>LCD.c</itemPath>
       <itemPath>system_init.c</itemPath>
       <itemPath>timer1.c</itemPath>
+      <itemPath>litaflokkari.c</itemPath>
+      <itemPath>uart.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"

@@ -42,16 +42,49 @@ extern "C" {
 #include <stdio.h>
 
     //Initializes the frequency
+/**
+ * @brief   This function Initializes the sensor
+ *          Sets the output frequency to 12kHz
+ *          clears OE bit
+ * @param   void             
+ * @return  void
+ */
 void sensor_init(void);
-//Sets to red filter
+
+/**
+ * @brief   This function manipulates S2 and S3 pins to choose RED channel on sensor
+ * @param   void          
+ * @return  void
+ */
 void filter_red(void);
-//sets to blue filter
+
+/**
+ * @brief   This function manipulates S2 and S3 pins to choose BLUE channel on sensor
+ * @param   void          
+ * @return  void
+ */
 void filter_blue(void);
-//Sets to green filter
+
+/**
+ * @brief   This function manipulates S2 and S3 pins to choose GREEN channel on sensor
+ * @param   void          
+ * @return  void
+ */
 void filter_green(void);
-//Sets to clear filter
+
+/**
+ * @brief   This function manipulates S2 and S3 pins to choose CLEAR channel on sensor
+ * @param   void          
+ * @return  void
+ */
 void filter_clear(void);
+
 //samples the sensor and returns timer1 16 bit value
+/**
+ * @brief   This function samples the sensor at the channel which is selected
+ * @param   void            
+ * @return  returns the reading from sensor analog output
+ */
 uint16_t sample_reading(void);
 
 

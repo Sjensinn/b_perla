@@ -36,15 +36,49 @@ extern "C" {
 
     uint8_t pca_address;
 
-//Initiate the PCA with given prescalar and address
-
+/**
+ * @brief This function initializes the PCA9685 unit
+ *        This routine must be called before any other PCA9685 routines.
+ * @param   8 bit value for PCA9685 prescalar 
+ *          8 bit value for PCA9685 I2C address
+ * @return void.
+ *
+ * @code
+ * void main(void)
+ * {
+ *     PCA_Init();
+ *     
+ *     while(1)
+ *     {   
+ *         PCA_Tasks();
+ *     }
+ * }
+ * @endcode
+ */
 void PCA_Init(uint8_t prescalar, uint8_t pca_addr);
 
-//Write to LEDn channel with given On and off value
+
+/**
+ * @brief This function writes values on/off to led channel ChannelN of PCA9685
+ * @param ChannelN : The number of the channel of PCA9685 to be written to
+ *              on : The on value for given channel
+ *             off : The off value for given channel              
+ * @return void.
+ *
+ * @code
+ * void main(void){
+ *     PCA_Init();
+ *     
+ *     while(1){   
+ *         PCA_Write(0, SERVOMIN, 4095-SERVOMIN);
+ *          __delay_ms(500);
+ *          PCA_Write(0, SERVOMAX, 4095-SERVOMAX);
+ *     }
+ * }
+ * @endcode
+ */
 void PCA_write(uint8_t ChannelN, uint16_t on, uint16_t off);
 
-
-    
 
 #ifdef	__cplusplus
 }

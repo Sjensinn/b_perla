@@ -38,28 +38,98 @@ extern "C" {
 uint8_t lcd_address, RS;
 uint8_t BackLight_State = LCD_BACKLIGHT;
     
+/**
+ * @brief   This function initializes the LCD screen with 4 bit procedure
+ *          Refer to datasheet for intial procedure 
+ * @param   8 bit lcd i2c address          
+ * @return  void
+ *
+ */
 void LCD_init(uint8_t lcd_addr);
 
+/**
+ * @brief   This function writes to LCD 
+ * @param   unsigned char data (uint8_t) data to be written            
+ * @return  void
+ *
+ *  Used by other functions
+ */
 void IO_Expander(unsigned char data);
 
+/**
+ * @brief   This function writes 4 bits to LCD
+ * @param   unsigned char Nibble: half of the data to be written            
+ * @return  void
+ *
+ * Used by other functions
+ */
 void LCD_Write_4Bit(unsigned char Nibble);
 
+/**
+ * @brief   This function writes to LCD CMD
+ * @param   unsigned char CMD : data to be written            
+ * @return  void
+ * 
+ * Sets register select to 0
+ *
+ */
 void LCD_CMD(unsigned char CMD);
 
+/**
+ * @brief   This function writes a character to the LCD
+ * @param   char data: Character to be written          
+ * @return  void
+ */
 void LCD_write_char(char data);
 
+/**
+ * @brief   This function writes a string to the LCD
+ * @param   char* str : String to print             
+ * @return  void
+ */
 void LCD_write_string(char* str);
 
+/**
+ * @brief   This function sets the cursor at a specific location on LCD
+ * @param   unsigned char ROW: Which Row will the cursor be placed at
+ *          unsigned char COL: What COL will the cursor be placed at          
+ * @return  void
+ */
 void LCD_Set_Cursor(unsigned char ROW, unsigned char COL);
 
+/**
+ * @brief   This functions turns on the backlight on the LCD
+ * @param   void             
+ * @return  void
+ */
 void Backlight();
 
+/**
+ * @brief   This functions turns off the backlight on the LCD
+ * @param   void             
+ * @return  void
+ */
 void noBacklight();
 
+/**
+ * @brief   This functions slides screen text right 
+ * @param   void             
+ * @return  void
+ */
 void LCD_SL();
 
+/**
+ * @brief   This functions slides screen text left 
+ * @param   void             
+ * @return  void
+ */
 void LCD_SR();
 
+/**
+ * @brief   This functions cleares the screen 
+ * @param   void             
+ * @return  void
+ */
 void LCD_Clear();
 
 

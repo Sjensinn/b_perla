@@ -156,6 +156,6 @@ void uart_init(void){
 }
 
 void int_init(void){
-        INTCONbits.GIE = 1;         //Enable Global interrupts
+    INTCONbits.GIE = 1;         //Enable Global interrupts
     INTCONbits.PEIE = 1;        //Enable Pheripheral Interrupts
 }

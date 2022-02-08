@@ -12,8 +12,52 @@
 extern "C" {
 #endif
 
+/**
+ * @brief 
+ * @param             
+ * @return 
+ *
+ * @code
+ * void main(void){
+ *     
+ *     while(1){   
+ *  
+ *     }
+ * }
+ * @endcode
+ */
 void uart_init(void);
+
+/**
+ * @brief 
+ * @param             
+ * @return 
+ *
+ * @code
+ * void main(void){
+ *     
+ *     while(1){   
+ *  
+ *     }
+ * }
+ * @endcode
+ */
 void uart_Write(unsigned char data);
+
+/**
+ * @brief 
+ * @param             
+ * @return 
+ *
+ * @code
+ * void main(void){
+ *     
+ *     while(1){   
+ *  
+ *     }
+ * }
+ * @endcode
+ */
 void uart_Write_String(char* buf);
 
 

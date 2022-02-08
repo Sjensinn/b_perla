@@ -25,6 +25,21 @@ void PCA_Init(uint8_t prescalar, uint8_t pca_addr){
 
 }
 
+/* PCA_Write(uint8_t ChannelN, uint16_t on, uint16_t off);
+ *
+ *  Brief : Function to send on/off values to channelN on PCA9685 module.
+ *          12 bit resolution on the PWM signal for a total of 0d4096
+ *  
+ *  ChannelN : Desired channel to write to on PCA9685
+ *  on : Desired on value to write to channel
+ *  off : Desired off value to write to channel
+ * 
+ *  Pre:    Must have initiated PCA with PCA_Init()
+ *          ChannelN must be <= 15
+ *          on / off value must not exceed SERVOMIN and SERVOMAX
+ * 
+ *  Post: Given channel will have desired on/off value
+ */
 void PCA_write(uint8_t ChannelN, uint16_t on, uint16_t off){
     if(ChannelN > 15){
         return; //Error only 15 channels
@@ -40,3 +55,4 @@ void PCA_write(uint8_t ChannelN, uint16_t on, uint16_t off){
     I2C_Write((off & 0xf00) >> 8);      //Higher bits of 12 bit for OFF
     I2C_Stop();                         //Send stop bit
 }
+

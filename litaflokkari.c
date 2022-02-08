@@ -1,47 +1,14 @@
-/*
- * File:   newmain.c
+/* 
+ * File:   litaflokkari.c
  * Author: Sjensi
- *
- * Created on February 2, 2022, 3:35 PM
+ * 
+ * Contains functions used by the color sorting machine
+ * 
+ * Created on February 8, 2022, 11:34 AM
  */
 
-#ifndef _XTAL_FREQ
-#define _XTAL_FREQ 16000000
-#endif
-
-#include <xc.h>
-#include <stdio.h>
-#include "config_bits.h"
-#include "system_init.h"
-#include "uart.h"
-#include "LCD.h"
 #include "litaflokkari.h"
 
-#ifndef    
-#define SERVOMIN  95 // This is the 'minimum' pulse length count (out of 4096)
-#endif
-#ifndef
-#define SERVOMAX  500 // This is the 'maximum' pulse length count (out of 4096)
-#endif
-
-//Turns one servo to position according to passed value 0/1
-void PCA_Servo_Command(uint8_t n, uint8_t pos);
-//Turn the servos to position according to 0-8 from passed variable pos
-void PCA_Servo_Pos(uint8_t pos);
-
-
-void main(void) {
-   system_init();                  //Initiate clock, pins, uart, i2c, timer1 and interrupts
-   PCA_Init(130, 0x80);          //Initiate PCA9685 module with i2c_address = 0x80 and prescalar = 130 for 50Hz
-   LCD_init(0x4E);               // Initialize LCD module with i2c_address = 0x4E
-   sensor_init();                //Initialize the TCS3200 sensor
-   
-    while(1){                       //Embedded systems never stop having fun!
-        LED_TOGGLE();               //And we have rave lights
-        __delay_ms(1000); 
-    }
-    return;
-}
 
 void PCA_Servo_Command(uint8_t n, uint8_t pos){
     uint8_t offval, onval;

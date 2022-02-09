@@ -113,7 +113,7 @@ void I2C_Stop(void);
  *  void main(void){
  *     I2C_init();
  *       
- *      uint8_t buffer[10];
+ *      int8_t buffer[10];
  * 
  *     while(1){   
  *      I2C_Start();
@@ -136,7 +136,7 @@ void I2C_Stop(void);
  *  }
  * @endcode
  */
-uint8_t I2C_Read(uint8_t ackbit);
+int8_t I2C_Read(int8_t ackbit);
 
 
 #ifdef	__cplusplus

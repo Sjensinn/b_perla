@@ -7,7 +7,7 @@
 # 1 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16F1xxxx_DFP/1.9.163/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
 # 1 "newmain.c" 2
-# 12 "newmain.c"
+# 14 "newmain.c"
 # 1 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16F1xxxx_DFP/1.9.163/xc8\\pic\\include\\xc.h" 1 3
 # 18 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16F1xxxx_DFP/1.9.163/xc8\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -20717,7 +20717,7 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 29 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16F1xxxx_DFP/1.9.163/xc8\\pic\\include\\xc.h" 2 3
-# 12 "newmain.c" 2
+# 14 "newmain.c" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\stdio.h" 1 3
 # 24 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\stdio.h" 3
@@ -20857,7 +20857,7 @@ char *ctermid(char *);
 
 
 char *tempnam(const char *, const char *);
-# 13 "newmain.c" 2
+# 15 "newmain.c" 2
 
 # 1 "./litaflokkari.h" 1
 # 131 "./litaflokkari.h"
@@ -20880,16 +20880,16 @@ uint8_t find_color(void);
 uint8_t color_compare_return(uint16_t red, uint16_t green, uint16_t blue, uint16_t clear);
 # 199 "./litaflokkari.h"
 void print_color_quantity(void);
-# 14 "newmain.c" 2
+# 16 "newmain.c" 2
 
 # 1 "./PCA9685_driver.h" 1
 # 37 "./PCA9685_driver.h"
     uint8_t pca_address;
-# 58 "./PCA9685_driver.h"
+# 56 "./PCA9685_driver.h"
 void PCA_Init(uint8_t prescalar, uint8_t pca_addr);
-# 80 "./PCA9685_driver.h"
+# 78 "./PCA9685_driver.h"
 void PCA_Write(uint8_t ChannelN, uint16_t on, uint16_t off);
-# 15 "newmain.c" 2
+# 17 "newmain.c" 2
 
 # 1 "./config_bits.h" 1
 # 18 "./config_bits.h"
@@ -20924,7 +20924,7 @@ void PCA_Write(uint8_t ChannelN, uint16_t on, uint16_t off);
 
 #pragma config CP = OFF
 #pragma config CPD = OFF
-# 16 "newmain.c" 2
+# 18 "newmain.c" 2
 
 # 1 "./system_init.h" 1
 # 31 "./system_init.h"
@@ -20935,7 +20935,7 @@ void clock_init(void);
 void pin_init(void);
 # 62 "./system_init.h"
 void int_init(void);
-# 17 "newmain.c" 2
+# 19 "newmain.c" 2
 
 # 1 "./tcs3200.h" 1
 # 52 "./tcs3200.h"
@@ -20976,16 +20976,26 @@ void filter_clear(void);
 
 
 uint16_t sample_reading(void);
-# 18 "newmain.c" 2
+# 20 "newmain.c" 2
 
 # 1 "./uart.h" 1
-# 29 "./uart.h"
+# 22 "./uart.h"
 void uart_init(void);
-# 45 "./uart.h"
+
+
+
+
+
+
 void uart_Write(unsigned char data);
-# 61 "./uart.h"
+
+
+
+
+
+
 void uart_Write_String(char* buf);
-# 19 "newmain.c" 2
+# 21 "newmain.c" 2
 
 # 1 "./LCD.h" 1
 # 16 "./LCD.h"
@@ -21013,7 +21023,7 @@ void I2C_RepeatedStart();
 
 void I2C_Stop(void);
 # 139 "./I2C_MSSP1_driver.h"
-uint8_t I2C_Read(uint8_t ackbit);
+int8_t I2C_Read(int8_t ackbit);
 # 16 "./LCD.h" 2
 # 38 "./LCD.h"
 uint8_t lcd_address, RS;
@@ -21083,7 +21093,7 @@ void LCD_SR();
 
 
 void LCD_Clear();
-# 20 "newmain.c" 2
+# 22 "newmain.c" 2
 
 
 void main(void) {

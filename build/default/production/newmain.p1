@@ -3,11 +3,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 "31 ./system_init.h
 [; ;./system_init.h: 31: void system_init(void);
 [v _system_init `(v ~T0 @X0 0 ef ]
-"29 ./uart.h
-[; ;./uart.h: 29: void uart_init(void);
+"22 ./uart.h
+[; ;./uart.h: 22: void uart_init(void);
 [v _uart_init `(v ~T0 @X0 0 ef ]
-"58 ./PCA9685_driver.h
-[; ;./PCA9685_driver.h: 58: void PCA_Init(uint8_t prescalar, uint8_t pca_addr);
+"56 ./PCA9685_driver.h
+[; ;./PCA9685_driver.h: 56: void PCA_Init(uint8_t prescalar, uint8_t pca_addr);
 [v _PCA_Init `(v ~T0 @X0 0 ef2`uc`uc ]
 "48 ./LCD.h
 [; ;./LCD.h: 48: void LCD_init(uint8_t lcd_addr);
@@ -1750,67 +1750,67 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> -> 8 `i `uc
 ]
 [v $root$_main `(v ~T0 @X0 0 e ]
-"22 newmain.c
-[; ;newmain.c: 22: void main(void) {
+"24 newmain.c
+[; ;newmain.c: 24: void main(void) {
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"24
-[; ;newmain.c: 24:    system_init();
-[e ( _system_init ..  ]
-"25
-[; ;newmain.c: 25:    uart_init();
-[e ( _uart_init ..  ]
 "26
-[; ;newmain.c: 26:    PCA_Init(130, 0x80);
-[e ( _PCA_Init (2 , -> -> 130 `i `uc -> -> 128 `i `uc ]
+[; ;newmain.c: 26:    system_init();
+[e ( _system_init ..  ]
 "27
-[; ;newmain.c: 27:    LCD_init(0x4E);
-[e ( _LCD_init (1 -> -> 78 `i `uc ]
+[; ;newmain.c: 27:    uart_init();
+[e ( _uart_init ..  ]
 "28
-[; ;newmain.c: 28:    sensor_init();
+[; ;newmain.c: 28:    PCA_Init(130, 0x80);
+[e ( _PCA_Init (2 , -> -> 130 `i `uc -> -> 128 `i `uc ]
+"29
+[; ;newmain.c: 29:    LCD_init(0x4E);
+[e ( _LCD_init (1 -> -> 78 `i `uc ]
+"30
+[; ;newmain.c: 30:    sensor_init();
 [e ( _sensor_init ..  ]
-"31
-[; ;newmain.c: 31:    uint8_t curr_col = 0;
+"33
+[; ;newmain.c: 33:    uint8_t curr_col = 0;
 [v _curr_col `uc ~T0 @X0 1 a ]
 [e = _curr_col -> -> 0 `i `uc ]
-"32
-[; ;newmain.c: 32:    print_welcome_message();
-[e ( _print_welcome_message ..  ]
 "34
-[; ;newmain.c: 34:     while(1){
+[; ;newmain.c: 34:    print_welcome_message();
+[e ( _print_welcome_message ..  ]
+"36
+[; ;newmain.c: 36:     while(1){
 [e :U 1617 ]
 {
-"35
-[; ;newmain.c: 35:         do { LATBbits.LATB2 = ~LATBbits.LATB2; } while(0);
+"37
+[; ;newmain.c: 37:         do { LATBbits.LATB2 = ~LATBbits.LATB2; } while(0);
 [e :U 1621 ]
 {
 [e = . . _LATBbits 0 2 -> ~ -> . . _LATBbits 0 2 `i `uc ]
 }
 [e :U 1620 ]
-"36
-[; ;newmain.c: 36:         curr_col = find_color();
-[e = _curr_col ( _find_color ..  ]
 "38
-[; ;newmain.c: 38:         print_color_quantity();
-[e ( _print_color_quantity ..  ]
-"39
-[; ;newmain.c: 39:         PCA_Servo_Pos(curr_col);
-[e ( _PCA_Servo_Pos (1 _curr_col ]
+[; ;newmain.c: 38:         curr_col = find_color();
+[e = _curr_col ( _find_color ..  ]
 "40
-[; ;newmain.c: 40:         _delay((unsigned long)((1000)*(16000000/4000.0)));
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
+[; ;newmain.c: 40:         print_color_quantity();
+[e ( _print_color_quantity ..  ]
 "41
-[; ;newmain.c: 41:     }
+[; ;newmain.c: 41:         PCA_Servo_Pos(curr_col);
+[e ( _PCA_Servo_Pos (1 _curr_col ]
+"42
+[; ;newmain.c: 42:         _delay((unsigned long)((1000)*(16000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
+"43
+[; ;newmain.c: 43:     }
 }
 [e :U 1616 ]
 [e $U 1617  ]
 [e :U 1618 ]
-"42
-[; ;newmain.c: 42:     return;
+"44
+[; ;newmain.c: 44:     return;
 [e $UE 1615  ]
-"43
-[; ;newmain.c: 43: }
+"45
+[; ;newmain.c: 45: }
 [e :UE 1615 ]
 }

@@ -20720,11 +20720,21 @@ extern __bank0 __bit __timeout;
 # 2 "uart.c" 2
 
 # 1 "./uart.h" 1
-# 29 "./uart.h"
+# 22 "./uart.h"
 void uart_init(void);
-# 45 "./uart.h"
+
+
+
+
+
+
 void uart_Write(unsigned char data);
-# 61 "./uart.h"
+
+
+
+
+
+
 void uart_Write_String(char* buf);
 # 3 "uart.c" 2
 
@@ -20746,11 +20756,6 @@ void uart_init(void){
 
 
     SP1BRGH = 0x1;
-
-    ANSELCbits.ANSC3 = 0;
-    ANSELCbits.ANSC4 = 0;
-    TRISCbits.TRISC3 = 1;
-    TRISCbits.TRISC4 = 1;
 }
 
 void uart_Write(unsigned char data){

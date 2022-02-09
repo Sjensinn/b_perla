@@ -2,6 +2,8 @@
  * File:   newmain.c
  * Author: Sjensi
  *
+ *  Part of perluflokk
+ * 
  * Created on February 2, 2022, 3:35 PM
  */
 

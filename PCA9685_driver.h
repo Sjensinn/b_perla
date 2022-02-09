@@ -44,12 +44,10 @@ extern "C" {
  * @return void.
  *
  * @code
- * void main(void)
- * {
+ * void main(void){
  *     PCA_Init();
  *     
- *     while(1)
- *     {   
+ *     while(1){   
  *         PCA_Tasks();
  *     }
  * }
@@ -61,8 +59,8 @@ void PCA_Init(uint8_t prescalar, uint8_t pca_addr);
 /**
  * @brief This function writes values on/off to led channel ChannelN of PCA9685
  * @param ChannelN : The number of the channel of PCA9685 to be written to
- *              on : The on value for given channel
- *             off : The off value for given channel              
+ *              on : The on value for given channel - delay - set as 0 for servo
+ *             off : The off value for given channel - 5% - 10% duty cycle for servo               
  * @return void.
  *
  * @code

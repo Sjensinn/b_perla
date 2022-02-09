@@ -20811,7 +20811,7 @@ void I2C_RepeatedStart();
 
 void I2C_Stop(void);
 # 139 "./I2C_MSSP1_driver.h"
-uint8_t I2C_Read(uint8_t ackbit);
+int8_t I2C_Read(int8_t ackbit);
 # 10 "system_init.c" 2
 
 

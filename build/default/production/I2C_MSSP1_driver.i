@@ -20743,7 +20743,7 @@ void I2C_RepeatedStart();
 
 void I2C_Stop(void);
 # 139 "./I2C_MSSP1_driver.h"
-uint8_t I2C_Read(uint8_t ackbit);
+int8_t I2C_Read(int8_t ackbit);
 # 3 "I2C_MSSP1_driver.c" 2
 
 
@@ -20805,8 +20805,8 @@ void I2C_Write(uint8_t data){
 }
 
 
- uint8_t I2C_Read(uint8_t ackbit){
-    uint8_t tempreadbuffer;
+ int8_t I2C_Read(int8_t ackbit){
+    int8_t tempreadbuffer;
 
     SSP1CON2bits.RCEN = 1;
     I2C_Wait();

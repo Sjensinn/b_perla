@@ -75,7 +75,7 @@
 [v _color_compare_return color_compare_return `(uc  1 e 1 0 ]
 "213
 [v _print_color_quantity print_color_quantity `(v  1 e 1 0 ]
-"22 C:\Users\user\Git_repos\perluflokk_v2\PIC16f18877_v6.1.X\newmain.c
+"24 C:\Users\user\Git_repos\perluflokk_v2\PIC16f18877_v6.1.X\newmain.c
 [v _main main `(v  1 e 1 0 ]
 "6 C:\Users\user\Git_repos\perluflokk_v2\PIC16f18877_v6.1.X\PCA9685_driver.c
 [v _PCA_Init PCA_Init `(v  1 e 1 0 ]
@@ -113,7 +113,7 @@
 [v _Timer1_Write Timer1_Write `(v  1 e 1 0 ]
 "5 C:\Users\user\Git_repos\perluflokk_v2\PIC16f18877_v6.1.X\uart.c
 [v _uart_init uart_init `(v  1 e 1 0 ]
-"29
+"24
 [v _uart_Write uart_Write `(v  1 e 1 0 ]
 "38 C:\Users\user\Git_repos\perluflokk_v2\PIC16f18877_v6.1.X/LCD.h
 [v _lcd_address lcd_address `uc  1 e 1 0 ]
@@ -525,20 +525,6 @@
 [v _IOCBF IOCBF `VEuc  1 e 1 @8010 ]
 "34734
 [v _ANSELC ANSELC `VEuc  1 e 1 @8014 ]
-[s S1032 . 1 `uc 1 ANSC0 1 0 :1:0 
-`uc 1 ANSC1 1 0 :1:1 
-`uc 1 ANSC2 1 0 :1:2 
-`uc 1 ANSC3 1 0 :1:3 
-`uc 1 ANSC4 1 0 :1:4 
-`uc 1 ANSC5 1 0 :1:5 
-`uc 1 ANSC6 1 0 :1:6 
-`uc 1 ANSC7 1 0 :1:7 
-]
-"34751
-[u S1041 . 1 `S1032 1 . 1 0 ]
-"34751
-"34751
-[v _ANSELCbits ANSELCbits `VES1041  1 e 1 @8014 ]
 "34796
 [v _WPUC WPUC `VEuc  1 e 1 @8015 ]
 "34858
@@ -587,17 +573,17 @@
 [v _dbuf dbuf `[32]uc  1 s 32 dbuf ]
 "69
 [v _nout nout `i  1 s 2 nout ]
-"22 C:\Users\user\Git_repos\perluflokk_v2\PIC16f18877_v6.1.X\newmain.c
+"24 C:\Users\user\Git_repos\perluflokk_v2\PIC16f18877_v6.1.X\newmain.c
 [v _main main `(v  1 e 1 0 ]
 {
-"31
+"33
 [v main@curr_col curr_col `uc  1 a 1 57 ]
-"43
+"45
 } 0
 "5 C:\Users\user\Git_repos\perluflokk_v2\PIC16f18877_v6.1.X\uart.c
 [v _uart_init uart_init `(v  1 e 1 0 ]
 {
-"27
+"22
 } 0
 "12 C:\Users\user\Git_repos\perluflokk_v2\PIC16f18877_v6.1.X\system_init.c
 [v _system_init system_init `(v  1 e 1 0 ]
@@ -650,9 +636,9 @@
 [v _sprintf sprintf `(i  1 e 2 0 ]
 {
 [v sprintf@s s `*.4uc  1 a 1 wreg ]
-[s S1523 _IO_FILE 5 `*.4uc 1 buffer 1 0 `i 1 count 2 1 `i 1 limit 2 3 ]
+[s S1482 _IO_FILE 5 `*.4uc 1 buffer 1 0 `i 1 count 2 1 `i 1 limit 2 3 ]
 "13
-[v sprintf@f f `S1523  1 a 5 2 ]
+[v sprintf@f f `S1482  1 a 5 2 ]
 "12
 [v sprintf@ap ap `[1]*.4v  1 a 1 0 ]
 "9
@@ -665,40 +651,40 @@
 "1390 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\doprnt.c
 [v _vfprintf vfprintf `(i  1 e 2 0 ]
 {
-[s S1549 _IO_FILE 0 ]
-[v vfprintf@fp fp `*.4S1549  1 a 1 wreg ]
+[s S1508 _IO_FILE 0 ]
+[v vfprintf@fp fp `*.4S1508  1 a 1 wreg ]
 "1393
 [v vfprintf@cfmt cfmt `*.25uc  1 a 2 68 ]
 "1390
-[v vfprintf@fp fp `*.4S1549  1 a 1 wreg ]
+[v vfprintf@fp fp `*.4S1508  1 a 1 wreg ]
 [v vfprintf@fmt fmt `*.25DCuc  1 p 2 62 ]
 [v vfprintf@ap ap `*.4*.4v  1 p 1 64 ]
 "1395
 "1390
-[v vfprintf@fp fp `*.4S1549  1 a 1 67 ]
+[v vfprintf@fp fp `*.4S1508  1 a 1 67 ]
 "1404
 } 0
 "692
 [v _vfpfcnvrt vfpfcnvrt `(i  1 s 2 vfpfcnvrt ]
 {
-[s S1549 _IO_FILE 0 ]
-[v vfpfcnvrt@fp fp `*.4S1549  1 a 1 wreg ]
+[s S1508 _IO_FILE 0 ]
+[v vfpfcnvrt@fp fp `*.4S1508  1 a 1 wreg ]
 "696
 [v vfpfcnvrt@ll ll `o  1 a 8 53 ]
 "692
-[v vfpfcnvrt@fp fp `*.4S1549  1 a 1 wreg ]
+[v vfpfcnvrt@fp fp `*.4S1508  1 a 1 wreg ]
 [v vfpfcnvrt@fmt fmt `*.4*.25uc  1 p 1 46 ]
 [v vfpfcnvrt@ap ap `*.4*.4v  1 p 1 47 ]
 "702
 "692
-[v vfpfcnvrt@fp fp `*.4S1549  1 a 1 61 ]
+[v vfpfcnvrt@fp fp `*.4S1508  1 a 1 61 ]
 "1387
 } 0
 "287
 [v _dtoa dtoa `(i  1 s 2 dtoa ]
 {
-[s S1549 _IO_FILE 0 ]
-[v dtoa@fp fp `*.4S1549  1 a 1 wreg ]
+[s S1508 _IO_FILE 0 ]
+[v dtoa@fp fp `*.4S1508  1 a 1 wreg ]
 "290
 [v dtoa@n n `o  1 a 8 36 ]
 "289
@@ -707,28 +693,28 @@
 [v dtoa@w w `i  1 a 2 32 ]
 [v dtoa@p p `i  1 a 2 30 ]
 "287
-[v dtoa@fp fp `*.4S1549  1 a 1 wreg ]
+[v dtoa@fp fp `*.4S1508  1 a 1 wreg ]
 [v dtoa@d d `o  1 p 8 16 ]
 "293
 "287
-[v dtoa@fp fp `*.4S1549  1 a 1 29 ]
+[v dtoa@fp fp `*.4S1508  1 a 1 29 ]
 "328
 } 0
 "72
 [v _pad pad `(i  1 s 2 pad ]
 {
-[s S1549 _IO_FILE 0 ]
-[v pad@fp fp `*.4S1549  1 a 1 wreg ]
+[s S1508 _IO_FILE 0 ]
+[v pad@fp fp `*.4S1508  1 a 1 wreg ]
 "74
 [v pad@w w `i  1 a 2 9 ]
 [v pad@i i `i  1 a 2 7 ]
 "72
-[v pad@fp fp `*.4S1549  1 a 1 wreg ]
+[v pad@fp fp `*.4S1508  1 a 1 wreg ]
 [v pad@buf buf `*.5uc  1 p 1 4 ]
 [v pad@p p `i  1 p 2 5 ]
 "77
 "72
-[v pad@fp fp `*.4S1549  1 a 1 11 ]
+[v pad@fp fp `*.4S1508  1 a 1 11 ]
 "95
 } 0
 "5 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\strlen.c
@@ -753,8 +739,8 @@
 [v fputs@c c `uc  1 a 1 0 ]
 "8
 [v fputs@s s `*.5DCuc  1 a 1 wreg ]
-[s S1523 _IO_FILE 5 `*.4uc 1 buffer 1 0 `i 1 count 2 1 `i 1 limit 2 3 ]
-[v fputs@fp fp `*.4S1523  1 p 1 8 ]
+[s S1482 _IO_FILE 5 `*.4uc 1 buffer 1 0 `i 1 count 2 1 `i 1 limit 2 3 ]
+[v fputs@fp fp `*.4S1482  1 p 1 8 ]
 "13
 [v fputs@s s `*.5DCuc  1 a 1 3 ]
 "19
@@ -763,8 +749,8 @@
 [v _fputc fputc `(i  1 e 2 0 ]
 {
 [v fputc@c c `i  1 p 2 0 ]
-[s S1523 _IO_FILE 5 `*.4uc 1 buffer 1 0 `i 1 count 2 1 `i 1 limit 2 3 ]
-[v fputc@fp fp `*.4S1523  1 p 1 2 ]
+[s S1482 _IO_FILE 5 `*.4uc 1 buffer 1 0 `i 1 count 2 1 `i 1 limit 2 3 ]
+[v fputc@fp fp `*.4S1482  1 p 1 2 ]
 "24
 } 0
 "7 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\putch.c

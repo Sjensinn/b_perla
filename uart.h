@@ -1,6 +1,6 @@
 /* 
  * File:   uart.h
- * Author: user
+ * Author: Sjensi
  *
  * Created on February 7, 2022, 7:57 PM
  */
@@ -13,50 +13,25 @@ extern "C" {
 #endif
 
 /**
- * @brief 
- * @param             
- * @return 
- *
- * @code
- * void main(void){
- *     
- *     while(1){   
- *  
- *     }
- * }
- * @endcode
+ * @brief   This function intitiates the USART module in asynchronous mode
+ * @param   void             
+ * @return  void
+ * 
+ *      Baudrate: 9600
  */
 void uart_init(void);
 
 /**
- * @brief 
- * @param             
- * @return 
- *
- * @code
- * void main(void){
- *     
- *     while(1){   
- *  
- *     }
- * }
- * @endcode
+ * @brief   This function writes one character to USART bus
+ * @param   char data: byte to be written to RX pin          
+ * @return  void
  */
 void uart_Write(unsigned char data);
 
 /**
- * @brief 
- * @param             
- * @return 
- *
- * @code
- * void main(void){
- *     
- *     while(1){   
- *  
- *     }
- * }
- * @endcode
+ * @brief   This function writes a string to USART bus
+ * @param   char* buf: pointer to char array (string)             
+ * @return  void 
  */
 void uart_Write_String(char* buf);
 

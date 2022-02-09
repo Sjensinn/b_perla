@@ -16,12 +16,21 @@
 #include "LCD.h"
 #include "uart.h"
 
-void PCA_Servo_Command(uint8_t n, uint8_t pos){
-    uint8_t offval, onval;
-    offval = (4095 - SERVOMIN) - pos*(SERVOMAX-SERVOMIN);  //for the off value
-    onval = SERVOMIN + pos*(SERVOMAX - SERVOMIN);   //For the on value 
+void PCA_Servo_Command(uint8_t servo_nr, uint8_t servo_on_off){
+    uint8_t stateTest = servo_on_off;
+    if(stateTest == 0){
+        PCA_Write(servo_nr, 0x0, LFSMIN);
+    }
+    
+    if(stateTest == 1){
+        PCA_Write(servo_nr, 0x0, LFSMAX);
+    }
+    
+    else{
+        LATBbits.LATB2 = ~LATBbits.LATB2;
+        __delay_ms(50);
+    }
 
-    PCA_Write(n, offval, onval);
     return;
 }
 

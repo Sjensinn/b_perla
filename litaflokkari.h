@@ -57,11 +57,11 @@
 extern "C" {
 #endif
 
-#ifndef SERVOMIN   
-#define SERVOMIN  95 // This is the 'minimum' pulse length count (out of 4096)
+#ifndef LFSMIN   //200 works
+#define LFSMIN  130 // This is the 'minimum' pulse length count (out of 4096)
 #endif
-#ifndef SERVOMAX
-#define SERVOMAX  500 // This is the 'maximum' pulse length count (out of 4096)
+#ifndef LFSMAX    //500 works
+#define LFSMAX  500 // This is the 'maximum' pulse length count (out of 4096)
 #endif
     
 //Yellow beat color ranges
@@ -138,7 +138,7 @@ uint8_t yellow_bead, red_bead, green_bead, blue_bead, black_bead, white_bead, br
  *          pos should be between 0-7              
  * @return  void
  */
-void PCA_Servo_Command(uint8_t n, uint8_t pos);
+void PCA_Servo_Command(uint8_t servo_nr, uint8_t servo_on_off);
 
 /**
  * @brief   This function turn the servos 1, 2, 3 to position according to 0-8 from passed variable pos

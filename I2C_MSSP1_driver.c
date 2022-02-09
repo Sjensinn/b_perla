@@ -12,9 +12,9 @@ void I2C_init(void){
     /* DHEN disabled; AHEN disabled; SBCDE disabled; SDAHT 100ns; BOEN disabled; SCIE disabled; PCIE disabled;  */
     SSP1CON3 = 0x0;
     /* SSPADD 39;  for 100kHz*/
-    //SSP1ADD = 0x27;
+    SSP1ADD = 0x27;
     /* SSPADD 159 for 400kHz*/
-    SSP1ADD = 159;
+    //SSP1ADD = 159;
     
     TRISCbits.TRISC3 = 1;  //RC3 (SCL) as input
     TRISCbits.TRISC4 = 1;  //RC4 (SDA) as input

@@ -3,18 +3,15 @@ Version 4.0 HI-TECH Software Intermediate Code
 "31 ./system_init.h
 [; ;./system_init.h: 31: void system_init(void);
 [v _system_init `(v ~T0 @X0 0 ef ]
-"29 ./uart.h
-[; ;./uart.h: 29: void uart_init(void);
-[v _uart_init `(v ~T0 @X0 0 ef ]
-"58 ./PCA9685_driver.h
-[; ;./PCA9685_driver.h: 58: void PCA_Init(uint8_t prescalar, uint8_t pca_addr);
+"40 ./I2C_MSSP1_driver.h
+[; ;./I2C_MSSP1_driver.h: 40: void I2C_init(void);
+[v _I2C_init `(v ~T0 @X0 0 ef ]
+"51 ./PCA9685_driver.h
+[; ;./PCA9685_driver.h: 51: void PCA_Init(uint8_t prescalar, uint8_t pca_addr);
 [v _PCA_Init `(v ~T0 @X0 0 ef2`uc`uc ]
 "48 ./LCD.h
 [; ;./LCD.h: 48: void LCD_init(uint8_t lcd_addr);
 [v _LCD_init `(v ~T0 @X0 0 ef1`uc ]
-"52 ./tcs3200.h
-[; ;./tcs3200.h: 52: void sensor_init(void);
-[v _sensor_init `(v ~T0 @X0 0 ef ]
 "169 ./litaflokkari.h
 [; ;./litaflokkari.h: 169: void print_welcome_message(void);
 [v _print_welcome_message `(v ~T0 @X0 0 ef ]
@@ -29,10 +26,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 "1036
 [; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16F1xxxx_DFP/1.9.163/xc8\pic\include\proc\pic16f18877.h: 1036: extern volatile LATBbits_t LATBbits __attribute__((address(0x017)));
 [v _LATBbits `VS54 ~T0 @X0 0 e@23 ]
-"178 ./litaflokkari.h
-[; ;./litaflokkari.h: 178: uint8_t find_color(void);
-[v _find_color `(uc ~T0 @X0 0 ef ]
-"199
+"199 ./litaflokkari.h
 [; ;./litaflokkari.h: 199: void print_color_quantity(void);
 [v _print_color_quantity `(v ~T0 @X0 0 ef ]
 "161
@@ -1690,8 +1684,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [i _unsort_bead
 -> -> 0 `i `uc
 ]
-"37 ./PCA9685_driver.h
-[; ;./PCA9685_driver.h: 37:     uint8_t pca_address;
+"30 ./PCA9685_driver.h
+[; ;./PCA9685_driver.h: 30:     uint8_t pca_address;
 [v _pca_address `uc ~T0 @X0 1 e ]
 "18 ./config_bits.h
 [p x FEXTOSC  =  OFF      ]
@@ -1759,58 +1753,71 @@ Version 4.0 HI-TECH Software Intermediate Code
 "24
 [; ;newmain.c: 24:    system_init();
 [e ( _system_init ..  ]
-"25
-[; ;newmain.c: 25:    uart_init();
-[e ( _uart_init ..  ]
 "26
-[; ;newmain.c: 26:    PCA_Init(130, 0x80);
-[e ( _PCA_Init (2 , -> -> 130 `i `uc -> -> 128 `i `uc ]
-"27
-[; ;newmain.c: 27:    LCD_init(0x4E);
-[e ( _LCD_init (1 -> -> 78 `i `uc ]
+[; ;newmain.c: 26:    I2C_init();
+[e ( _I2C_init ..  ]
 "28
-[; ;newmain.c: 28:    sensor_init();
-[e ( _sensor_init ..  ]
-"31
-[; ;newmain.c: 31:    uint8_t curr_col = 0;
-[v _curr_col `uc ~T0 @X0 1 a ]
-[e = _curr_col -> -> 0 `i `uc ]
-"32
-[; ;newmain.c: 32:    print_welcome_message();
+[; ;newmain.c: 28:    PCA_Init(130, 0x80);
+[e ( _PCA_Init (2 , -> -> 130 `i `uc -> -> 128 `i `uc ]
+"29
+[; ;newmain.c: 29:    LCD_init(0x4E);
+[e ( _LCD_init (1 -> -> 78 `i `uc ]
+"33
+[; ;newmain.c: 33:    print_welcome_message();
 [e ( _print_welcome_message ..  ]
-"34
-[; ;newmain.c: 34:     while(1){
+"35
+[; ;newmain.c: 35:     while(1){
 [e :U 1617 ]
 {
-"35
-[; ;newmain.c: 35:         do { LATBbits.LATB2 = ~LATBbits.LATB2; } while(0);
-[e :U 1621 ]
+"36
+[; ;newmain.c: 36:         for(int i = 0; i < 8; i++){
+{
+[v _i `i ~T0 @X0 1 a ]
+[e = _i -> 0 `i ]
+[e $ < _i -> 8 `i 1619  ]
+[e $U 1620  ]
+[e :U 1619 ]
+{
+"37
+[; ;newmain.c: 37:         uint8_t curr_col = 0;
+[v _curr_col `uc ~T0 @X0 1 a ]
+[e = _curr_col -> -> 0 `i `uc ]
+"38
+[; ;newmain.c: 38:         do { LATBbits.LATB2 = ~LATBbits.LATB2; } while(0);
+[e :U 1624 ]
 {
 [e = . . _LATBbits 0 2 -> ~ -> . . _LATBbits 0 2 `i `uc ]
 }
-[e :U 1620 ]
-"36
-[; ;newmain.c: 36:         curr_col = find_color();
-[e = _curr_col ( _find_color ..  ]
-"38
-[; ;newmain.c: 38:         print_color_quantity();
-[e ( _print_color_quantity ..  ]
-"39
-[; ;newmain.c: 39:         PCA_Servo_Pos(curr_col);
-[e ( _PCA_Servo_Pos (1 _curr_col ]
-"40
-[; ;newmain.c: 40:         _delay((unsigned long)((1000)*(16000000/4000.0)));
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
+[e :U 1623 ]
 "41
-[; ;newmain.c: 41:     }
+[; ;newmain.c: 41:         print_color_quantity();
+[e ( _print_color_quantity ..  ]
+"42
+[; ;newmain.c: 42:         PCA_Servo_Pos(curr_col);
+[e ( _PCA_Servo_Pos (1 _curr_col ]
+"43
+[; ;newmain.c: 43:         curr_col++;
+[e ++ _curr_col -> -> 1 `i `uc ]
+"44
+[; ;newmain.c: 44:         _delay((unsigned long)((2000)*(16000000/4000.0)));
+[e ( __delay (1 -> * -> -> 2000 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
+"45
+[; ;newmain.c: 45:         }
+}
+[e ++ _i -> 1 `i ]
+[e $ < _i -> 8 `i 1619  ]
+[e :U 1620 ]
+}
+"47
+[; ;newmain.c: 47:     }
 }
 [e :U 1616 ]
 [e $U 1617  ]
 [e :U 1618 ]
-"42
-[; ;newmain.c: 42:     return;
+"48
+[; ;newmain.c: 48:     return;
 [e $UE 1615  ]
-"43
-[; ;newmain.c: 43: }
+"49
+[; ;newmain.c: 49: }
 [e :UE 1615 ]
 }

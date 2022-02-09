@@ -33,8 +33,8 @@ void PCA_Write(uint8_t ChannelN, uint16_t on, uint16_t off){
     
     I2C_Start();                        //Send start bit
     I2C_Write(pca_address);             //Address and R/W cleared
-    //I2C_Write((ChannelN * 4) + 6);   //0x06 is the first register of output channels they come in 4
-    I2C_Write(0x06);
+    I2C_Write((ChannelN * 4) + 6);   //0x06 is the first register of output channels they come in 4
+    //I2C_Write(0x06);
     I2C_Write(on & 0xff);               //lower byte of 12 bit for ON
     I2C_Write((on & 0xf00) >> 8);       //Higher bits of 12 bit for ON
     I2C_Write(off & 0xff);              //Lower byte of 12 bit for OFF

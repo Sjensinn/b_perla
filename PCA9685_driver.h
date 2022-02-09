@@ -27,13 +27,6 @@ extern "C" {
 #define PCA_OE_ENABLE() LATBbits.LATB3 = 0;
 #define PCA_OE_DISABLE() LATBbits.LATB3 = 1;
 
-#ifndef SERVOMIN   
-#define SERVOMIN  95 // This is the 'minimum' pulse length count (out of 4096)
-#endif
-#ifndef SERVOMAX
-#define SERVOMAX  500 // This is the 'maximum' pulse length count (out of 4096)
-#endif
-
     uint8_t pca_address;
 
 /**

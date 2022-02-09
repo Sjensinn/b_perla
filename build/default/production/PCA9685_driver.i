@@ -20720,27 +20720,39 @@ extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 29 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16F1xxxx_DFP/1.9.163/xc8\\pic\\include\\xc.h" 2 3
 # 21 "./PCA9685_driver.h" 2
-# 33 "./PCA9685_driver.h"
+# 37 "./PCA9685_driver.h"
     uint8_t pca_address;
-
-
-
+# 58 "./PCA9685_driver.h"
 void PCA_Init(uint8_t prescalar, uint8_t pca_addr);
-
-
-void PCA_write(uint8_t ChannelN, uint16_t on, uint16_t off);
+# 80 "./PCA9685_driver.h"
+void PCA_Write(uint8_t ChannelN, uint16_t on, uint16_t off);
 # 2 "PCA9685_driver.c" 2
 
 # 1 "./I2C_MSSP1_driver.h" 1
-# 34 "./I2C_MSSP1_driver.h"
+# 40 "./I2C_MSSP1_driver.h"
 void I2C_init(void);
+# 61 "./I2C_MSSP1_driver.h"
 void I2C_Start(void);
+# 70 "./I2C_MSSP1_driver.h"
 void I2C_Wait(void);
+# 91 "./I2C_MSSP1_driver.h"
 void I2C_Write(uint8_t data);
-void I2C_RepeatedStart();
-void I2C_Stop(void);
 
-void I2C_Read(uint8_t* readbuffer, uint8_t place, uint8_t a);
+
+
+
+
+
+void I2C_RepeatedStart();
+
+
+
+
+
+
+void I2C_Stop(void);
+# 139 "./I2C_MSSP1_driver.h"
+uint8_t I2C_Read(uint8_t ackbit);
 # 3 "PCA9685_driver.c" 2
 
 
@@ -20767,7 +20779,8 @@ void PCA_Init(uint8_t prescalar, uint8_t pca_addr){
 
 }
 
-void PCA_write(uint8_t ChannelN, uint16_t on, uint16_t off){
+
+void PCA_Write(uint8_t ChannelN, uint16_t on, uint16_t off){
     if(ChannelN > 15){
         return;
     }

@@ -11,21 +11,16 @@
 #ifdef	__cplusplus
 extern "C" {
 #endif
-
-#include "config_bits.h"
-#include "tcs3200.h"
-#include "I2C_MSSP1_driver.h"
-#include "PCA9685_driver.h"
-#include "timer1.h"
-
     
 //Pin macros
 #ifndef LED_TOGGLE()            
 #define LED_TOGGLE() do { LATBbits.LATB2 = ~LATBbits.LATB2; } while(0)
 #endif
 
+#include "config_bits.h"
+    
 /**
- * @brief   This function initializes clock, pins, uart , i2c, and interrupts
+ * @brief   This function initializes clock, pins, i2c, and interrupts
  * @param   void          
  * @return  void
  *
@@ -56,15 +51,6 @@ void clock_init(void);
  *  Sets appropriate inital values
  */
 void pin_init(void);
-
-/**
- * @brief   This function intializes the systems UART module
- * @param   void          
- * @return  void
- *
- *   Baudrate : 9600 
- */
-void uart_init(void);
 
 /**
  * @brief   This function enables the systems interrupts

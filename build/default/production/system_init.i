@@ -1,4 +1,4 @@
-# 1 "I2C_MSSP1_driver.c"
+# 1 "system_init.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,8 +6,62 @@
 # 1 "<built-in>" 2
 # 1 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16F1xxxx_DFP/1.9.163/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "I2C_MSSP1_driver.c" 2
+# 1 "system_init.c" 2
 
+
+
+
+
+
+
+# 1 "./system_init.h" 1
+# 20 "./system_init.h"
+# 1 "./config_bits.h" 1
+# 18 "./config_bits.h"
+#pragma config FEXTOSC = OFF
+#pragma config RSTOSC = HFINT32
+#pragma config CLKOUTEN = OFF
+#pragma config CSWEN = ON
+#pragma config FCMEN = ON
+
+
+#pragma config MCLRE = ON
+#pragma config PWRTE = OFF
+#pragma config LPBOREN = OFF
+#pragma config BOREN = ON
+#pragma config BORV = LO
+#pragma config ZCD = OFF
+#pragma config PPS1WAY = ON
+#pragma config STVREN = ON
+#pragma config DEBUG = OFF
+
+
+#pragma config WDTCPS = WDTCPS_31
+#pragma config WDTE = OFF
+#pragma config WDTCWS = WDTCWS_7
+#pragma config WDTCCS = SC
+
+
+#pragma config WRT = OFF
+#pragma config SCANE = available
+#pragma config LVP = ON
+
+
+#pragma config CP = OFF
+#pragma config CPD = OFF
+# 20 "./system_init.h" 2
+# 31 "./system_init.h"
+void system_init(void);
+# 42 "./system_init.h"
+void clock_init(void);
+# 53 "./system_init.h"
+void pin_init(void);
+# 62 "./system_init.h"
+void int_init(void);
+# 8 "system_init.c" 2
+
+# 1 "./timer1.h" 1
+# 15 "./timer1.h"
 # 1 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16F1xxxx_DFP/1.9.163/xc8\\pic\\include\\xc.h" 1 3
 # 18 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16F1xxxx_DFP/1.9.163/xc8\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -20717,7 +20771,21 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 29 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16F1xxxx_DFP/1.9.163/xc8\\pic\\include\\xc.h" 2 3
-# 2 "I2C_MSSP1_driver.c" 2
+# 15 "./timer1.h" 2
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\stdbool.h" 1 3
+# 16 "./timer1.h" 2
+# 37 "./timer1.h"
+void Timer1_Initialize(void);
+# 60 "./timer1.h"
+void Timer1_Start(void);
+# 92 "./timer1.h"
+void Timer1_Stop(void);
+# 118 "./timer1.h"
+uint16_t Timer1_Read(void);
+# 143 "./timer1.h"
+void Timer1_Write(size_t timerVal);
+# 9 "system_init.c" 2
 
 # 1 "./I2C_MSSP1_driver.h" 1
 # 40 "./I2C_MSSP1_driver.h"
@@ -20744,79 +20812,124 @@ void I2C_RepeatedStart();
 void I2C_Stop(void);
 # 139 "./I2C_MSSP1_driver.h"
 uint8_t I2C_Read(uint8_t ackbit);
-# 3 "I2C_MSSP1_driver.c" 2
+# 10 "system_init.c" 2
 
 
-void I2C_init(void){
-
-    SSP1STAT = 0x80;
-
-    SSP1CON1 = 0x8;
-
-    SSP1CON2 = 0x0;
-
-    SSP1CON3 = 0x0;
-
-
-
-    SSP1ADD = 159;
-
-    TRISCbits.TRISC3 = 1;
-    TRISCbits.TRISC4 = 1;
-
-    SSP1CON1bits.SSPEN = 1;
+void system_init(){
+    clock_init();
+    pin_init();
+    I2C_init();
+    Timer1_Initialize();
+    int_init();
 }
 
 
-void I2C_Start(void){
-  SSP1CON2bits.SEN = 1;
-  I2C_Wait();
+void clock_init(){
+
+
+    OSCCON1 = 0x61;
+    OSCCON2 = 0x70;
+
+    OSCCON3 = 0x0;
+
+    OSCEN = 0x40;
+
+    OSCFRQ = 0x6;
+
+    OSCSTAT = 0x0;
+
+    OSCTUNE = 0x0;
 }
 
-void I2C_Wait(void){
-    while(!PIR3bits.SSP1IF){
-        if(SSP1CON1bits.WCOL == 1){
-            while(1){
-                do { LATBbits.LATB2 = ~LATBbits.LATB2; } while(0);
-                _delay((unsigned long)((50)*(16000000/4000.0)));
-            }
-        }
-        continue;
-    }
-    PIR3bits.SSP1IF = 0;
+void pin_init(){
+
+
+
+    LATA = 0x0;
+    LATB = 0x0;
+    LATC = 0x18;
+    LATD = 0x0;
+    LATE = 0x0;
+
+
+
+
+    TRISA = 0x30;
+    TRISB = 0xF1;
+    TRISC = 0xBF;
+    TRISD = 0x0;
+    TRISE = 0x7;
+
+
+
+
+    ANSELA = 0x30;
+    ANSELB = 0xF0;
+    ANSELC = 0x67;
+    ANSELD = 0x0;
+    ANSELE = 0x7;
+
+
+
+
+    WPUA = 0x0;
+    WPUB = 0x0;
+    WPUC = 0x0;
+    WPUD = 0x0;
+    WPUE = 0x0;
+# 84 "system_init.c"
+    ODCONA = 0x0;
+    ODCONB = 0x0;
+    ODCONC = 0x0;
+    ODCOND = 0x0;
+    ODCONE = 0x0;
+
+
+
+    SLRCONA = 0xFF;
+    SLRCONB = 0xFF;
+    SLRCONC = 0xFF;
+    SLRCOND = 0xFF;
+    SLRCONE = 0x7;
+
+
+
+    INLVLA = 0xFF;
+    INLVLB = 0xFF;
+    INLVLC = 0xFF;
+    INLVLD = 0xFF;
+    INLVLE = 0xF;
+
+
+
+
+    RXPPS = 0x17;
+    T1CKIPPS = 0x10;
+    T1GPPS = 0xD;
+    RC6PPS = 0x10;
+    SSP1CLKPPS = 0x13;
+    RC3PPS = 0x14;
+    SSP1DATPPS = 0x14;
+    RC4PPS = 0x15;
+
+
+
+
+    IOCAP = 0x0;
+    IOCAN = 0x0;
+    IOCAF = 0x0;
+    IOCBP = 0x0;
+    IOCBN = 0x0;
+    IOCBF = 0x0;
+    IOCCP = 0x0;
+    IOCCN = 0x0;
+    IOCCF = 0x0;
+    IOCEP = 0x0;
+    IOCEN = 0x0;
+    IOCEF = 0x0;
 }
 
-
-void I2C_RepeatedStart(void){
-  SSP1CON2bits.RSEN = 1;
-  I2C_Wait();
-}
-
-
-void I2C_Stop(void){
-  SSP1CON2bits.PEN = 1;
-  I2C_Wait();
-}
-
-
-void I2C_Write(uint8_t data){
-  SSP1BUF = data;
-  I2C_Wait();
-}
-
-
- uint8_t I2C_Read(uint8_t ackbit){
-    uint8_t tempreadbuffer;
-
-    SSP1CON2bits.RCEN = 1;
-    I2C_Wait();
-
-    tempreadbuffer = SSP1BUF;
-    SSP1STATbits.BF = 0;
-
-    SSP1CON2bits.ACKDT = (ackbit);
-    SSP1CON2bits.ACKEN = 1;
-    I2C_Wait();
-
-    return tempreadbuffer;
+void int_init(void){
+    INTCONbits.GIE = 1;
+    INTCONbits.PEIE = 1;
 }

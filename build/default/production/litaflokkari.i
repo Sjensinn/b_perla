@@ -1,4 +1,4 @@
-# 1 "I2C_MSSP1_driver.c"
+# 1 "litaflokkari.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,8 +6,8 @@
 # 1 "<built-in>" 2
 # 1 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16F1xxxx_DFP/1.9.163/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "I2C_MSSP1_driver.c" 2
-
+# 1 "litaflokkari.c" 2
+# 10 "litaflokkari.c"
 # 1 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16F1xxxx_DFP/1.9.163/xc8\\pic\\include\\xc.h" 1 3
 # 18 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16F1xxxx_DFP/1.9.163/xc8\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -20717,7 +20717,147 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 29 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16F1xxxx_DFP/1.9.163/xc8\\pic\\include\\xc.h" 2 3
-# 2 "I2C_MSSP1_driver.c" 2
+# 10 "litaflokkari.c" 2
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\stdio.h" 1 3
+# 24 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\stdio.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\bits/alltypes.h" 1 3
+
+
+
+
+
+typedef void * va_list[1];
+
+
+
+
+typedef void * __isoc_va_list[1];
+# 137 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef long ssize_t;
+# 246 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef long long off_t;
+# 399 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef struct _IO_FILE FILE;
+# 24 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\stdio.h" 2 3
+# 52 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\stdio.h" 3
+typedef union _G_fpos64_t {
+ char __opaque[16];
+ double __align;
+} fpos_t;
+
+extern FILE *const stdin;
+extern FILE *const stdout;
+extern FILE *const stderr;
+
+
+
+
+
+FILE *fopen(const char *restrict, const char *restrict);
+FILE *freopen(const char *restrict, const char *restrict, FILE *restrict);
+int fclose(FILE *);
+
+int remove(const char *);
+int rename(const char *, const char *);
+
+int feof(FILE *);
+int ferror(FILE *);
+int fflush(FILE *);
+void clearerr(FILE *);
+
+int fseek(FILE *, long, int);
+long ftell(FILE *);
+void rewind(FILE *);
+
+int fgetpos(FILE *restrict, fpos_t *restrict);
+int fsetpos(FILE *, const fpos_t *);
+
+size_t fread(void *restrict, size_t, size_t, FILE *restrict);
+size_t fwrite(const void *restrict, size_t, size_t, FILE *restrict);
+
+int fgetc(FILE *);
+int getc(FILE *);
+int getchar(void);
+int ungetc(int, FILE *);
+
+int fputc(int, FILE *);
+int putc(int, FILE *);
+int putchar(int);
+
+char *fgets(char *restrict, int, FILE *restrict);
+
+char *gets(char *);
+
+
+int fputs(const char *restrict, FILE *restrict);
+int puts(const char *);
+
+#pragma printf_check(printf) const
+#pragma printf_check(vprintf) const
+#pragma printf_check(sprintf) const
+#pragma printf_check(snprintf) const
+#pragma printf_check(vsprintf) const
+#pragma printf_check(vsnprintf) const
+
+int printf(const char *restrict, ...);
+int fprintf(FILE *restrict, const char *restrict, ...);
+int sprintf(char *restrict, const char *restrict, ...);
+int snprintf(char *restrict, size_t, const char *restrict, ...);
+
+int vprintf(const char *restrict, __isoc_va_list);
+int vfprintf(FILE *restrict, const char *restrict, __isoc_va_list);
+int vsprintf(char *restrict, const char *restrict, __isoc_va_list);
+int vsnprintf(char *restrict, size_t, const char *restrict, __isoc_va_list);
+
+int scanf(const char *restrict, ...);
+int fscanf(FILE *restrict, const char *restrict, ...);
+int sscanf(const char *restrict, const char *restrict, ...);
+int vscanf(const char *restrict, __isoc_va_list);
+int vfscanf(FILE *restrict, const char *restrict, __isoc_va_list);
+int vsscanf(const char *restrict, const char *restrict, __isoc_va_list);
+
+void perror(const char *);
+
+int setvbuf(FILE *restrict, char *restrict, int, size_t);
+void setbuf(FILE *restrict, char *restrict);
+
+char *tmpnam(char *);
+FILE *tmpfile(void);
+
+
+
+
+FILE *fmemopen(void *restrict, size_t, const char *restrict);
+FILE *open_memstream(char **, size_t *);
+FILE *fdopen(int, const char *);
+FILE *popen(const char *, const char *);
+int pclose(FILE *);
+int fileno(FILE *);
+int fseeko(FILE *, off_t, int);
+off_t ftello(FILE *);
+int dprintf(int, const char *restrict, ...);
+int vdprintf(int, const char *restrict, __isoc_va_list);
+void flockfile(FILE *);
+int ftrylockfile(FILE *);
+void funlockfile(FILE *);
+int getc_unlocked(FILE *);
+int getchar_unlocked(void);
+int putc_unlocked(int, FILE *);
+int putchar_unlocked(int);
+ssize_t getdelim(char **restrict, size_t *restrict, int, FILE *restrict);
+ssize_t getline(char **restrict, size_t *restrict, FILE *restrict);
+int renameat(int, const char *, int, const char *);
+char *ctermid(char *);
+
+
+
+
+
+
+
+char *tempnam(const char *, const char *);
+# 11 "litaflokkari.c" 2
 
 # 1 "./I2C_MSSP1_driver.h" 1
 # 40 "./I2C_MSSP1_driver.h"
@@ -20744,79 +20884,362 @@ void I2C_RepeatedStart();
 void I2C_Stop(void);
 # 139 "./I2C_MSSP1_driver.h"
 uint8_t I2C_Read(uint8_t ackbit);
-# 3 "I2C_MSSP1_driver.c" 2
+# 12 "litaflokkari.c" 2
+
+# 1 "./PCA9685_driver.h" 1
+# 37 "./PCA9685_driver.h"
+    uint8_t pca_address;
+# 58 "./PCA9685_driver.h"
+void PCA_Init(uint8_t prescalar, uint8_t pca_addr);
+# 80 "./PCA9685_driver.h"
+void PCA_Write(uint8_t ChannelN, uint16_t on, uint16_t off);
+# 13 "litaflokkari.c" 2
+
+# 1 "./litaflokkari.h" 1
+# 131 "./litaflokkari.h"
+uint8_t yellow_bead, red_bead, green_bead, blue_bead, black_bead, white_bead, brown_bead, unsort_bead = 0;
+# 141 "./litaflokkari.h"
+void PCA_Servo_Command(uint8_t n, uint8_t pos);
+# 161 "./litaflokkari.h"
+void PCA_Servo_Pos(uint8_t pos);
 
 
-void I2C_init(void){
-
-    SSP1STAT = 0x80;
-
-    SSP1CON1 = 0x8;
-
-    SSP1CON2 = 0x0;
-
-    SSP1CON3 = 0x0;
 
 
 
-    SSP1ADD = 159;
 
-    TRISCbits.TRISC3 = 1;
-    TRISCbits.TRISC4 = 1;
 
-    SSP1CON1bits.SSPEN = 1;
+void print_welcome_message(void);
+# 178 "./litaflokkari.h"
+uint8_t find_color(void);
+# 190 "./litaflokkari.h"
+uint8_t color_compare_return(uint16_t red, uint16_t green, uint16_t blue, uint16_t clear);
+# 199 "./litaflokkari.h"
+void print_color_quantity(void);
+# 14 "litaflokkari.c" 2
+
+# 1 "./tcs3200.h" 1
+# 52 "./tcs3200.h"
+void sensor_init(void);
+
+
+
+
+
+
+void filter_red(void);
+
+
+
+
+
+
+void filter_blue(void);
+
+
+
+
+
+
+void filter_green(void);
+
+
+
+
+
+
+void filter_clear(void);
+
+
+
+
+
+
+
+uint16_t sample_reading(void);
+# 15 "litaflokkari.c" 2
+
+# 1 "./LCD.h" 1
+# 38 "./LCD.h"
+uint8_t lcd_address, RS;
+uint8_t BackLight_State = 0x08;
+# 48 "./LCD.h"
+void LCD_init(uint8_t lcd_addr);
+# 57 "./LCD.h"
+void IO_Expander(unsigned char data);
+# 66 "./LCD.h"
+void LCD_Write_4Bit(unsigned char Nibble);
+# 76 "./LCD.h"
+void LCD_CMD(unsigned char CMD);
+
+
+
+
+
+
+void LCD_write_char(char data);
+
+
+
+
+
+
+void LCD_write_string(char* str);
+
+
+
+
+
+
+
+void LCD_Set_Cursor(unsigned char ROW, unsigned char COL);
+
+
+
+
+
+
+void Backlight();
+
+
+
+
+
+
+void noBacklight();
+
+
+
+
+
+
+void LCD_SL();
+
+
+
+
+
+
+void LCD_SR();
+
+
+
+
+
+
+void LCD_Clear();
+# 16 "litaflokkari.c" 2
+
+# 1 "./uart.h" 1
+# 29 "./uart.h"
+void uart_init(void);
+# 45 "./uart.h"
+void uart_Write(unsigned char data);
+# 61 "./uart.h"
+void uart_Write_String(char* buf);
+# 17 "litaflokkari.c" 2
+
+
+void PCA_Servo_Command(uint8_t n, uint8_t pos){
+    uint8_t offval, onval;
+    offval = (4095 - 95) - pos*(500 -95);
+    onval = 95 + pos*(500 - 95);
+
+    PCA_Write(n, offval, onval);
+    return;
 }
 
+void PCA_Servo_Pos(uint8_t pos){
+    switch(pos){
+        case 1:
 
-void I2C_Start(void){
-  SSP1CON2bits.SEN = 1;
-  I2C_Wait();
-}
+        PCA_Servo_Command(0, 0);
+        PCA_Servo_Command(1, 0);
+        PCA_Servo_Command(2, 1);
+        break;
 
-void I2C_Wait(void){
-    while(!PIR3bits.SSP1IF){
-        if(SSP1CON1bits.WCOL == 1){
-            while(1){
-                do { LATBbits.LATB2 = ~LATBbits.LATB2; } while(0);
-                _delay((unsigned long)((50)*(16000000/4000.0)));
-            }
-        }
-        continue;
+        case 2:
+
+        PCA_Servo_Command(0, 0);
+        PCA_Servo_Command(1, 1);
+        PCA_Servo_Command(2, 0);
+        break;
+
+        case 3:
+
+        PCA_Servo_Command(0, 0);
+        PCA_Servo_Command(1, 1);
+        PCA_Servo_Command(2, 1);
+        break;
+
+        case 4:
+
+        PCA_Servo_Command(0, 1);
+        PCA_Servo_Command(1, 0);
+        PCA_Servo_Command(2, 0);
+        break;
+
+        case 5:
+
+        PCA_Servo_Command(0, 1);
+        PCA_Servo_Command(1, 0);
+        PCA_Servo_Command(2, 1);
+        break;
+
+        case 6:
+
+        PCA_Servo_Command(0, 1);
+        PCA_Servo_Command(1, 1);
+        PCA_Servo_Command(2, 0);
+        break;
+
+        case 7:
+
+        PCA_Servo_Command(0, 1);
+        PCA_Servo_Command(1, 1);
+        PCA_Servo_Command(2, 1);
+        break;
+
+        default:
+
+        PCA_Servo_Command(0, 0);
+        PCA_Servo_Command(1, 0);
+        PCA_Servo_Command(2, 0);
+        break;
     }
-    PIR3bits.SSP1IF = 0;
 }
 
+void print_welcome_message(void){
 
-void I2C_RepeatedStart(void){
-  SSP1CON2bits.RSEN = 1;
-  I2C_Wait();
+    LCD_Set_Cursor(1,1);
+    LCD_write_string("Beads Color Sorter 2^3");
+    LCD_Set_Cursor(2,1);
+    LCD_write_string("Group : B");
+    _delay((unsigned long)((5000)*(16000000/4000.0)));
 }
 
+uint8_t find_color(){
 
-void I2C_Stop(void){
-  SSP1CON2bits.PEN = 1;
-  I2C_Wait();
+    uint16_t red, green, blue, clear;
+
+
+    filter_red();
+    _delay((unsigned long)((10)*(16000000/4000.0)));
+    red = sample_reading();
+
+
+    filter_green();
+    _delay((unsigned long)((10)*(16000000/4000.0)));
+    green = sample_reading();
+
+
+    filter_blue();
+    _delay((unsigned long)((10)*(16000000/4000.0)));
+    blue = sample_reading();
+
+
+    filter_clear();
+    _delay((unsigned long)((10)*(16000000/4000.0)));
+    clear = sample_reading();
+
+
+    return (color_compare_return(red, green, blue, clear));
 }
 
+uint8_t color_compare_return(uint16_t red, uint16_t green, uint16_t blue, uint16_t clear){
 
-void I2C_Write(uint8_t data){
-  SSP1BUF = data;
-  I2C_Wait();
+    uint8_t cVal = 0;
+    uint16_t a, b, c, d;
+
+
+    a = (red-1)*(red-255);
+    b = (green-1)*(green-255);
+    c = (blue-1)*(blue-255);
+    d = (clear-1)*(blue-255);
+    if(a <= 0 && b <= 0 && c <= 0 && d <= 0){
+        cVal = 1;
+        yellow_bead++;
+        return cVal;
+    }
+
+
+    a = (red-1)*(red-255);
+    b = (green-1)*(green-255);
+    c = (blue-1)*(blue-255);
+    d = (clear-1)*(blue-255);
+    if( a <= 0 && b <= 0 && c <= 0 && d <= 0){
+        cVal = 2;
+        red_bead++;
+        return cVal;
+    }
+
+
+    a = (red-1)*(red-255);
+    b = (green-1)*(green-255);
+    c = (blue-1)*(blue-255) ;
+    d = (clear-1)*(blue-255);
+    if(a <= 0 && b <= 0 && c <= 0 && d <= 0){
+        cVal = 3;
+        green_bead++;
+        return cVal;
+    }
+
+
+    a =(red-1)*(red-255);
+    b =(green-1)*(green-255);
+    c =(blue-1)*(blue-255);
+    d =(clear-1)*(blue-255) ;
+    if( a <= 0 && b <= 0 && c <= 0 && d <= 0){
+        cVal = 4;
+        blue_bead++;
+        return cVal;
+    }
+
+
+    a =(red-1)*(red-255);
+    b =(green-1)*(green-255);
+    c =(blue-1)*(blue-255);
+    d =(clear-1)*(blue-255);
+    if( a <= 0 && b <= 0 && c <= 0 && d <= 0){
+        cVal = 5;
+        black_bead++;
+        return cVal;
+    }
+
+
+    a =(red-1)*(red-255);
+    b =(green-1)*(green-255);
+    c = (blue-1)*(blue-255) ;
+    d =(clear-1)*(blue-255);
+    if(a <= 0 && b <= 0 && c <= 0 && d <= 0){
+        cVal = 6;
+        white_bead++;
+        return cVal;
+    }
+
+
+    a =(red-1)*(red-255) ;
+    b =(green-1)*(green-255) ;
+    c =(blue-1)*(blue-255);
+    d =(clear-1)*(blue-255);
+    if(a <= 0 && b <= 0 && c <= 0 && d <= 0){
+        cVal = 7;
+        brown_bead++;
+        return cVal;
+    }
+    else{
+        cVal = 0;
+        unsort_bead++;
+        return cVal;
+    }
 }
 
-
- uint8_t I2C_Read(uint8_t ackbit){
-    uint8_t tempreadbuffer;
-
-    SSP1CON2bits.RCEN = 1;
-    I2C_Wait();
-
-    tempreadbuffer = SSP1BUF;
-    SSP1STATbits.BF = 0;
-
-    SSP1CON2bits.ACKDT = (ackbit);
-    SSP1CON2bits.ACKEN = 1;
-    I2C_Wait();
-
-    return tempreadbuffer;
+void print_color_quantity(){
+    char strbuff[40];
+    LCD_Set_Cursor(1,1);
+    sprintf(strbuff, "Y%d R%d G%d BE%d", yellow_bead, red_bead, green_bead, blue_bead);
+    LCD_write_string(strbuff);
+    LCD_Set_Cursor(2,1);
+    sprintf(strbuff, "BK%d W%d BN%d U%d", black_bead, white_bead, brown_bead, unsort_bead);
+    LCD_write_string(strbuff);
 }

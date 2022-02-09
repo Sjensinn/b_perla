@@ -7,42 +7,7 @@
 # 1 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16F1xxxx_DFP/1.9.163/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
 # 1 "newmain.c" 2
-# 15 "newmain.c"
-# 1 "./config_bits.h" 1
-# 18 "./config_bits.h"
-#pragma config FEXTOSC = OFF
-#pragma config RSTOSC = HFINT32
-#pragma config CLKOUTEN = OFF
-#pragma config CSWEN = ON
-#pragma config FCMEN = ON
-
-
-#pragma config MCLRE = ON
-#pragma config PWRTE = OFF
-#pragma config LPBOREN = OFF
-#pragma config BOREN = ON
-#pragma config BORV = LO
-#pragma config ZCD = OFF
-#pragma config PPS1WAY = ON
-#pragma config STVREN = ON
-#pragma config DEBUG = OFF
-
-
-#pragma config WDTCPS = WDTCPS_31
-#pragma config WDTE = OFF
-#pragma config WDTCWS = WDTCWS_7
-#pragma config WDTCCS = SC
-
-
-#pragma config WRT = OFF
-#pragma config SCANE = available
-#pragma config LVP = ON
-
-
-#pragma config CP = OFF
-#pragma config CPD = OFF
-# 15 "newmain.c" 2
-
+# 12 "newmain.c"
 # 1 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16F1xxxx_DFP/1.9.163/xc8\\pic\\include\\xc.h" 1 3
 # 18 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16F1xxxx_DFP/1.9.163/xc8\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -20752,7 +20717,7 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 29 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16F1xxxx_DFP/1.9.163/xc8\\pic\\include\\xc.h" 2 3
-# 16 "newmain.c" 2
+# 12 "newmain.c" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\stdio.h" 1 3
 # 24 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\stdio.h" 3
@@ -20892,193 +20857,254 @@ char *ctermid(char *);
 
 
 char *tempnam(const char *, const char *);
-# 17 "newmain.c" 2
+# 13 "newmain.c" 2
 
-# 1 "./I2C_MSSP1_driver.h" 1
-# 34 "./I2C_MSSP1_driver.h"
-void I2C_init(void);
-void I2C_Start(void);
-void I2C_Wait(void);
-void I2C_Write(uint8_t data);
-void I2C_RepeatedStart();
-void I2C_Stop(void);
+# 1 "./litaflokkari.h" 1
+# 131 "./litaflokkari.h"
+uint8_t yellow_bead, red_bead, green_bead, blue_bead, black_bead, white_bead, brown_bead, unsort_bead = 0;
+# 141 "./litaflokkari.h"
+void PCA_Servo_Command(uint8_t n, uint8_t pos);
+# 161 "./litaflokkari.h"
+void PCA_Servo_Pos(uint8_t pos);
 
-void I2C_Read(uint8_t* readbuffer, uint8_t place, uint8_t a);
-# 18 "newmain.c" 2
+
+
+
+
+
+
+void print_welcome_message(void);
+# 178 "./litaflokkari.h"
+uint8_t find_color(void);
+# 190 "./litaflokkari.h"
+uint8_t color_compare_return(uint16_t red, uint16_t green, uint16_t blue, uint16_t clear);
+# 199 "./litaflokkari.h"
+void print_color_quantity(void);
+# 14 "newmain.c" 2
 
 # 1 "./PCA9685_driver.h" 1
-# 33 "./PCA9685_driver.h"
+# 37 "./PCA9685_driver.h"
     uint8_t pca_address;
-
-
-
+# 58 "./PCA9685_driver.h"
 void PCA_Init(uint8_t prescalar, uint8_t pca_addr);
+# 80 "./PCA9685_driver.h"
+void PCA_Write(uint8_t ChannelN, uint16_t on, uint16_t off);
+# 15 "newmain.c" 2
+
+# 1 "./config_bits.h" 1
+# 18 "./config_bits.h"
+#pragma config FEXTOSC = OFF
+#pragma config RSTOSC = HFINT32
+#pragma config CLKOUTEN = OFF
+#pragma config CSWEN = ON
+#pragma config FCMEN = ON
 
 
-void PCA_write(uint8_t ChannelN, uint16_t on, uint16_t off);
+#pragma config MCLRE = ON
+#pragma config PWRTE = OFF
+#pragma config LPBOREN = OFF
+#pragma config BOREN = ON
+#pragma config BORV = LO
+#pragma config ZCD = OFF
+#pragma config PPS1WAY = ON
+#pragma config STVREN = ON
+#pragma config DEBUG = OFF
+
+
+#pragma config WDTCPS = WDTCPS_31
+#pragma config WDTE = OFF
+#pragma config WDTCWS = WDTCWS_7
+#pragma config WDTCCS = SC
+
+
+#pragma config WRT = OFF
+#pragma config SCANE = available
+#pragma config LVP = ON
+
+
+#pragma config CP = OFF
+#pragma config CPD = OFF
+# 16 "newmain.c" 2
+
+# 1 "./system_init.h" 1
+# 31 "./system_init.h"
+void system_init(void);
+# 42 "./system_init.h"
+void clock_init(void);
+# 53 "./system_init.h"
+void pin_init(void);
+# 62 "./system_init.h"
+void int_init(void);
+# 17 "newmain.c" 2
+
+# 1 "./tcs3200.h" 1
+# 52 "./tcs3200.h"
+void sensor_init(void);
+
+
+
+
+
+
+void filter_red(void);
+
+
+
+
+
+
+void filter_blue(void);
+
+
+
+
+
+
+void filter_green(void);
+
+
+
+
+
+
+void filter_clear(void);
+
+
+
+
+
+
+
+uint16_t sample_reading(void);
+# 18 "newmain.c" 2
+
+# 1 "./uart.h" 1
+# 29 "./uart.h"
+void uart_init(void);
+# 45 "./uart.h"
+void uart_Write(unsigned char data);
+# 61 "./uart.h"
+void uart_Write_String(char* buf);
 # 19 "newmain.c" 2
 
+# 1 "./LCD.h" 1
+# 16 "./LCD.h"
+# 1 "./I2C_MSSP1_driver.h" 1
+# 40 "./I2C_MSSP1_driver.h"
+void I2C_init(void);
+# 61 "./I2C_MSSP1_driver.h"
+void I2C_Start(void);
+# 70 "./I2C_MSSP1_driver.h"
+void I2C_Wait(void);
+# 91 "./I2C_MSSP1_driver.h"
+void I2C_Write(uint8_t data);
 
-void clock_init(void);
-void pin_init(void);
-void uart_init(void);
-void putch(uint8_t txData);
+
+
+
+
+
+void I2C_RepeatedStart();
+
+
+
+
+
+
+void I2C_Stop(void);
+# 139 "./I2C_MSSP1_driver.h"
+uint8_t I2C_Read(uint8_t ackbit);
+# 16 "./LCD.h" 2
+# 38 "./LCD.h"
+uint8_t lcd_address, RS;
+uint8_t BackLight_State = 0x08;
+# 48 "./LCD.h"
+void LCD_init(uint8_t lcd_addr);
+# 57 "./LCD.h"
+void IO_Expander(unsigned char data);
+# 66 "./LCD.h"
+void LCD_Write_4Bit(unsigned char Nibble);
+# 76 "./LCD.h"
+void LCD_CMD(unsigned char CMD);
+
+
+
+
+
+
+void LCD_write_char(char data);
+
+
+
+
+
+
+void LCD_write_string(char* str);
+
+
+
+
+
+
+
+void LCD_Set_Cursor(unsigned char ROW, unsigned char COL);
+
+
+
+
+
+
+void Backlight();
+
+
+
+
+
+
+void noBacklight();
+
+
+
+
+
+
+void LCD_SL();
+
+
+
+
+
+
+void LCD_SR();
+
+
+
+
+
+
+void LCD_Clear();
+# 20 "newmain.c" 2
+
 
 void main(void) {
-    clock_init();
-    pin_init();
-    uart_init();
-    I2C_init();
 
-    INTCONbits.GIE = 1;
-    INTCONbits.PEIE = 1;
+   system_init();
+   uart_init();
+   PCA_Init(130, 0x80);
+   LCD_init(0x4E);
+   sensor_init();
 
-    PCA_Init(130 ,0x80);
+
+   uint8_t curr_col = 0;
+   print_welcome_message();
 
     while(1){
-        LATBbits.LATB2 = 0;
-        PCA_write(0, 4000, 95);
-        _delay((unsigned long)((5000)*(16000000/4000.0)));
+        do { LATBbits.LATB2 = ~LATBbits.LATB2; } while(0);
+        curr_col = find_color();
 
-        LATBbits.LATB2 = 1;
-        PCA_write(0, 3595, 500);
-        _delay((unsigned long)((5000)*(16000000/4000.0)));
+        print_color_quantity();
+        PCA_Servo_Pos(curr_col);
+        _delay((unsigned long)((1000)*(16000000/4000.0)));
     }
     return;
-}
-
-void clock_init(){
-
-
-    OSCCON1 = 0x61;
-    OSCCON2 = 0x70;
-
-    OSCCON3 = 0x0;
-
-    OSCEN = 0x40;
-
-    OSCFRQ = 0x6;
-
-    OSCSTAT = 0x0;
-
-    OSCTUNE = 0x0;
-}
-
-void pin_init(){
-
-
-
-    LATA = 0x0;
-    LATB = 0x0;
-    LATC = 0x18;
-    LATD = 0x0;
-    LATE = 0x0;
-
-
-
-
-    TRISA = 0x30;
-    TRISB = 0xF1;
-    TRISC = 0xBF;
-    TRISD = 0x0;
-    TRISE = 0x7;
-
-
-
-
-    ANSELA = 0x30;
-    ANSELB = 0xF0;
-    ANSELC = 0x67;
-    ANSELD = 0x0;
-    ANSELE = 0x7;
-
-
-
-
-    WPUA = 0x0;
-    WPUB = 0x0;
-    WPUC = 0x0;
-    WPUD = 0x0;
-    WPUE = 0x0;
-# 112 "newmain.c"
-    ODCONA = 0x0;
-    ODCONB = 0x0;
-    ODCONC = 0x0;
-    ODCOND = 0x0;
-    ODCONE = 0x0;
-
-
-
-    SLRCONA = 0xFF;
-    SLRCONB = 0xFF;
-    SLRCONC = 0xFF;
-    SLRCOND = 0xFF;
-    SLRCONE = 0x7;
-
-
-
-    INLVLA = 0xFF;
-    INLVLB = 0xFF;
-    INLVLC = 0xFF;
-    INLVLD = 0xFF;
-    INLVLE = 0xF;
-
-
-
-
-    RXPPS = 0x17;
-    T1CKIPPS = 0x10;
-    T1GPPS = 0xD;
-    RC6PPS = 0x10;
-    SSP1CLKPPS = 0x13;
-    RC3PPS = 0x14;
-    SSP1DATPPS = 0x14;
-    RC4PPS = 0x15;
-
-
-
-
-    IOCAP = 0x0;
-    IOCAN = 0x0;
-    IOCAF = 0x0;
-    IOCBP = 0x0;
-    IOCBN = 0x0;
-    IOCBF = 0x0;
-    IOCCP = 0x0;
-    IOCCN = 0x0;
-    IOCCF = 0x0;
-    IOCEP = 0x0;
-    IOCEN = 0x0;
-    IOCEF = 0x0;
-}
-
-void uart_init(void){
-
-
-
-    BAUD1CON = 0x48;
-
-
-    RC1STA = 0x90;
-
-
-    TX1STA = 0x26;
-
-
-    SP1BRGL = 0x9F;
-
-
-    SP1BRGH = 0x1;
-
-    ANSELCbits.ANSC3 = 0;
-    ANSELCbits.ANSC4 = 0;
-    TRISCbits.TRISC3 = 1;
-    TRISCbits.TRISC4 = 1;
-}
-
-void putch(uint8_t data){
-    while(0 == PIR3bits.TXIF){
-        continue;
-    }
-    TX1REG = data;
 }

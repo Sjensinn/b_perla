@@ -1,4 +1,4 @@
-# 1 "I2C_MSSP1_driver.c"
+# 1 "uart.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,7 +6,7 @@
 # 1 "<built-in>" 2
 # 1 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16F1xxxx_DFP/1.9.163/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "I2C_MSSP1_driver.c" 2
+# 1 "uart.c" 2
 
 # 1 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16F1xxxx_DFP/1.9.163/xc8\\pic\\include\\xc.h" 1 3
 # 18 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16F1xxxx_DFP/1.9.163/xc8\\pic\\include\\xc.h" 3
@@ -20717,106 +20717,51 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 29 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16F1xxxx_DFP/1.9.163/xc8\\pic\\include\\xc.h" 2 3
-# 2 "I2C_MSSP1_driver.c" 2
+# 2 "uart.c" 2
 
-# 1 "./I2C_MSSP1_driver.h" 1
-# 40 "./I2C_MSSP1_driver.h"
-void I2C_init(void);
-# 61 "./I2C_MSSP1_driver.h"
-void I2C_Start(void);
-# 70 "./I2C_MSSP1_driver.h"
-void I2C_Wait(void);
-# 91 "./I2C_MSSP1_driver.h"
-void I2C_Write(uint8_t data);
-
+# 1 "./uart.h" 1
+# 29 "./uart.h"
+void uart_init(void);
+# 45 "./uart.h"
+void uart_Write(unsigned char data);
+# 61 "./uart.h"
+void uart_Write_String(char* buf);
+# 3 "uart.c" 2
 
 
-
-
-
-void I2C_RepeatedStart();
+void uart_init(void){
 
 
 
+    BAUD1CON = 0x48;
 
 
-
-void I2C_Stop(void);
-# 139 "./I2C_MSSP1_driver.h"
-uint8_t I2C_Read(uint8_t ackbit);
-# 3 "I2C_MSSP1_driver.c" 2
+    RC1STA = 0x90;
 
 
-void I2C_init(void){
-
-    SSP1STAT = 0x80;
-
-    SSP1CON1 = 0x8;
-
-    SSP1CON2 = 0x0;
-
-    SSP1CON3 = 0x0;
+    TX1STA = 0x26;
 
 
+    SP1BRGL = 0x9F;
 
-    SSP1ADD = 159;
 
+    SP1BRGH = 0x1;
+
+    ANSELCbits.ANSC3 = 0;
+    ANSELCbits.ANSC4 = 0;
     TRISCbits.TRISC3 = 1;
     TRISCbits.TRISC4 = 1;
-
-    SSP1CON1bits.SSPEN = 1;
 }
 
-
-void I2C_Start(void){
-  SSP1CON2bits.SEN = 1;
-  I2C_Wait();
-}
-
-void I2C_Wait(void){
-    while(!PIR3bits.SSP1IF){
-        if(SSP1CON1bits.WCOL == 1){
-            while(1){
-                do { LATBbits.LATB2 = ~LATBbits.LATB2; } while(0);
-                _delay((unsigned long)((50)*(16000000/4000.0)));
-            }
-        }
+void uart_Write(unsigned char data){
+    while(0 == PIR3bits.TXIF){
         continue;
     }
-    PIR3bits.SSP1IF = 0;
+    TX1REG = data;
 }
-
-
-void I2C_RepeatedStart(void){
-  SSP1CON2bits.RSEN = 1;
-  I2C_Wait();
-}
-
-
-void I2C_Stop(void){
-  SSP1CON2bits.PEN = 1;
-  I2C_Wait();
-}
-
-
-void I2C_Write(uint8_t data){
-  SSP1BUF = data;
-  I2C_Wait();
-}
-
-
- uint8_t I2C_Read(uint8_t ackbit){
-    uint8_t tempreadbuffer;
-
-    SSP1CON2bits.RCEN = 1;
-    I2C_Wait();
-
-    tempreadbuffer = SSP1BUF;
-    SSP1STATbits.BF = 0;
-
-    SSP1CON2bits.ACKDT = (ackbit);
-    SSP1CON2bits.ACKEN = 1;
-    I2C_Wait();
-
-    return tempreadbuffer;
+void uart_Write_String(char* buf){
+    int i=0;
+    while(buf[i] != '\0'){
+        uart_Write(buf[i++]);
+    }
 }

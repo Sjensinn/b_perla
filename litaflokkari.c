@@ -16,12 +16,21 @@
 #include "LCD.h"
 #include "uart.h"
 
-void PCA_Servo_Command(uint8_t n, uint8_t pos){
-    uint8_t offval, onval;
-    offval = (4095 - SERVOMIN) - pos*(SERVOMAX-SERVOMIN);  //for the off value
-    onval = SERVOMIN + pos*(SERVOMAX - SERVOMIN);   //For the on value 
+void PCA_Servo_Command(uint8_t servo_nr, uint8_t servo_on_off){
+    uint8_t stateTest = servo_on_off;
+    if(stateTest == 0){
+        PCA_Write(servo_nr, 0x0, LFSMIN);
+    }
+    
+    if(stateTest == 1){
+        PCA_Write(servo_nr, 0x0, LFSMAX);
+    }
+    
+    else{
+        LATBbits.LATB2 = ~LATBbits.LATB2;
+        __delay_ms(50);
+    }
 
-    PCA_Write(n, offval, onval);
     return;
 }
 
@@ -182,22 +191,22 @@ uint8_t color_compare_return(uint16_t red, uint16_t green, uint16_t blue, uint16
         return cVal;
     }
     
-    //If color samples match value range for WHITE bead
-    a =(red-WHITE_RED_MIN)*(red-WHITE_RED_MAX);
-    b =(green-WHITE_GREEN_MIN)*(green-WHITE_GREEN_MAX);
-    c = (blue-WHITE_BLUE_MIN)*(blue-WHITE_BLUE_MAX) ;
-    d =(clear-WHITE_CLEAR_MIN)*(blue-WHITE_CLEAR_MAX);
+    //If color samples match value range for ORANGE bead
+    a =(red-ORANGE_RED_MIN)*(red-ORANGE_RED_MAX);
+    b =(green-WHITE_ORANGE_MIN)*(green-ORANGE_GREEN_MAX);
+    c = (blue-WHITE_ORANGE_MIN)*(blue-ORANGE_BLUE_MAX) ;
+    d =(clear-ORANGE_CLEAR_MIN)*(blue-ORANGE_CLEAR_MAX);
     if(a <= 0 && b <= 0 && c <= 0 && d <= 0){
         cVal = 6;      
         white_bead++;
         return cVal;
     }
     
-    //If color samples match value range for BROWN bead
-    a =(red-BROWN_RED_MIN)*(red-BROWN_RED_MAX) ;
-    b =(green-BROWN_GREEN_MIN)*(green-BROWN_GREEN_MAX) ;
-    c =(blue-BROWN_BLUE_MIN)*(blue-BROWN_BLUE_MAX);
-    d =(clear-BROWN_CLEAR_MIN)*(blue-BROWN_CLEAR_MAX);
+    //If color samples match value range for ORANGE bead
+    a =(red-PURPLE_RED_MIN)*(red-PURPLE_RED_MAX) ;
+    b =(green-BROWN_PURPLE_MIN)*(green-PURPLE_GREEN_MAX) ;
+    c =(blue-BROWN_PURPLE_MIN)*(blue-PURPLE_BLUE_MAX);
+    d =(clear-PURPLE_CLEAR_MIN)*(blue-PURPLE_CLEAR_MAX);
     if(a <= 0 && b <= 0 && c <= 0 && d <= 0){
         cVal = 7;      
         brown_bead++;

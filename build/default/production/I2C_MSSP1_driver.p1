@@ -1823,9 +1823,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "13
 [; ;I2C_MSSP1_driver.c: 13:     SSP1CON3 = 0x0;
 [e = _SSP1CON3 -> -> 0 `i `uc ]
-"17
-[; ;I2C_MSSP1_driver.c: 17:     SSP1ADD = 159;
-[e = _SSP1ADD -> -> 159 `i `uc ]
+"15
+[; ;I2C_MSSP1_driver.c: 15:     SSP1ADD = 0x27;
+[e = _SSP1ADD -> -> 39 `i `uc ]
 "19
 [; ;I2C_MSSP1_driver.c: 19:     TRISCbits.TRISC3 = 1;
 [e = . . _TRISCbits 0 3 -> -> 1 `i `uc ]

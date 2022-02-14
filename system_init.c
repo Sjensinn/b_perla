@@ -6,14 +6,12 @@
  */
 
 #include "system_init.h"
-#include "timer1.h"
-#include "I2C_MSSP1_driver.h"
+#include "config_bits.h"
+#include <xc.h>
 
 void system_init(){
     clock_init();
     pin_init();
-    I2C_init();
-    Timer1_Initialize();
     int_init();
 }
 

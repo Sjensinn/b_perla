@@ -57,77 +57,103 @@
 extern "C" {
 #endif
 
-#ifndef SERVOMIN   
-#define SERVOMIN  95 // This is the 'minimum' pulse length count (out of 4096)
+#ifndef LFSMIN   //200 works
+#define LFSMIN  130 // This is the 'minimum' pulse length count (out of 4096)
 #endif
-#ifndef SERVOMAX
-#define SERVOMAX  500 // This is the 'maximum' pulse length count (out of 4096)
+#ifndef LFSMAX    //500 works
+#define LFSMAX  500 // This is the 'maximum' pulse length count (out of 4096)
 #endif
     
 //Yellow beat color ranges
-#define YELLOW_RED_MAX 255
-#define YELLOW_RED_MIN 1
-#define YELLOW_GREEN_MAX 255
-#define YELLOW_GREEN_MIN 1
-#define YELLOW_BLUE_MAX 255
-#define YELLOW_BLUE_MIN 1
-#define YELLOW_CLEAR_MAX 255
-#define YELLOW_CLEAR_MIN 1
+#define YELLOW_RED_MAX 4033
+#define YELLOW_RED_MIN 1945
+#define YELLOW_GREEN_MAX 7171
+#define YELLOW_GREEN_MIN 3775
+#define YELLOW_BLUE_MAX 7129
+#define YELLOW_BLUE_MIN 4159
+#define YELLOW_CLEAR_MAX 1969
+#define YELLOW_CLEAR_MIN 1075
 //RED beat color ranges
-#define RED_RED_MAX 255
-#define RED_RED_MIN 1
-#define RED_GREEN_MAX 255
-#define RED_GREEN_MIN 1
-#define RED_BLUE_MAX 255
-#define RED_BLUE_MIN 1
-#define RED_CLEAR_MAX 255
-#define RED_CLEAR_MIN 1
+#define RED_RED_MAX 4507
+#define RED_RED_MIN 2551
+#define RED_GREEN_MAX 8923
+#define RED_GREEN_MIN 5743
+#define RED_BLUE_MAX 7177
+#define RED_BLUE_MIN 4639
+#define RED_CLEAR_MAX 2221
+#define RED_CLEAR_MIN 1369
 //GREEN beat color ranges
-#define GREEN_RED_MAX 255
-#define GREEN_RED_MIN 1
-#define GREEN_GREEN_MAX 255
-#define GREEN_GREEN_MIN 1
-#define GREEN_BLUE_MAX 255 
-#define GREEN_BLUE_MIN 1
-#define GREEN_CLEAR_MAX 255
-#define GREEN_CLEAR_MIN 1
+#define GREEN_RED_MAX 7033
+#define GREEN_RED_MIN 4135
+#define GREEN_GREEN_MAX 9985
+#define GREEN_GREEN_MIN 6169
+#define GREEN_BLUE_MAX 9343
+#define GREEN_BLUE_MIN 5527
+#define GREEN_CLEAR_MAX 2791
+#define GREEN_CLEAR_MIN 1795
 //BLUE beat color ranges 
-#define BLUE_RED_MAX 255
-#define BLUE_RED_MIN 1
-#define BLUE_GREEN_MAX 255
-#define BLUE_GREEN_MIN 1 
-#define BLUE_BLUE_MAX 255 
-#define BLUE_BLUE_MIN 1
-#define BLUE_CLEAR_MAX 255
-#define BLUE_CLEAR_MIN 1
+#define BLUE_RED_MAX 6583
+#define BLUE_RED_MIN 3409
+#define BLUE_GREEN_MAX 9301
+#define BLUE_GREEN_MIN 15323
+#define BLUE_BLUE_MAX 7411
+#define BLUE_BLUE_MIN 4453
+#define BLUE_CLEAR_MAX 2569
+#define BLUE_CLEAR_MIN 1429
 //BLACK beat color ranges
-#define BLACK_RED_MAX 255
-#define BLACK_RED_MIN 1
-#define BLACK_GREEN_MAX 255 
-#define BLACK_GREEN_MIN 1
-#define BLACK_BLUE_MAX 255
-#define BLACK_BLUE_MIN 1
-#define BLACK_CLEAR_MAX 255
-#define BLACK_CLEAR_MIN 1
+#define BLACK_RED_MAX 5863
+#define BLACK_RED_MIN 3271
+#define BLACK_GREEN_MAX 9595 
+#define BLACK_GREEN_MIN 5419
+#define BLACK_BLUE_MAX 8521
+#define BLACK_BLUE_MIN 4879
+#define BLACK_CLEAR_MAX 2521
+#define BLACK_CLEAR_MIN 1459
 //WHITE beat color ranges
-#define WHITE_RED_MAX 255
-#define WHITE_RED_MIN 1
-#define WHITE_GREEN_MAX 255
-#define WHITE_GREEN_MIN 1 
-#define WHITE_BLUE_MAX 255
-#define WHITE_BLUE_MIN 1
-#define WHITE_CLEAR_MAX 255 
-#define WHITE_CLEAR_MIN 1
-//BROWN beat color ranges
-#define BROWN_RED_MAX 255
-#define BROWN_RED_MIN 1
-#define BROWN_GREEN_MAX 255
-#define BROWN_GREEN_MIN 1
-#define BROWN_BLUE_MAX 255 
-#define BROWN_BLUE_MIN 1
-#define BROWN_CLEAR_MAX 255
-#define BROWN_CLEAR_MIN 1
-    
+#define WHITE_RED_MAX 3181
+#define WHITE_RED_MIN 2143
+#define WHITE_GREEN_MAX 5047
+#define WHITE_GREEN_MIN 3313
+#define WHITE_BLUE_MAX 4550
+#define WHITE_BLUE_MIN 3000
+#define WHITE_CLEAR_MAX 967 
+#define WHITE_CLEAR_MIN 1429
+//ORANGE
+#define ORANGE_RED_MAX 2725
+#define ORANGE_RED_MIN 2137
+#define ORANGE_GREEN_MAX 6901
+#define ORANGE_GREEN_MIN 5143
+#define ORANGE_BLUE_MAX 6070
+#define ORANGE_BLUE_MIN 4690
+#define ORANGE_CLEAR_MAX 1570
+#define ORANGE_CLEAR_MIN 1220
+//PINK
+#define PINK_RED_MAX 2440
+#define PINK_RED_MIN 1210
+#define PINK_GREEN_MAX 255
+#define PINK_GREEN_MIN 1
+#define PINK_BLUE_MAX 255 
+#define PINK_BLUE_MIN 1
+#define PINK_CLEAR_MAX 255
+#define PINK_CLEAR_MIN 1
+//PURPLE
+#define PURPLE_RED_MAX 4810
+#define PURPLE_RED_MIN 2130
+#define PURPLE_GREEN_MAX 7270
+#define PURPLE_GREEN_MIN 4110
+#define PURPLE_BLUE_MAX 5540
+#define PURPLE_BLUE_MIN 3380
+#define PURPLE_CLEAR_MAX 1990
+#define PURPLE_CLEAR_MIN 1070
+//NOTHING
+#define NA_RED_MAX 8090
+#define NA_RED_MIN 3180
+#define NA_GREEN_MAX 13580
+#define NA_GREEN_MIN 4300
+#define NA_BLUE_MAX 12000
+#define NA_BLUE_MIN 3860
+#define NA_CLEAR_MAX 3320
+#define NA_CLEAR_MIN 1190
 uint8_t yellow_bead, red_bead, green_bead, blue_bead, black_bead, white_bead, brown_bead, unsort_bead = 0;
     
 /**
@@ -138,7 +164,7 @@ uint8_t yellow_bead, red_bead, green_bead, blue_bead, black_bead, white_bead, br
  *          pos should be between 0-7              
  * @return  void
  */
-void PCA_Servo_Command(uint8_t n, uint8_t pos);
+void PCA_Servo_Command(uint8_t servo_nr, uint8_t servo_on_off);
 
 /**
  * @brief   This function turn the servos 1, 2, 3 to position according to 0-8 from passed variable pos

@@ -3,7 +3,7 @@
     <type>com.microchip.mplab.nbide.embedded.makeproject</type>
     <configuration>
         <data xmlns="http://www.netbeans.org/ns/make-project/1">
-            <name>PIC16f18877_v6_1</name>
+            <name>b_perla</name>
             <creation-uuid>da34ae9a-d513-4a97-b2e6-d8d5ebd0b468</creation-uuid>
             <make-project-type>0</make-project-type>
             <c-extensions>c</c-extensions>

@@ -194,6 +194,15 @@ void PCA_Servo_Pos(uint8_t pos);
  */
 void print_welcome_message(void);
 
+
+/**
+ * @brief   This function samples each color filter on the sensor
+ *          Then returns values through pointer
+ * @param   pointer to each color         
+ * @return  Values to pointer
+ */
+uint8_t find_raw_color(uint16_t *red, uint16_t *green, uint16_t *blue, uint16_t *clear);
+
 /**
  * @brief   This function samples each color filter on the sensor
  *          Then runs those values through color_compare_return() function
@@ -223,5 +232,14 @@ uint8_t color_compare_return(uint16_t red, uint16_t green, uint16_t blue, uint16
  * @return  void
  */
 void print_color_quantity(void);
+
+/**
+ * @brief   This function is used to find min/max values for each bead color 
+ * @param   void            
+ * @return  void
+ */
+void calibrate_bead_values(void);
+
+void find_print(void);
 
 #endif

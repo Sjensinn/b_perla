@@ -7,7 +7,7 @@
 # 1 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16F1xxxx_DFP/1.9.163/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
 # 1 "newmain.c" 2
-# 12 "newmain.c"
+# 14 "newmain.c"
 # 1 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16F1xxxx_DFP/1.9.163/xc8\\pic\\include\\xc.h" 1 3
 # 18 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16F1xxxx_DFP/1.9.163/xc8\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -16,35 +16,35 @@ extern double __fpnormalize(double);
 
 
 
-# 1 "C:\\Program Files\\Microchip\\pic\\include\\c99\\xc8debug.h" 1 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\xc8debug.h" 1 3
 
 
 
-# 1 "C:\\Program Files\\Microchip\\pic\\include\\c99\\stdlib.h" 1 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\stdlib.h" 1 3
 
 
 
-# 1 "C:\\Program Files\\Microchip\\pic\\include\\c99\\musl_xc8.h" 1 3
-# 4 "C:\\Program Files\\Microchip\\pic\\include\\c99\\stdlib.h" 2 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\musl_xc8.h" 1 3
+# 4 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\stdlib.h" 2 3
 
 
 
 
 
 
-# 1 "C:\\Program Files\\Microchip\\pic\\include\\c99\\features.h" 1 3
-# 10 "C:\\Program Files\\Microchip\\pic\\include\\c99\\stdlib.h" 2 3
-# 21 "C:\\Program Files\\Microchip\\pic\\include\\c99\\stdlib.h" 3
-# 1 "C:\\Program Files\\Microchip\\pic\\include\\c99\\bits/alltypes.h" 1 3
-# 18 "C:\\Program Files\\Microchip\\pic\\include\\c99\\bits/alltypes.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\features.h" 1 3
+# 10 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\stdlib.h" 2 3
+# 21 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\stdlib.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\bits/alltypes.h" 1 3
+# 18 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\bits/alltypes.h" 3
 typedef long int wchar_t;
-# 122 "C:\\Program Files\\Microchip\\pic\\include\\c99\\bits/alltypes.h" 3
+# 122 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\bits/alltypes.h" 3
 typedef unsigned size_t;
-# 168 "C:\\Program Files\\Microchip\\pic\\include\\c99\\bits/alltypes.h" 3
+# 168 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\bits/alltypes.h" 3
 typedef __int24 int24_t;
-# 204 "C:\\Program Files\\Microchip\\pic\\include\\c99\\bits/alltypes.h" 3
+# 204 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\bits/alltypes.h" 3
 typedef __uint24 uint24_t;
-# 21 "C:\\Program Files\\Microchip\\pic\\include\\c99\\stdlib.h" 2 3
+# 21 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\stdlib.h" 2 3
 
 
 int atoi (const char *);
@@ -97,7 +97,7 @@ uldiv_t uldiv (unsigned long, unsigned long);
 
 
 size_t __ctype_get_mb_cur_max(void);
-# 4 "C:\\Program Files\\Microchip\\pic\\include\\c99\\xc8debug.h" 2 3
+# 4 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\xc8debug.h" 2 3
 
 
 
@@ -113,21 +113,21 @@ extern void __builtin_software_breakpoint(void);
 
 
 
-# 1 "C:\\Program Files\\Microchip\\pic\\include\\c99\\stdint.h" 1 3
-# 22 "C:\\Program Files\\Microchip\\pic\\include\\c99\\stdint.h" 3
-# 1 "C:\\Program Files\\Microchip\\pic\\include\\c99\\bits/alltypes.h" 1 3
-# 127 "C:\\Program Files\\Microchip\\pic\\include\\c99\\bits/alltypes.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\stdint.h" 1 3
+# 22 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\stdint.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\bits/alltypes.h" 1 3
+# 127 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\bits/alltypes.h" 3
 typedef unsigned long uintptr_t;
-# 142 "C:\\Program Files\\Microchip\\pic\\include\\c99\\bits/alltypes.h" 3
+# 142 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\bits/alltypes.h" 3
 typedef long intptr_t;
-# 158 "C:\\Program Files\\Microchip\\pic\\include\\c99\\bits/alltypes.h" 3
+# 158 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\bits/alltypes.h" 3
 typedef signed char int8_t;
 
 
 
 
 typedef short int16_t;
-# 173 "C:\\Program Files\\Microchip\\pic\\include\\c99\\bits/alltypes.h" 3
+# 173 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\bits/alltypes.h" 3
 typedef long int32_t;
 
 
@@ -135,7 +135,7 @@ typedef long int32_t;
 
 
 typedef long long int64_t;
-# 188 "C:\\Program Files\\Microchip\\pic\\include\\c99\\bits/alltypes.h" 3
+# 188 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\bits/alltypes.h" 3
 typedef long long intmax_t;
 
 
@@ -148,7 +148,7 @@ typedef unsigned char uint8_t;
 
 
 typedef unsigned short uint16_t;
-# 209 "C:\\Program Files\\Microchip\\pic\\include\\c99\\bits/alltypes.h" 3
+# 209 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\bits/alltypes.h" 3
 typedef unsigned long uint32_t;
 
 
@@ -156,9 +156,9 @@ typedef unsigned long uint32_t;
 
 
 typedef unsigned long long uint64_t;
-# 229 "C:\\Program Files\\Microchip\\pic\\include\\c99\\bits/alltypes.h" 3
+# 229 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\bits/alltypes.h" 3
 typedef unsigned long long uintmax_t;
-# 22 "C:\\Program Files\\Microchip\\pic\\include\\c99\\stdint.h" 2 3
+# 22 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\stdint.h" 2 3
 
 
 typedef int8_t int_fast8_t;
@@ -191,13 +191,13 @@ typedef uint24_t uint_fast24_t;
 typedef uint32_t uint_least32_t;
 
 typedef uint64_t uint_least64_t;
-# 144 "C:\\Program Files\\Microchip\\pic\\include\\c99\\stdint.h" 3
-# 1 "C:\\Program Files\\Microchip\\pic\\include\\c99\\bits/stdint.h" 1 3
+# 144 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\stdint.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\bits/stdint.h" 1 3
 typedef int16_t int_fast16_t;
 typedef int32_t int_fast32_t;
 typedef uint16_t uint_fast16_t;
 typedef uint32_t uint_fast32_t;
-# 144 "C:\\Program Files\\Microchip\\pic\\include\\c99\\stdint.h" 2 3
+# 144 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\stdint.h" 2 3
 # 5 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16F1xxxx_DFP/1.9.163/xc8\\pic\\include\\builtins.h" 2 3
 
 
@@ -20717,11 +20717,11 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 29 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16F1xxxx_DFP/1.9.163/xc8\\pic\\include\\xc.h" 2 3
-# 12 "newmain.c" 2
+# 14 "newmain.c" 2
 
-# 1 "C:\\Program Files\\Microchip\\pic\\include\\c99\\stdio.h" 1 3
-# 24 "C:\\Program Files\\Microchip\\pic\\include\\c99\\stdio.h" 3
-# 1 "C:\\Program Files\\Microchip\\pic\\include\\c99\\bits/alltypes.h" 1 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\stdio.h" 1 3
+# 24 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\stdio.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\bits/alltypes.h" 1 3
 
 
 
@@ -20733,14 +20733,14 @@ typedef void * va_list[1];
 
 
 typedef void * __isoc_va_list[1];
-# 137 "C:\\Program Files\\Microchip\\pic\\include\\c99\\bits/alltypes.h" 3
+# 137 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\bits/alltypes.h" 3
 typedef long ssize_t;
-# 246 "C:\\Program Files\\Microchip\\pic\\include\\c99\\bits/alltypes.h" 3
+# 246 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\bits/alltypes.h" 3
 typedef long long off_t;
-# 399 "C:\\Program Files\\Microchip\\pic\\include\\c99\\bits/alltypes.h" 3
+# 399 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\bits/alltypes.h" 3
 typedef struct _IO_FILE FILE;
-# 24 "C:\\Program Files\\Microchip\\pic\\include\\c99\\stdio.h" 2 3
-# 52 "C:\\Program Files\\Microchip\\pic\\include\\c99\\stdio.h" 3
+# 24 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\stdio.h" 2 3
+# 52 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\stdio.h" 3
 typedef union _G_fpos64_t {
  char __opaque[16];
  double __align;
@@ -20857,14 +20857,14 @@ char *ctermid(char *);
 
 
 char *tempnam(const char *, const char *);
-# 13 "newmain.c" 2
+# 15 "newmain.c" 2
 
 # 1 "./litaflokkari.h" 1
-# 131 "./litaflokkari.h"
+# 157 "./litaflokkari.h"
 uint8_t yellow_bead, red_bead, green_bead, blue_bead, black_bead, white_bead, brown_bead, unsort_bead = 0;
-# 141 "./litaflokkari.h"
+# 167 "./litaflokkari.h"
 void PCA_Servo_Command(uint8_t servo_nr, uint8_t servo_on_off);
-# 161 "./litaflokkari.h"
+# 187 "./litaflokkari.h"
 void PCA_Servo_Pos(uint8_t pos);
 
 
@@ -20874,22 +20874,33 @@ void PCA_Servo_Pos(uint8_t pos);
 
 
 void print_welcome_message(void);
-# 178 "./litaflokkari.h"
+# 204 "./litaflokkari.h"
+uint8_t find_raw_color(uint16_t *red, uint16_t *green, uint16_t *blue, uint16_t *clear);
+# 213 "./litaflokkari.h"
 uint8_t find_color(void);
-# 190 "./litaflokkari.h"
+# 225 "./litaflokkari.h"
 uint8_t color_compare_return(uint16_t red, uint16_t green, uint16_t blue, uint16_t clear);
-# 199 "./litaflokkari.h"
+# 234 "./litaflokkari.h"
 void print_color_quantity(void);
-# 14 "newmain.c" 2
+
+
+
+
+
+
+void calibrate_bead_values(void);
+
+void find_print(void);
+# 16 "newmain.c" 2
 
 # 1 "./PCA9685_driver.h" 1
 # 30 "./PCA9685_driver.h"
     uint8_t pca_address;
-# 51 "./PCA9685_driver.h"
+# 49 "./PCA9685_driver.h"
 void PCA_Init(uint8_t prescalar, uint8_t pca_addr);
-# 73 "./PCA9685_driver.h"
+# 71 "./PCA9685_driver.h"
 void PCA_Write(uint8_t ChannelN, uint16_t on, uint16_t off);
-# 15 "newmain.c" 2
+# 17 "newmain.c" 2
 
 # 1 "./config_bits.h" 1
 # 18 "./config_bits.h"
@@ -20924,7 +20935,7 @@ void PCA_Write(uint8_t ChannelN, uint16_t on, uint16_t off);
 
 #pragma config CP = OFF
 #pragma config CPD = OFF
-# 16 "newmain.c" 2
+# 18 "newmain.c" 2
 
 # 1 "./system_init.h" 1
 # 31 "./system_init.h"
@@ -20935,7 +20946,7 @@ void clock_init(void);
 void pin_init(void);
 # 62 "./system_init.h"
 void int_init(void);
-# 17 "newmain.c" 2
+# 19 "newmain.c" 2
 
 # 1 "./tcs3200.h" 1
 # 52 "./tcs3200.h"
@@ -20976,16 +20987,26 @@ void filter_clear(void);
 
 
 uint16_t sample_reading(void);
-# 18 "newmain.c" 2
+# 20 "newmain.c" 2
 
 # 1 "./uart.h" 1
-# 29 "./uart.h"
+# 22 "./uart.h"
 void uart_init(void);
-# 45 "./uart.h"
+
+
+
+
+
+
 void uart_Write(unsigned char data);
-# 61 "./uart.h"
+
+
+
+
+
+
 void uart_Write_String(char* buf);
-# 19 "newmain.c" 2
+# 21 "newmain.c" 2
 
 # 1 "./LCD.h" 1
 # 16 "./LCD.h"
@@ -21013,7 +21034,7 @@ void I2C_RepeatedStart();
 
 void I2C_Stop(void);
 # 139 "./I2C_MSSP1_driver.h"
-uint8_t I2C_Read(uint8_t ackbit);
+uint8_t I2C_Read(int8_t ackbit);
 # 16 "./LCD.h" 2
 # 38 "./LCD.h"
 uint8_t lcd_address, RS;
@@ -21083,32 +21104,64 @@ void LCD_SR();
 
 
 void LCD_Clear();
-# 20 "newmain.c" 2
+# 22 "newmain.c" 2
+
+# 1 "./timer1.h" 1
+# 16 "./timer1.h"
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\stdbool.h" 1 3
+# 16 "./timer1.h" 2
+# 37 "./timer1.h"
+void Timer1_Initialize(void);
+# 60 "./timer1.h"
+void Timer1_Start(void);
+# 92 "./timer1.h"
+void Timer1_Stop(void);
+# 118 "./timer1.h"
+uint16_t Timer1_Read(void);
+# 143 "./timer1.h"
+void Timer1_Write(size_t timerVal);
+# 23 "newmain.c" 2
+
+# 1 "./tcs3472.h" 1
+# 43 "./tcs3472.h"
+uint8_t tcs_addr;
 
 
-void main(void) {
-
-   system_init();
-
-   I2C_init();
-
-   PCA_Init(130, 0x80);
-   LCD_init(0x4E);
 
 
 
-   print_welcome_message();
+
+
+void TCS3472_Init(uint8_t addr, uint8_t troubleshoot);
+# 61 "./tcs3472.h"
+void TCS3472_Write(uint8_t reg, uint8_t data);
+# 70 "./tcs3472.h"
+void TCS3472_Read(uint8_t reg, uint8_t *data);
+
+void TCS3472_Colors(int16_t *red, int16_t *green, int16_t *blue, int16_t *clear);
+
+void TCS3472_getId(void);
+# 24 "newmain.c" 2
+# 68 "newmain.c"
+void main(void){
+    system_init();
+    I2C_init();
+    uart_init();
+    TCS3472_Init(0x29, 1);
+
+    int16_t r, g, b, c;
+    char buffer[50];
 
     while(1){
-        for(int i = 0; i < 8; i++){
-        do { LATBbits.LATB2 = ~LATBbits.LATB2; } while(0);
-
-
-        print_color_quantity();
-        PCA_Servo_Pos(i);
-        _delay((unsigned long)((2000)*(16000000/4000.0)));
-        }
-
+            TCS3472_Colors(&r, &g, &b, &c);
+            sprintf(buffer, "R: %d\t", r);
+            uart_Write_String(buffer);
+            sprintf(buffer, "G: %d\t", g);
+            uart_Write_String(buffer);
+            sprintf(buffer, "B: %d\t", b);
+            uart_Write_String(buffer);
+            sprintf(buffer, "C: %d\n\r", c);
+            uart_Write_String(buffer);
+            _delay((unsigned long)((1000)*(16000000/4000.0)));
     }
-    return;
 }

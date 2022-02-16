@@ -3,47 +3,30 @@ Version 4.0 HI-TECH Software Intermediate Code
 "31 ./system_init.h
 [; ;./system_init.h: 31: void system_init(void);
 [v _system_init `(v ~T0 @X0 0 ef ]
-<<<<<<< HEAD
-"22 ./uart.h
-[; ;./uart.h: 22: void uart_init(void);
-[v _uart_init `(v ~T0 @X0 0 ef ]
-"56 ./PCA9685_driver.h
-[; ;./PCA9685_driver.h: 56: void PCA_Init(uint8_t prescalar, uint8_t pca_addr);
-=======
 "40 ./I2C_MSSP1_driver.h
 [; ;./I2C_MSSP1_driver.h: 40: void I2C_init(void);
 [v _I2C_init `(v ~T0 @X0 0 ef ]
-"51 ./PCA9685_driver.h
-[; ;./PCA9685_driver.h: 51: void PCA_Init(uint8_t prescalar, uint8_t pca_addr);
->>>>>>> 329c7d0819a325a227b86e0241b40d71fbc5069b
-[v _PCA_Init `(v ~T0 @X0 0 ef2`uc`uc ]
-"48 ./LCD.h
-[; ;./LCD.h: 48: void LCD_init(uint8_t lcd_addr);
-[v _LCD_init `(v ~T0 @X0 0 ef1`uc ]
-"169 ./litaflokkari.h
-[; ;./litaflokkari.h: 169: void print_welcome_message(void);
-[v _print_welcome_message `(v ~T0 @X0 0 ef ]
-"1025 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16F1xxxx_DFP/1.9.163/xc8\pic\include\proc\pic16f18877.h
-[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16F1xxxx_DFP/1.9.163/xc8\pic\include\proc\pic16f18877.h: 1025:     struct {
-[s S55 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S55 . LATB0 LATB1 LATB2 LATB3 LATB4 LATB5 LATB6 LATB7 ]
-"1024
-[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16F1xxxx_DFP/1.9.163/xc8\pic\include\proc\pic16f18877.h: 1024: typedef union {
-[u S54 `S55 1 ]
-[n S54 . . ]
-"1036
-[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16F1xxxx_DFP/1.9.163/xc8\pic\include\proc\pic16f18877.h: 1036: extern volatile LATBbits_t LATBbits __attribute__((address(0x017)));
-[v _LATBbits `VS54 ~T0 @X0 0 e@23 ]
-"199 ./litaflokkari.h
-[; ;./litaflokkari.h: 199: void print_color_quantity(void);
-[v _print_color_quantity `(v ~T0 @X0 0 ef ]
-"161
-[; ;./litaflokkari.h: 161: void PCA_Servo_Pos(uint8_t pos);
-[v _PCA_Servo_Pos `(v ~T0 @X0 0 ef1`uc ]
+"22 ./uart.h
+[; ;./uart.h: 22: void uart_init(void);
+[v _uart_init `(v ~T0 @X0 0 ef ]
+"51 ./tcs3472.h
+[; ;./tcs3472.h: 51: void TCS3472_Init(uint8_t addr, uint8_t troubleshoot);
+[v _TCS3472_Init `(v ~T0 @X0 0 ef2`uc`uc ]
+"74
+[; ;./tcs3472.h: 74: void TCS3472_getId(void);
+[v _TCS3472_getId `(v ~T0 @X0 0 ef ]
 [v F183 `(v ~T0 @X0 1 tf1`ul ]
 "12 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16F1xxxx_DFP/1.9.163/xc8\pic\include\builtins.h
 [v __delay `JF183 ~T0 @X0 0 e ]
 [p i __delay ]
+"72 ./tcs3472.h
+[; ;./tcs3472.h: 72: void TCS3472_Colors(int16_t *red, int16_t *green, int16_t *blue, int16_t *clear);
+[v _TCS3472_Colors `(v ~T0 @X0 0 ef4`*s`*s`*s`*s ]
+"113 C:\Program Files\Microchip\xc8\v2.32\pic\include\c99\stdio.h
+[v _sprintf `(i ~T0 @X0 0 e1v`*uc`*Cuc ]
+"36 ./uart.h
+[; ;./uart.h: 36: void uart_Write_String(char* buf);
+[v _uart_Write_String `(v ~T0 @X0 0 ef1`*uc ]
 "55 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16F1xxxx_DFP/1.9.163/xc8\pic\include\proc\pic16f18877.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16F1xxxx_DFP/1.9.163/xc8\pic\include\proc\pic16f18877.h: 55: __asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
@@ -1679,8 +1662,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "36301
 [; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16F1xxxx_DFP/1.9.163/xc8\pic\include\proc\pic16f18877.h: 36301: __asm("TOSH equ 01FEFh");
 [; <" TOSH equ 01FEFh ;# ">
-"131 ./litaflokkari.h
-[; ;./litaflokkari.h: 131: uint8_t yellow_bead, red_bead, green_bead, blue_bead, black_bead, white_bead, brown_bead, unsort_bead = 0;
+"157 ./litaflokkari.h
+[; ;./litaflokkari.h: 157: uint8_t yellow_bead, red_bead, green_bead, blue_bead, black_bead, white_bead, brown_bead, unsort_bead = 0;
 [v _yellow_bead `uc ~T0 @X0 1 e ]
 [v _red_bead `uc ~T0 @X0 1 e ]
 [v _green_bead `uc ~T0 @X0 1 e ]
@@ -1751,136 +1734,89 @@ Version 4.0 HI-TECH Software Intermediate Code
 [i _BackLight_State
 -> -> 8 `i `uc
 ]
+"43 ./tcs3472.h
+[; ;./tcs3472.h: 43: uint8_t tcs_addr;
+[v _tcs_addr `uc ~T0 @X0 1 e ]
 [v $root$_main `(v ~T0 @X0 0 e ]
-"24 newmain.c
-[; ;newmain.c: 24: void main(void) {
+"68 newmain.c
+[; ;newmain.c: 68: void main(void){
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-<<<<<<< HEAD
-"26
-[; ;newmain.c: 26:    system_init();
+"69
+[; ;newmain.c: 69:     system_init();
 [e ( _system_init ..  ]
-"27
-[; ;newmain.c: 27:    uart_init();
-[e ( _uart_init ..  ]
-=======
-"24
-[; ;newmain.c: 24:    system_init();
-[e ( _system_init ..  ]
-"26
-[; ;newmain.c: 26:    I2C_init();
+"70
+[; ;newmain.c: 70:     I2C_init();
 [e ( _I2C_init ..  ]
->>>>>>> 329c7d0819a325a227b86e0241b40d71fbc5069b
-"28
-[; ;newmain.c: 28:    PCA_Init(130, 0x80);
-[e ( _PCA_Init (2 , -> -> 130 `i `uc -> -> 128 `i `uc ]
-"29
-[; ;newmain.c: 29:    LCD_init(0x4E);
-[e ( _LCD_init (1 -> -> 78 `i `uc ]
-<<<<<<< HEAD
-"30
-[; ;newmain.c: 30:    sensor_init();
-[e ( _sensor_init ..  ]
-"33
-[; ;newmain.c: 33:    uint8_t curr_col = 0;
-[v _curr_col `uc ~T0 @X0 1 a ]
-[e = _curr_col -> -> 0 `i `uc ]
-"34
-[; ;newmain.c: 34:    print_welcome_message();
-[e ( _print_welcome_message ..  ]
-"36
-[; ;newmain.c: 36:     while(1){
-[e :U 1617 ]
-{
-"37
-[; ;newmain.c: 37:         do { LATBbits.LATB2 = ~LATBbits.LATB2; } while(0);
-[e :U 1621 ]
-{
-[e = . . _LATBbits 0 2 -> ~ -> . . _LATBbits 0 2 `i `uc ]
-}
-[e :U 1620 ]
-"38
-[; ;newmain.c: 38:         curr_col = find_color();
-[e = _curr_col ( _find_color ..  ]
-"40
-[; ;newmain.c: 40:         print_color_quantity();
-[e ( _print_color_quantity ..  ]
-"41
-[; ;newmain.c: 41:         PCA_Servo_Pos(curr_col);
-[e ( _PCA_Servo_Pos (1 _curr_col ]
-"42
-[; ;newmain.c: 42:         _delay((unsigned long)((1000)*(16000000/4000.0)));
+"71
+[; ;newmain.c: 71:     uart_init();
+[e ( _uart_init ..  ]
+"72
+[; ;newmain.c: 72:     TCS3472_Init(0x29, 1);
+[e ( _TCS3472_Init (2 , -> -> 41 `i `uc -> -> 1 `i `uc ]
+"74
+[; ;newmain.c: 74:     int16_t r, g, b, c;
+[v _r `s ~T0 @X0 1 a ]
+[v _g `s ~T0 @X0 1 a ]
+[v _b `s ~T0 @X0 1 a ]
+[v _c `s ~T0 @X0 1 a ]
+"75
+[; ;newmain.c: 75:     char buffer[50];
+[v _buffer `uc ~T0 @X0 -> 50 `i a ]
+"77
+[; ;newmain.c: 77:     TCS3472_getId();
+[e ( _TCS3472_getId ..  ]
+"78
+[; ;newmain.c: 78:     _delay((unsigned long)((1000)*(16000000/4000.0)));
 [e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
-"43
-[; ;newmain.c: 43:     }
-=======
-"33
-[; ;newmain.c: 33:    print_welcome_message();
-[e ( _print_welcome_message ..  ]
-"35
-[; ;newmain.c: 35:     while(1){
+"79
+[; ;newmain.c: 79:     while(1){
 [e :U 1617 ]
 {
-"36
-[; ;newmain.c: 36:         for(int i = 0; i < 8; i++){
-{
-[v _i `i ~T0 @X0 1 a ]
-[e = _i -> 0 `i ]
-[e $ < _i -> 8 `i 1619  ]
-[e $U 1620  ]
-[e :U 1619 ]
-{
-"37
-[; ;newmain.c: 37:         uint8_t curr_col = 0;
-[v _curr_col `uc ~T0 @X0 1 a ]
-[e = _curr_col -> -> 0 `i `uc ]
-"38
-[; ;newmain.c: 38:         do { LATBbits.LATB2 = ~LATBbits.LATB2; } while(0);
-[e :U 1624 ]
-{
-[e = . . _LATBbits 0 2 -> ~ -> . . _LATBbits 0 2 `i `uc ]
-}
-[e :U 1623 ]
-"41
-[; ;newmain.c: 41:         print_color_quantity();
-[e ( _print_color_quantity ..  ]
-"42
-[; ;newmain.c: 42:         PCA_Servo_Pos(curr_col);
-[e ( _PCA_Servo_Pos (1 _curr_col ]
-"43
-[; ;newmain.c: 43:         curr_col++;
-[e ++ _curr_col -> -> 1 `i `uc ]
-"44
-[; ;newmain.c: 44:         _delay((unsigned long)((2000)*(16000000/4000.0)));
-[e ( __delay (1 -> * -> -> 2000 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
-"45
-[; ;newmain.c: 45:         }
-}
-[e ++ _i -> 1 `i ]
-[e $ < _i -> 8 `i 1619  ]
-[e :U 1620 ]
-}
-"47
-[; ;newmain.c: 47:     }
->>>>>>> 329c7d0819a325a227b86e0241b40d71fbc5069b
+"80
+[; ;newmain.c: 80:         TCS3472_Colors(&r, &g, &b, &c);
+[e ( _TCS3472_Colors (4 , , , &U _r &U _g &U _b &U _c ]
+"81
+[; ;newmain.c: 81:         sprintf(buffer, "R: %d\t", r);
+[e ( _sprintf (1 , (. , &U _buffer :s 1C -> _r `i ]
+"82
+[; ;newmain.c: 82:         uart_Write_String(buffer);
+[e ( _uart_Write_String (1 &U _buffer ]
+"83
+[; ;newmain.c: 83:         sprintf(buffer, "G: %d\t", g);
+[e ( _sprintf (1 , (. , &U _buffer :s 2C -> _g `i ]
+"84
+[; ;newmain.c: 84:         uart_Write_String(buffer);
+[e ( _uart_Write_String (1 &U _buffer ]
+"85
+[; ;newmain.c: 85:         sprintf(buffer, "B: %d\t", b);
+[e ( _sprintf (1 , (. , &U _buffer :s 3C -> _b `i ]
+"86
+[; ;newmain.c: 86:         uart_Write_String(buffer);
+[e ( _uart_Write_String (1 &U _buffer ]
+"87
+[; ;newmain.c: 87:         sprintf(buffer, "C: %d\n\r", c);
+[e ( _sprintf (1 , (. , &U _buffer :s 4C -> _c `i ]
+"88
+[; ;newmain.c: 88:         uart_Write_String(buffer);
+[e ( _uart_Write_String (1 &U _buffer ]
+"89
+[; ;newmain.c: 89:         _delay((unsigned long)((1000)*(16000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
+"90
+[; ;newmain.c: 90:     }
 }
 [e :U 1616 ]
 [e $U 1617  ]
 [e :U 1618 ]
-<<<<<<< HEAD
-"44
-[; ;newmain.c: 44:     return;
-[e $UE 1615  ]
-"45
-[; ;newmain.c: 45: }
-=======
-"48
-[; ;newmain.c: 48:     return;
-[e $UE 1615  ]
-"49
-[; ;newmain.c: 49: }
->>>>>>> 329c7d0819a325a227b86e0241b40d71fbc5069b
+"91
+[; ;newmain.c: 91: }
 [e :UE 1615 ]
 }
+[p f _sprintf 8388736 ]
+[a 4C 67 58 32 37 100 10 13 0 ]
+[a 1C 82 58 32 37 100 9 0 ]
+[a 2C 71 58 32 37 100 9 0 ]
+[a 3C 66 58 32 37 100 9 0 ]

@@ -103,6 +103,28 @@ void print_welcome_message(void){
     __delay_ms(5000);
 }
 
+uint8_t find_raw_color(uint16_t *red, uint16_t *green, uint16_t *blue, uint16_t *clear){
+    /*Sample the red filter*/
+    filter_red();
+    __delay_ms(10);
+    *red = sample_reading();
+    
+    /*Sample the green filter*/
+    filter_green();
+    __delay_ms(10);
+    *green = sample_reading();
+    
+    /*Sample the blue filter*/
+    filter_blue();
+    __delay_ms(10);
+    *blue = sample_reading();
+    
+    /*Sample the clear filter*/
+    filter_clear();
+    __delay_ms(10);
+    *clear = sample_reading();
+}
+
 uint8_t find_color(){
     //Variables to store value from sensor for each filter
     uint16_t red, green, blue, clear;
@@ -193,8 +215,8 @@ uint8_t color_compare_return(uint16_t red, uint16_t green, uint16_t blue, uint16
     
     //If color samples match value range for ORANGE bead
     a =(red-ORANGE_RED_MIN)*(red-ORANGE_RED_MAX);
-    b =(green-WHITE_ORANGE_MIN)*(green-ORANGE_GREEN_MAX);
-    c = (blue-WHITE_ORANGE_MIN)*(blue-ORANGE_BLUE_MAX) ;
+    b =(green-ORANGE_GREEN_MIN)*(green-ORANGE_GREEN_MAX);
+    c = (blue-ORANGE_GREEN_MIN)*(blue-ORANGE_BLUE_MAX) ;
     d =(clear-ORANGE_CLEAR_MIN)*(blue-ORANGE_CLEAR_MAX);
     if(a <= 0 && b <= 0 && c <= 0 && d <= 0){
         cVal = 6;      
@@ -204,8 +226,8 @@ uint8_t color_compare_return(uint16_t red, uint16_t green, uint16_t blue, uint16
     
     //If color samples match value range for ORANGE bead
     a =(red-PURPLE_RED_MIN)*(red-PURPLE_RED_MAX) ;
-    b =(green-BROWN_PURPLE_MIN)*(green-PURPLE_GREEN_MAX) ;
-    c =(blue-BROWN_PURPLE_MIN)*(blue-PURPLE_BLUE_MAX);
+    b =(green-PURPLE_GREEN_MIN)*(green-PURPLE_GREEN_MAX) ;
+    c =(blue-PURPLE_BLUE_MIN)*(blue-PURPLE_BLUE_MAX);
     d =(clear-PURPLE_CLEAR_MIN)*(blue-PURPLE_CLEAR_MAX);
     if(a <= 0 && b <= 0 && c <= 0 && d <= 0){
         cVal = 7;      
@@ -227,5 +249,74 @@ void print_color_quantity(){
     LCD_Set_Cursor(2,1);
     sprintf(strbuff, "BK%d W%d BN%d U%d", black_bead, white_bead, brown_bead, unsort_bead);
     LCD_write_string(strbuff);
+}
+
+void calibrate_bead_values(void){
+
+    
+    //Yellow
+    uart_Write_String("Measure 10 pieces Yellow Bead now: \n\r");
+    for(int i = 0; i < 10; i++){
+        find_print();
+    }
+    
+    //Red
+    uart_Write_String("Measure 10 pieces Red Bead now: \n\r");
+    for(int i = 0; i < 10; i++){
+
+    }
+    //Green
+    uart_Write_String("Measure 10 pieces Green Bead now: \n\r");
+    for(int i = 0; i < 10; i++){
+        find_print();
+    }
+    //Blue
+    uart_Write_String("Measure 10 pieces Blue Bead now: \n\r");
+    for(int i = 0; i < 10; i++){
+        find_print();
+    }
+    //Black
+    uart_Write_String("Measure 10 pieces Black Bead now: \n\r");
+    for(int i = 0; i < 10; i++){
+        find_print();
+    }
+    //White
+    uart_Write_String("Measure 10 pieces White Bead now: \n\r");
+    for(int i = 0; i < 10; i++){
+        find_print();
+    }
+    //Purple
+    uart_Write_String("Measure 10 pieces Purple Bead now: \n\r");
+    for(int i = 0; i < 10; i++){
+        find_print();
+    }
+    //Pink
+    uart_Write_String("Measure 10 pieces Pink Bead now: \n\r");
+    for(int i = 0; i < 10; i++){
+        find_print();
+    }
+    //Orange
+    uart_Write_String("Measure 10 pieces Orange Bead now: \n\r");
+    for(int i = 0; i < 10; i++){
+        find_print();   
+    }
+    
+}
+
+void find_print(void){
+    //Values for colors
+    uint16_t red, green, blue, clear;
+    //Buffer for printing to uart
+    char buffer[50];
+    
+        find_raw_color(&red, &green, &blue, &clear);
+        sprintf(buffer, "%d\t", red);
+        uart_Write_String(buffer);
+        sprintf(buffer, "%d\t", green);
+        uart_Write_String(buffer);
+        sprintf(buffer, "%d\t", blue);
+        uart_Write_String(buffer);
+        sprintf(buffer, "%d\n\r", clear);
+        uart_Write_String(buffer);
 }
 

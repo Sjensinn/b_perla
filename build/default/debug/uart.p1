@@ -14,28 +14,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "3950
 [; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16F1xxxx_DFP/1.9.163/xc8\pic\include\proc\pic16f18877.h: 3950: extern volatile unsigned char SP1BRGH __attribute__((address(0x11C)));
 [v _SP1BRGH `Vuc ~T0 @X0 0 e@284 ]
-"34740
-[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16F1xxxx_DFP/1.9.163/xc8\pic\include\proc\pic16f18877.h: 34740:     struct {
-[s S1538 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S1538 . ANSC0 ANSC1 ANSC2 ANSC3 ANSC4 ANSC5 ANSC6 ANSC7 ]
-"34739
-[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16F1xxxx_DFP/1.9.163/xc8\pic\include\proc\pic16f18877.h: 34739: typedef union {
-[u S1537 `S1538 1 ]
-[n S1537 . . ]
-"34751
-[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16F1xxxx_DFP/1.9.163/xc8\pic\include\proc\pic16f18877.h: 34751: extern volatile ANSELCbits_t ANSELCbits __attribute__((address(0x1F4E)));
-[v _ANSELCbits `VS1537 ~T0 @X0 0 e@8014 ]
-"807
-[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16F1xxxx_DFP/1.9.163/xc8\pic\include\proc\pic16f18877.h: 807:     struct {
-[s S47 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S47 . TRISC0 TRISC1 TRISC2 TRISC3 TRISC4 TRISC5 TRISC6 TRISC7 ]
-"806
-[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16F1xxxx_DFP/1.9.163/xc8\pic\include\proc\pic16f18877.h: 806: typedef union {
-[u S46 `S47 1 ]
-[n S46 . . ]
-"818
-[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16F1xxxx_DFP/1.9.163/xc8\pic\include\proc\pic16f18877.h: 818: extern volatile TRISCbits_t TRISCbits __attribute__((address(0x013)));
-[v _TRISCbits `VS46 ~T0 @X0 0 e@19 ]
 "21373
 [; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16F1xxxx_DFP/1.9.163/xc8\pic\include\proc\pic16f18877.h: 21373:     struct {
 [s S972 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -1706,80 +1684,68 @@ Version 4.0 HI-TECH Software Intermediate Code
 "21
 [; ;uart.c: 21:     SP1BRGH = 0x1;
 [e = _SP1BRGH -> -> 1 `i `uc ]
-"23
-[; ;uart.c: 23:     ANSELCbits.ANSC3 = 0;
-[e = . . _ANSELCbits 0 3 -> -> 0 `i `uc ]
-"24
-[; ;uart.c: 24:     ANSELCbits.ANSC4 = 0;
-[e = . . _ANSELCbits 0 4 -> -> 0 `i `uc ]
-"25
-[; ;uart.c: 25:     TRISCbits.TRISC3 = 1;
-[e = . . _TRISCbits 0 3 -> -> 1 `i `uc ]
-"26
-[; ;uart.c: 26:     TRISCbits.TRISC4 = 1;
-[e = . . _TRISCbits 0 4 -> -> 1 `i `uc ]
-"27
-[; ;uart.c: 27: }
+"22
+[; ;uart.c: 22: }
 [e :UE 1613 ]
 }
-"29
-[; ;uart.c: 29: void uart_Write(unsigned char data){
+"24
+[; ;uart.c: 24: void uart_Write(unsigned char data){
 [v _uart_Write `(v ~T0 @X0 1 ef1`uc ]
 {
 [e :U _uart_Write ]
 [v _data `uc ~T0 @X0 1 r1 ]
 [f ]
-"30
-[; ;uart.c: 30:     while(0 == PIR3bits.TXIF){
+"25
+[; ;uart.c: 25:     while(0 == PIR3bits.TXIF){
 [e $U 1615  ]
 [e :U 1616 ]
 {
-"31
-[; ;uart.c: 31:         continue;
+"26
+[; ;uart.c: 26:         continue;
 [e $U 1615  ]
-"32
-[; ;uart.c: 32:     }
+"27
+[; ;uart.c: 27:     }
 }
 [e :U 1615 ]
-"30
-[; ;uart.c: 30:     while(0 == PIR3bits.TXIF){
+"25
+[; ;uart.c: 25:     while(0 == PIR3bits.TXIF){
 [e $ == -> 0 `i -> . . _PIR3bits 0 4 `i 1616  ]
 [e :U 1617 ]
-"33
-[; ;uart.c: 33:     TX1REG = data;
+"28
+[; ;uart.c: 28:     TX1REG = data;
 [e = _TX1REG _data ]
-"34
-[; ;uart.c: 34: }
+"29
+[; ;uart.c: 29: }
 [e :UE 1614 ]
 }
-"35
-[; ;uart.c: 35: void uart_Write_String(char* buf){
+"30
+[; ;uart.c: 30: void uart_Write_String(char* buf){
 [v _uart_Write_String `(v ~T0 @X0 1 ef1`*uc ]
 {
 [e :U _uart_Write_String ]
 [v _buf `*uc ~T0 @X0 1 r1 ]
 [f ]
-"36
-[; ;uart.c: 36:     int i=0;
+"31
+[; ;uart.c: 31:     int i=0;
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
-"37
-[; ;uart.c: 37:     while(buf[i] != '\0'){
+"32
+[; ;uart.c: 32:     while(buf[i] != '\0'){
 [e $U 1619  ]
 [e :U 1620 ]
 {
-"38
-[; ;uart.c: 38:         uart_Write(buf[i++]);
+"33
+[; ;uart.c: 33:         uart_Write(buf[i++]);
 [e ( _uart_Write (1 -> *U + _buf * -> ++ _i -> 1 `i `x -> -> # *U _buf `i `x `uc ]
-"39
-[; ;uart.c: 39:     }
+"34
+[; ;uart.c: 34:     }
 }
 [e :U 1619 ]
-"37
-[; ;uart.c: 37:     while(buf[i] != '\0'){
+"32
+[; ;uart.c: 32:     while(buf[i] != '\0'){
 [e $ != -> *U + _buf * -> _i `x -> -> # *U _buf `i `x `ui -> 0 `ui 1620  ]
 [e :U 1621 ]
-"40
-[; ;uart.c: 40: }
+"35
+[; ;uart.c: 35: }
 [e :UE 1618 ]
 }

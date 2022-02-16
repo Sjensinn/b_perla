@@ -1,4 +1,4 @@
-# 1 "system_init.c"
+# 1 "tcs3472.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,61 +6,8 @@
 # 1 "<built-in>" 2
 # 1 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16F1xxxx_DFP/1.9.163/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "system_init.c" 2
-
-
-
-
-
-
-
-# 1 "./system_init.h" 1
-# 20 "./system_init.h"
-# 1 "./config_bits.h" 1
-# 18 "./config_bits.h"
-#pragma config FEXTOSC = OFF
-#pragma config RSTOSC = HFINT32
-#pragma config CLKOUTEN = OFF
-#pragma config CSWEN = ON
-#pragma config FCMEN = ON
-
-
-#pragma config MCLRE = ON
-#pragma config PWRTE = OFF
-#pragma config LPBOREN = OFF
-#pragma config BOREN = ON
-#pragma config BORV = LO
-#pragma config ZCD = OFF
-#pragma config PPS1WAY = ON
-#pragma config STVREN = ON
-#pragma config DEBUG = OFF
-
-
-#pragma config WDTCPS = WDTCPS_31
-#pragma config WDTE = OFF
-#pragma config WDTCWS = WDTCWS_7
-#pragma config WDTCCS = SC
-
-
-#pragma config WRT = OFF
-#pragma config SCANE = available
-#pragma config LVP = ON
-
-
-#pragma config CP = OFF
-#pragma config CPD = OFF
-# 20 "./system_init.h" 2
-# 31 "./system_init.h"
-void system_init(void);
-# 42 "./system_init.h"
-void clock_init(void);
-# 53 "./system_init.h"
-void pin_init(void);
-# 62 "./system_init.h"
-void int_init(void);
-# 8 "system_init.c" 2
-
-
+# 1 "tcs3472.c" 2
+# 10 "tcs3472.c"
 # 1 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16F1xxxx_DFP/1.9.163/xc8\\pic\\include\\xc.h" 1 3
 # 18 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16F1xxxx_DFP/1.9.163/xc8\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -20770,122 +20717,320 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 29 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16F1xxxx_DFP/1.9.163/xc8\\pic\\include\\xc.h" 2 3
-# 10 "system_init.c" 2
+# 10 "tcs3472.c" 2
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\stdio.h" 1 3
+# 24 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\stdio.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\bits/alltypes.h" 1 3
 
 
-void system_init(){
-    clock_init();
-    pin_init();
-    int_init();
+
+
+
+typedef void * va_list[1];
+
+
+
+
+typedef void * __isoc_va_list[1];
+# 137 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef long ssize_t;
+# 246 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef long long off_t;
+# 399 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef struct _IO_FILE FILE;
+# 24 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\stdio.h" 2 3
+# 52 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\stdio.h" 3
+typedef union _G_fpos64_t {
+ char __opaque[16];
+ double __align;
+} fpos_t;
+
+extern FILE *const stdin;
+extern FILE *const stdout;
+extern FILE *const stderr;
+
+
+
+
+
+FILE *fopen(const char *restrict, const char *restrict);
+FILE *freopen(const char *restrict, const char *restrict, FILE *restrict);
+int fclose(FILE *);
+
+int remove(const char *);
+int rename(const char *, const char *);
+
+int feof(FILE *);
+int ferror(FILE *);
+int fflush(FILE *);
+void clearerr(FILE *);
+
+int fseek(FILE *, long, int);
+long ftell(FILE *);
+void rewind(FILE *);
+
+int fgetpos(FILE *restrict, fpos_t *restrict);
+int fsetpos(FILE *, const fpos_t *);
+
+size_t fread(void *restrict, size_t, size_t, FILE *restrict);
+size_t fwrite(const void *restrict, size_t, size_t, FILE *restrict);
+
+int fgetc(FILE *);
+int getc(FILE *);
+int getchar(void);
+int ungetc(int, FILE *);
+
+int fputc(int, FILE *);
+int putc(int, FILE *);
+int putchar(int);
+
+char *fgets(char *restrict, int, FILE *restrict);
+
+char *gets(char *);
+
+
+int fputs(const char *restrict, FILE *restrict);
+int puts(const char *);
+
+#pragma printf_check(printf) const
+#pragma printf_check(vprintf) const
+#pragma printf_check(sprintf) const
+#pragma printf_check(snprintf) const
+#pragma printf_check(vsprintf) const
+#pragma printf_check(vsnprintf) const
+
+int printf(const char *restrict, ...);
+int fprintf(FILE *restrict, const char *restrict, ...);
+int sprintf(char *restrict, const char *restrict, ...);
+int snprintf(char *restrict, size_t, const char *restrict, ...);
+
+int vprintf(const char *restrict, __isoc_va_list);
+int vfprintf(FILE *restrict, const char *restrict, __isoc_va_list);
+int vsprintf(char *restrict, const char *restrict, __isoc_va_list);
+int vsnprintf(char *restrict, size_t, const char *restrict, __isoc_va_list);
+
+int scanf(const char *restrict, ...);
+int fscanf(FILE *restrict, const char *restrict, ...);
+int sscanf(const char *restrict, const char *restrict, ...);
+int vscanf(const char *restrict, __isoc_va_list);
+int vfscanf(FILE *restrict, const char *restrict, __isoc_va_list);
+int vsscanf(const char *restrict, const char *restrict, __isoc_va_list);
+
+void perror(const char *);
+
+int setvbuf(FILE *restrict, char *restrict, int, size_t);
+void setbuf(FILE *restrict, char *restrict);
+
+char *tmpnam(char *);
+FILE *tmpfile(void);
+
+
+
+
+FILE *fmemopen(void *restrict, size_t, const char *restrict);
+FILE *open_memstream(char **, size_t *);
+FILE *fdopen(int, const char *);
+FILE *popen(const char *, const char *);
+int pclose(FILE *);
+int fileno(FILE *);
+int fseeko(FILE *, off_t, int);
+off_t ftello(FILE *);
+int dprintf(int, const char *restrict, ...);
+int vdprintf(int, const char *restrict, __isoc_va_list);
+void flockfile(FILE *);
+int ftrylockfile(FILE *);
+void funlockfile(FILE *);
+int getc_unlocked(FILE *);
+int getchar_unlocked(void);
+int putc_unlocked(int, FILE *);
+int putchar_unlocked(int);
+ssize_t getdelim(char **restrict, size_t *restrict, int, FILE *restrict);
+ssize_t getline(char **restrict, size_t *restrict, FILE *restrict);
+int renameat(int, const char *, int, const char *);
+char *ctermid(char *);
+
+
+
+
+
+
+
+char *tempnam(const char *, const char *);
+# 11 "tcs3472.c" 2
+
+# 1 "./tcs3472.h" 1
+# 43 "./tcs3472.h"
+uint8_t tcs_addr;
+
+
+
+
+
+
+
+void TCS3472_Init(uint8_t addr, uint8_t troubleshoot);
+# 61 "./tcs3472.h"
+void TCS3472_Write(uint8_t reg, uint8_t data);
+# 70 "./tcs3472.h"
+void TCS3472_Read(uint8_t reg, uint8_t *data);
+
+void TCS3472_Colors(int16_t *red, int16_t *green, int16_t *blue, int16_t *clear);
+
+void TCS3472_getId(void);
+# 12 "tcs3472.c" 2
+
+# 1 "./uart.h" 1
+# 22 "./uart.h"
+void uart_init(void);
+
+
+
+
+
+
+void uart_Write(unsigned char data);
+
+
+
+
+
+
+void uart_Write_String(char* buf);
+# 13 "tcs3472.c" 2
+
+# 1 "./I2C_MSSP1_driver.h" 1
+# 40 "./I2C_MSSP1_driver.h"
+void I2C_init(void);
+# 61 "./I2C_MSSP1_driver.h"
+void I2C_Start(void);
+# 70 "./I2C_MSSP1_driver.h"
+void I2C_Wait(void);
+# 91 "./I2C_MSSP1_driver.h"
+void I2C_Write(uint8_t data);
+
+
+
+
+
+
+void I2C_RepeatedStart();
+
+
+
+
+
+
+void I2C_Stop(void);
+# 139 "./I2C_MSSP1_driver.h"
+uint8_t I2C_Read(int8_t ackbit);
+# 14 "tcs3472.c" 2
+
+
+
+void TCS3472_Init(uint8_t addr, uint8_t troubleshoot){
+    tcs_addr = addr << 1;
+
+
+    I2C_Start();
+    I2C_Write(tcs_addr);
+    I2C_Write(0x80);
+    I2C_Write(0b10100110);
+    I2C_Stop();
+
+
+    I2C_Start();
+    I2C_Write(tcs_addr);
+    I2C_Write(0x00 | 0x80);
+
+    I2C_Write(0b00000011);
+    I2C_Stop();
+
+    I2C_Start();
+    I2C_Write(tcs_addr);
+    I2C_Write(0x01 | 0x80);
+    I2C_Write(0x00);
+    I2C_Stop();
+
+
+    I2C_Start();
+    I2C_Write(tcs_addr);
+    I2C_Write(0x0D | 0x80);
+    I2C_Write(0x00);
+    I2C_Stop();
+    I2C_Start();
+    I2C_Write(tcs_addr);
+    I2C_Write(0x03 | 0x80);
+    I2C_Write(0x00);
+    I2C_Stop();
+
+
+    I2C_Start();
+    I2C_Write(tcs_addr);
+    I2C_Write(0x0F | 0x80);
+    I2C_Write(0x01);
+    I2C_Stop();
 }
 
-
-void clock_init(){
-
-
-    OSCCON1 = 0x61;
-    OSCCON2 = 0x70;
-
-    OSCCON3 = 0x0;
-
-    OSCEN = 0x40;
-
-    OSCFRQ = 0x6;
-
-    OSCSTAT = 0x0;
-
-    OSCTUNE = 0x0;
+void TCS3472_Write(uint8_t reg, uint8_t data){
+    I2C_Start();
+    I2C_Write(tcs_addr);
+    I2C_Write(reg | 0x80);
+    I2C_Write(data);
+    I2C_Stop();
 }
 
-void pin_init(){
+void TCS3472_Read(uint8_t reg, uint8_t *data){
+    I2C_Start();
+    I2C_Write(tcs_addr);
+    I2C_Write(reg | 0x80);
+    I2C_Stop();
 
-
-
-    LATA = 0x0;
-    LATB = 0x0;
-    LATC = 0x18;
-    LATD = 0x0;
-    LATE = 0x0;
-
-
-
-
-    TRISA = 0x30;
-    TRISB = 0xF1;
-    TRISC = 0xBF;
-    TRISD = 0x0;
-    TRISE = 0x7;
-
-
-
-
-    ANSELA = 0x30;
-    ANSELB = 0xF0;
-    ANSELC = 0x67;
-    ANSELD = 0x0;
-    ANSELE = 0x7;
-
-
-
-
-    WPUA = 0x0;
-    WPUB = 0x0;
-    WPUC = 0x0;
-    WPUD = 0x0;
-    WPUE = 0x0;
-# 82 "system_init.c"
-    ODCONA = 0x0;
-    ODCONB = 0x0;
-    ODCONC = 0x0;
-    ODCOND = 0x0;
-    ODCONE = 0x0;
-
-
-
-    SLRCONA = 0xFF;
-    SLRCONB = 0xFF;
-    SLRCONC = 0xFF;
-    SLRCOND = 0xFF;
-    SLRCONE = 0x7;
-
-
-
-    INLVLA = 0xFF;
-    INLVLB = 0xFF;
-    INLVLC = 0xFF;
-    INLVLD = 0xFF;
-    INLVLE = 0xF;
-
-
-
-
-    RXPPS = 0x17;
-    T1CKIPPS = 0x10;
-    T1GPPS = 0xD;
-    RC6PPS = 0x10;
-    SSP1CLKPPS = 0x13;
-    RC3PPS = 0x14;
-    SSP1DATPPS = 0x14;
-    RC4PPS = 0x15;
-
-
-
-
-    IOCAP = 0x0;
-    IOCAN = 0x0;
-    IOCAF = 0x0;
-    IOCBP = 0x0;
-    IOCBN = 0x0;
-    IOCBF = 0x0;
-    IOCCP = 0x0;
-    IOCCN = 0x0;
-    IOCCF = 0x0;
-    IOCEP = 0x0;
-    IOCEN = 0x0;
-    IOCEF = 0x0;
+    I2C_Start();
+    I2C_Write(tcs_addr + 0x01);
+    *data = I2C_Read(1);
+    I2C_Stop();
 }
 
-void int_init(void){
-    INTCONbits.GIE = 1;
-    INTCONbits.PEIE = 1;
+void TCS3472_Colors(int16_t *red, int16_t *green, int16_t *blue, int16_t *clear){
+    uint8_t rh, rl, gh, gl, bh, bl, ch, cl;
+
+    I2C_Start();
+    I2C_Write(tcs_addr);
+    I2C_Write(0x14);
+    I2C_Stop();
+
+    I2C_Start();
+    I2C_Write(tcs_addr + 0x01);
+    cl = I2C_Read(0);
+    ch = I2C_Read(0);
+    rl = I2C_Read(0);
+    rh = I2C_Read(0);
+    gl = I2C_Read(0);
+    gh = I2C_Read(0);
+    bl = I2C_Read(0);
+    bh = I2C_Read(1);
+    I2C_Stop();
+
+    *red = (rh << 8) | rl;
+    *green = (gh << 8) | gl;
+    *blue = (bh << 8) | bl;
+    *clear = (ch << 8)| cl;
+}
+
+void TCS3472_getId(void){
+    uint8_t read_id;
+    char buff[40];
+
+    I2C_Start();
+    I2C_Write(tcs_addr);
+    I2C_Write(0x12 | 0x80);
+
+    I2C_Start();
+    I2C_Write((tcs_addr | 0x01));
+    read_id = I2C_Read(1);
+    I2C_Stop();
+
+    sprintf(buff, "TCS3472 address read from ID register: %d\n\r", read_id);
+    uart_Write_String(buff);
 }

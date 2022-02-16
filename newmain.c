@@ -20,9 +20,12 @@
 #include "tcs3200.h"
 #include "uart.h"
 #include "LCD.h"
+#include "timer1.h"
+#include "tcs3472.h"
 
+/*
 void main(void) {
-    /*Initiate sequence!*/
+    //Initiate sequence!
    system_init();                  //Initiate clock, pins, uart, i2c, timer1 and interrupts
    uart_init();
    I2C_init();
@@ -31,7 +34,7 @@ void main(void) {
    LCD_init(0x4E);               // Initialize LCD module with i2c_address = 0x4E
    sensor_init();                //Initialize the TCS3200 sensor
    
-   /*Program runs here*/
+   //Program runs here
    print_welcome_message();
    
     while(1){                       //Embedded systems never stop having fun!
@@ -46,6 +49,45 @@ void main(void) {
 
     }
     return;
+}
+*/
+/*Testing TCS3200
+void main(void){
+
+    system_init();
+    uart_init();
+    sensor_init();
+    Timer1_Initialize();
+    
+    while(1){
+        calibrate_bead_values();
+    }
+}
+*/
+
+void main(void){
+    system_init();
+    I2C_init();
+    uart_init();
+    TCS3472_Init(0x29, 1);
+
+    int16_t r, g, b, c;
+    char buffer[50];
+    
+    TCS3472_getId();
+    __delay_ms(1000);
+    while(1){
+        TCS3472_Colors(&r, &g, &b, &c);
+        sprintf(buffer, "R: %d\t", r);
+        uart_Write_String(buffer);
+        sprintf(buffer, "G: %d\t", g);
+        uart_Write_String(buffer);
+        sprintf(buffer, "B: %d\t", b);
+        uart_Write_String(buffer);
+        sprintf(buffer, "C: %d\n\r", c);
+        uart_Write_String(buffer);
+        __delay_ms(1000);
+    }
 }
 
 

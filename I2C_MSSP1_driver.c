@@ -11,10 +11,14 @@ void I2C_init(void){
     SSP1CON2 = 0x0;
     /* DHEN disabled; AHEN disabled; SBCDE disabled; SDAHT 100ns; BOEN disabled; SCIE disabled; PCIE disabled;  */
     SSP1CON3 = 0x0;
-    /* SSPADD 39;  for 100kHz*/
+    /*  SSPADD<7:0>: Baud Rate Clock Divider bits
+    *   SCL pin clock period = ((ADD<7:0> + 1) *4)/FOSC
+    *   SSPADD 39;  for 100kHz (0x27)
+    *   SSPADD 159 for 400kHz
+    * */
+    
     SSP1ADD = 0x27;
-    /* SSPADD 159 for 400kHz*/
-    //SSP1ADD = 159;
+
     
     TRISCbits.TRISC3 = 1;  //RC3 (SCL) as input
     TRISCbits.TRISC4 = 1;  //RC4 (SDA) as input
@@ -30,12 +34,12 @@ void I2C_Start(void){
 
 void I2C_Wait(void){
     while(!PIR3bits.SSP1IF){    //Check if transmission finished, or Start Stop acknowledged
-        if(SSP1CON1bits.WCOL == 1){ //If we have an issue with writing
-            while(1){
-                LED_TOGGLE();
-                __delay_ms(50); //Toggle led fast
-            }
-        }
+        //if(SSP1CON1bits.WCOL == 1){ //If we have an issue with writing
+        //    while(1){
+        //        LED_TOGGLE();
+        //        __delay_ms(50); //Toggle led fast
+        //    }
+        
         continue;
     }
     PIR3bits.SSP1IF = 0; //Clear the flag
@@ -60,8 +64,8 @@ void I2C_Write(uint8_t data){
 }
 
 //  Takes in an integer, 0 or 1, which is what the Acknowledge Data bit (ACKDT) is set to. Set to 0 to acknowledge (when reading first 2 bytes) and 1 when reading last byte. Also, sends restart condition, and sets Acknowledge Sequence Enable bit (ACKEN) to 1 to initiate acknowledge sequence on SDA and SCL and send ACKDT bit. The hardware automatically clears this bit.
- int8_t I2C_Read(int8_t ackbit){
-    int8_t tempreadbuffer;      //Temporary variable for reading from buffer
+ uint8_t I2C_Read(int8_t ackbit){
+    uint8_t tempreadbuffer;      //Temporary variable for reading from buffer
     
     SSP1CON2bits.RCEN = 1;          //Set Recieve Enable
     I2C_Wait();                     //Wait for ack

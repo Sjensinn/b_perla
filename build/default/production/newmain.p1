@@ -3,8 +3,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "31 ./system_init.h
 [; ;./system_init.h: 31: void system_init(void);
 [v _system_init `(v ~T0 @X0 0 ef ]
-"40 ./I2C_MSSP1_driver.h
-[; ;./I2C_MSSP1_driver.h: 40: void I2C_init(void);
+"35 ./I2C_MSSP1_driver.h
+[; ;./I2C_MSSP1_driver.h: 35: void I2C_init(void);
 [v _I2C_init `(v ~T0 @X0 0 ef ]
 "22 ./uart.h
 [; ;./uart.h: 22: void uart_init(void);
@@ -15,18 +15,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "74
 [; ;./tcs3472.h: 74: void TCS3472_getId(void);
 [v _TCS3472_getId `(v ~T0 @X0 0 ef ]
-[v F183 `(v ~T0 @X0 1 tf1`ul ]
-"12 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16F1xxxx_DFP/1.9.163/xc8\pic\include\builtins.h
-[v __delay `JF183 ~T0 @X0 0 e ]
-[p i __delay ]
-"72 ./tcs3472.h
-[; ;./tcs3472.h: 72: void TCS3472_Colors(int16_t *red, int16_t *green, int16_t *blue, int16_t *clear);
-[v _TCS3472_Colors `(v ~T0 @X0 0 ef4`*s`*s`*s`*s ]
-"113 C:\Program Files\Microchip\xc8\v2.32\pic\include\c99\stdio.h
-[v _sprintf `(i ~T0 @X0 0 e1v`*uc`*Cuc ]
-"36 ./uart.h
-[; ;./uart.h: 36: void uart_Write_String(char* buf);
-[v _uart_Write_String `(v ~T0 @X0 0 ef1`*uc ]
+"76
+[; ;./tcs3472.h: 76: void TCS3472_sample_beads(void);
+[v _TCS3472_sample_beads `(v ~T0 @X0 0 ef ]
 "55 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16F1xxxx_DFP/1.9.163/xc8\pic\include\proc\pic16f18877.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16F1xxxx_DFP/1.9.163/xc8\pic\include\proc\pic16f18877.h: 55: __asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
@@ -1738,85 +1729,41 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;./tcs3472.h: 43: uint8_t tcs_addr;
 [v _tcs_addr `uc ~T0 @X0 1 e ]
 [v $root$_main `(v ~T0 @X0 0 e ]
-"68 newmain.c
-[; ;newmain.c: 68: void main(void){
+"72 newmain.c
+[; ;newmain.c: 72: void main(void){
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"69
-[; ;newmain.c: 69:     system_init();
+"73
+[; ;newmain.c: 73:     system_init();
 [e ( _system_init ..  ]
-"70
-[; ;newmain.c: 70:     I2C_init();
-[e ( _I2C_init ..  ]
-"71
-[; ;newmain.c: 71:     uart_init();
-[e ( _uart_init ..  ]
-"72
-[; ;newmain.c: 72:     TCS3472_Init(0x29, 1);
-[e ( _TCS3472_Init (2 , -> -> 41 `i `uc -> -> 1 `i `uc ]
 "74
-[; ;newmain.c: 74:     int16_t r, g, b, c;
-[v _r `s ~T0 @X0 1 a ]
-[v _g `s ~T0 @X0 1 a ]
-[v _b `s ~T0 @X0 1 a ]
-[v _c `s ~T0 @X0 1 a ]
+[; ;newmain.c: 74:     I2C_init();
+[e ( _I2C_init ..  ]
 "75
-[; ;newmain.c: 75:     char buffer[50];
-[v _buffer `uc ~T0 @X0 -> 50 `i a ]
-"77
-[; ;newmain.c: 77:     TCS3472_getId();
-[e ( _TCS3472_getId ..  ]
-"78
-[; ;newmain.c: 78:     _delay((unsigned long)((1000)*(16000000/4000.0)));
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
-"79
-[; ;newmain.c: 79:     while(1){
+[; ;newmain.c: 75:     uart_init();
+[e ( _uart_init ..  ]
+"76
+[; ;newmain.c: 76:     TCS3472_Init(0x29, 1);
+[e ( _TCS3472_Init (2 , -> -> 41 `i `uc -> -> 1 `i `uc ]
+"80
+[; ;newmain.c: 80:     while(1){
 [e :U 1617 ]
 {
-"80
-[; ;newmain.c: 80:         TCS3472_Colors(&r, &g, &b, &c);
-[e ( _TCS3472_Colors (4 , , , &U _r &U _g &U _b &U _c ]
 "81
-[; ;newmain.c: 81:         sprintf(buffer, "R: %d\t", r);
-[e ( _sprintf (1 , (. , &U _buffer :s 1C -> _r `i ]
+[; ;newmain.c: 81:         TCS3472_getId();
+[e ( _TCS3472_getId ..  ]
 "82
-[; ;newmain.c: 82:         uart_Write_String(buffer);
-[e ( _uart_Write_String (1 &U _buffer ]
+[; ;newmain.c: 82:         TCS3472_sample_beads();
+[e ( _TCS3472_sample_beads ..  ]
 "83
-[; ;newmain.c: 83:         sprintf(buffer, "G: %d\t", g);
-[e ( _sprintf (1 , (. , &U _buffer :s 2C -> _g `i ]
-"84
-[; ;newmain.c: 84:         uart_Write_String(buffer);
-[e ( _uart_Write_String (1 &U _buffer ]
-"85
-[; ;newmain.c: 85:         sprintf(buffer, "B: %d\t", b);
-[e ( _sprintf (1 , (. , &U _buffer :s 3C -> _b `i ]
-"86
-[; ;newmain.c: 86:         uart_Write_String(buffer);
-[e ( _uart_Write_String (1 &U _buffer ]
-"87
-[; ;newmain.c: 87:         sprintf(buffer, "C: %d\n\r", c);
-[e ( _sprintf (1 , (. , &U _buffer :s 4C -> _c `i ]
-"88
-[; ;newmain.c: 88:         uart_Write_String(buffer);
-[e ( _uart_Write_String (1 &U _buffer ]
-"89
-[; ;newmain.c: 89:         _delay((unsigned long)((1000)*(16000000/4000.0)));
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
-"90
-[; ;newmain.c: 90:     }
+[; ;newmain.c: 83:     }
 }
 [e :U 1616 ]
 [e $U 1617  ]
 [e :U 1618 ]
-"91
-[; ;newmain.c: 91: }
+"84
+[; ;newmain.c: 84: }
 [e :UE 1615 ]
 }
-[p f _sprintf 8388736 ]
-[a 4C 67 58 32 37 100 10 13 0 ]
-[a 1C 82 58 32 37 100 9 0 ]
-[a 2C 71 58 32 37 100 9 0 ]
-[a 3C 66 58 32 37 100 9 0 ]

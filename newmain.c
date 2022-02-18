@@ -2,7 +2,7 @@
  * File:   newmain.c
  * Author: Sjensi
  *
- *  Part of perluflokk
+ *  Part of b_perla
  * 
  * Created on February 2, 2022, 3:35 PM
  */
@@ -23,6 +23,7 @@
 #include "timer1.h"
 #include "tcs3472.h"
 
+//Main main function
 /*
 void main(void) {
     //Initiate sequence!
@@ -51,7 +52,9 @@ void main(void) {
     return;
 }
 */
-/*Testing TCS3200
+
+//Testing TCS3200
+/*
 void main(void){
 
     system_init();
@@ -65,29 +68,36 @@ void main(void){
 }
 */
 
+//Test TCS3472
 void main(void){
     system_init();
     I2C_init();
     uart_init();
     TCS3472_Init(0x29, 1);
-
-    int16_t r, g, b, c;
-    char buffer[50];
     
-    TCS3472_getId();
-    __delay_ms(1000);
+    
+    //__delay_ms(1000);
     while(1){
-        TCS3472_Colors(&r, &g, &b, &c);
-        sprintf(buffer, "R: %d\t", r);
-        uart_Write_String(buffer);
-        sprintf(buffer, "G: %d\t", g);
-        uart_Write_String(buffer);
-        sprintf(buffer, "B: %d\t", b);
-        uart_Write_String(buffer);
-        sprintf(buffer, "C: %d\n\r", c);
-        uart_Write_String(buffer);
-        __delay_ms(1000);
+        TCS3472_getId();
+        TCS3472_sample_beads();
     }
 }
 
+
+//Main function to find min max mid values for servos
+/*
+void main(void){
+    system_init();
+    I2C_init();
+    PCA_Init(130, 0x80);
+    
+    while(1){
+        PCA_Servo_Pos(0);
+        //__delay_ms(5000);
+        PCA_Servo_Pos(7);
+        //__delay_ms(10000);
+    }
+   
+}
+*/
 

@@ -34,12 +34,6 @@ void I2C_Start(void){
 
 void I2C_Wait(void){
     while(!PIR3bits.SSP1IF){    //Check if transmission finished, or Start Stop acknowledged
-        //if(SSP1CON1bits.WCOL == 1){ //If we have an issue with writing
-        //    while(1){
-        //        LED_TOGGLE();
-        //        __delay_ms(50); //Toggle led fast
-        //    }
-        
         continue;
     }
     PIR3bits.SSP1IF = 0; //Clear the flag

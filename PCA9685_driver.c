@@ -7,7 +7,7 @@ void PCA_Init(uint8_t prescalar, uint8_t pca_addr){
     pca_address = pca_addr;     //Set the global variable with the address
     
     TRISBbits.TRISB3=0;                 
-    PCA_OE_ENABLE();                    //Enabling PCA9685 with OE=0
+    LATBbits.LATB3 = 0;  //Enabling PCA9685 with OE=0
 
     I2C_Start();            //Send start bit
     I2C_Write(pca_address);        //0x40 == address of PCA9685

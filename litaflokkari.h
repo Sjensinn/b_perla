@@ -57,11 +57,11 @@
 extern "C" {
 #endif
 
-#ifndef LFSMIN   //200 works
-#define LFSMIN  130 // This is the 'minimum' pulse length count (out of 4096)
+#ifndef LFSMIN   //150 works for servo 1 and 2 bottom half
+#define LFSMIN  160 // This is the 'minimum' pulse length count (out of 4096)
 #endif
-#ifndef LFSMAX    //500 works
-#define LFSMAX  500 // This is the 'maximum' pulse length count (out of 4096)
+#ifndef LFSMAX    //350 works for servo 1 and 2 bottom half
+#define LFSMAX  350 // This is the 'maximum' pulse length count (out of 4096)
 #endif
     
 //Yellow beat color ranges
@@ -201,7 +201,7 @@ void print_welcome_message(void);
  * @param   pointer to each color         
  * @return  Values to pointer
  */
-uint8_t find_raw_color(uint16_t *red, uint16_t *green, uint16_t *blue, uint16_t *clear);
+void find_raw_color(uint16_t *red, uint16_t *green, uint16_t *blue, uint16_t *clear);
 
 /**
  * @brief   This function samples each color filter on the sensor

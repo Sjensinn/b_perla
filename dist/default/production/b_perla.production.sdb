@@ -3,13 +3,13 @@
 [d edition pro ]
 [d chip 16F18877 ]
 [d frameptr 6 ]
-"1 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\abs.c
+"1 C:\Program Files\Microchip\pic\sources\c99\common\abs.c
 [v _abs abs `(i  1 e 2 0 ]
-"7 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\aodiv.c
+"7 C:\Program Files\Microchip\pic\sources\c99\common\aodiv.c
 [v ___aodiv __aodiv `(o  1 e 8 0 ]
-"7 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\aomod.c
+"7 C:\Program Files\Microchip\pic\sources\c99\common\aomod.c
 [v ___aomod __aomod `(o  1 e 8 0 ]
-"72 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\doprnt.c
+"72 C:\Program Files\Microchip\pic\sources\c99\common\doprnt.c
 [v _pad pad `(i  1 s 2 pad ]
 "287
 [v _dtoa dtoa `(i  1 s 2 dtoa ]
@@ -17,39 +17,39 @@
 [v _vfpfcnvrt vfpfcnvrt `(i  1 s 2 vfpfcnvrt ]
 "1390
 [v _vfprintf vfprintf `(i  1 e 2 0 ]
-"8 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\nf_fputc.c
+"8 C:\Program Files\Microchip\pic\sources\c99\common\nf_fputc.c
 [v _fputc fputc `(i  1 e 2 0 ]
-"8 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\nf_fputs.c
+"8 C:\Program Files\Microchip\pic\sources\c99\common\nf_fputs.c
 [v _fputs fputs `(i  1 e 2 0 ]
-"9 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\nf_sprintf.c
+"9 C:\Program Files\Microchip\pic\sources\c99\common\nf_sprintf.c
 [v _sprintf sprintf `(i  1 e 2 0 ]
-"7 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\putch.c
+"7 C:\Program Files\Microchip\pic\sources\c99\common\putch.c
 [v _putch putch `(v  1 e 1 0 ]
-"10 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\sprcadd.c
+"10 C:\Program Files\Microchip\pic\sources\c99\common\sprcadd.c
 [v ___fladd __fladd `(d  1 e 4 0 ]
-"5 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\strlen.c
+"5 C:\Program Files\Microchip\pic\sources\c99\common\strlen.c
 [v _strlen strlen `(ui  1 e 2 0 ]
-"15 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\Umul16.c
+"15 C:\Program Files\Microchip\pic\sources\c99\common\Umul16.c
 [v ___wmul __wmul `(ui  1 e 2 0 ]
-"4 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\Umul8_16.c
+"4 C:\Program Files\Microchip\pic\sources\c99\common\Umul8_16.c
 [v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
-"6 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\pic\__eeprom.c
+"6 C:\Program Files\Microchip\pic\sources\c99\pic\__eeprom.c
 [v ___eecpymem __eecpymem `(v  1 e 1 0 ]
 "39
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
-"5 C:\Users\user\Git_repos\perluflokk_v2\PIC16f18877_v6.1.X\I2C_MSSP1_driver.c
+"5 C:\Users\Sindri Jens\git_repos\bperl\b_perla\I2C_MSSP1_driver.c
 [v _I2C_init I2C_init `(v  1 e 1 0 ]
 "30
 [v _I2C_Start I2C_Start `(v  1 e 1 0 ]
 "35
 [v _I2C_Wait I2C_Wait `(v  1 e 1 0 ]
-"55
+"49
 [v _I2C_Stop I2C_Stop `(v  1 e 1 0 ]
-"61
+"55
 [v _I2C_Write I2C_Write `(v  1 e 1 0 ]
-"67
+"61
 [v _I2C_Read I2C_Read `(uc  1 e 1 0 ]
-"32 C:\Users\user\Git_repos\perluflokk_v2\PIC16f18877_v6.1.X\LCD.c
+"32 C:\Users\Sindri Jens\git_repos\bperl\b_perla\LCD.c
 [v _IO_Expander IO_Expander `(v  1 e 1 0 ]
 "39
 [v _LCD_Write_4Bit LCD_Write_4Bit `(v  1 e 1 0 ]
@@ -61,19 +61,19 @@
 [v _LCD_write_string LCD_write_string `(v  1 e 1 0 ]
 "64
 [v _LCD_Set_Cursor LCD_Set_Cursor `(v  1 e 1 0 ]
-"19 C:\Users\user\Git_repos\perluflokk_v2\PIC16f18877_v6.1.X\litaflokkari.c
+"19 C:\Users\Sindri Jens\git_repos\bperl\b_perla\litaflokkari.c
 [v _PCA_Servo_Command PCA_Servo_Command `(v  1 e 1 0 ]
 "106
-[v _find_raw_color find_raw_color `(uc  1 e 1 0 ]
+[v _find_raw_color find_raw_color `(v  1 e 1 0 ]
 "156
 [v _color_compare_return color_compare_return `(uc  1 e 1 0 ]
 "306
 [v _find_print find_print `(v  1 e 1 0 ]
-"68 C:\Users\user\Git_repos\perluflokk_v2\PIC16f18877_v6.1.X\newmain.c
+"72 C:\Users\Sindri Jens\git_repos\bperl\b_perla\newmain.c
 [v _main main `(v  1 e 1 0 ]
-"29 C:\Users\user\Git_repos\perluflokk_v2\PIC16f18877_v6.1.X\PCA9685_driver.c
+"29 C:\Users\Sindri Jens\git_repos\bperl\b_perla\PCA9685_driver.c
 [v _PCA_Write PCA_Write `(v  1 e 1 0 ]
-"12 C:\Users\user\Git_repos\perluflokk_v2\PIC16f18877_v6.1.X\system_init.c
+"12 C:\Users\Sindri Jens\git_repos\bperl\b_perla\system_init.c
 [v _system_init system_init `(v  1 e 1 0 ]
 "19
 [v _clock_init clock_init `(v  1 e 1 0 ]
@@ -81,7 +81,7 @@
 [v _pin_init pin_init `(v  1 e 1 0 ]
 "133
 [v _int_init int_init `(v  1 e 1 0 ]
-"18 C:\Users\user\Git_repos\perluflokk_v2\PIC16f18877_v6.1.X\tcs3200.c
+"18 C:\Users\Sindri Jens\git_repos\bperl\b_perla\tcs3200.c
 [v _filter_red filter_red `(v  1 e 1 0 ]
 "24
 [v _filter_blue filter_blue `(v  1 e 1 0 ]
@@ -91,11 +91,17 @@
 [v _filter_clear filter_clear `(v  1 e 1 0 ]
 "42
 [v _sample_reading sample_reading `(us  1 e 2 0 ]
-"17 C:\Users\user\Git_repos\perluflokk_v2\PIC16f18877_v6.1.X\tcs3472.c
+"17 C:\Users\Sindri Jens\git_repos\bperl\b_perla\tcs3472.c
 [v _TCS3472_Init TCS3472_Init `(v  1 e 1 0 ]
 "81
 [v _TCS3472_Colors TCS3472_Colors `(v  1 e 1 0 ]
-"32 C:\Users\user\Git_repos\perluflokk_v2\PIC16f18877_v6.1.X\timer1.c
+"106
+[v _TCS3472_getId TCS3472_getId `(v  1 e 1 0 ]
+"123
+[v _TCS3472_sample_beads TCS3472_sample_beads `(v  1 e 1 0 ]
+"181
+[v _TCS3472_sample_once_print TCS3472_sample_once_print `(v  1 e 1 0 ]
+"32 C:\Users\Sindri Jens\git_repos\bperl\b_perla\timer1.c
 [v _Timer1_Start Timer1_Start `(v  1 e 1 0 ]
 "37
 [v _Timer1_Stop Timer1_Stop `(v  1 e 1 0 ]
@@ -103,18 +109,18 @@
 [v _Timer1_Read Timer1_Read `(us  1 e 2 0 ]
 "54
 [v _Timer1_Write Timer1_Write `(v  1 e 1 0 ]
-"5 C:\Users\user\Git_repos\perluflokk_v2\PIC16f18877_v6.1.X\uart.c
+"5 C:\Users\Sindri Jens\git_repos\bperl\b_perla\uart.c
 [v _uart_init uart_init `(v  1 e 1 0 ]
 "24
 [v _uart_Write uart_Write `(v  1 e 1 0 ]
 "30
 [v _uart_Write_String uart_Write_String `(v  1 e 1 0 ]
-"38 C:\Users\user\Git_repos\perluflokk_v2\PIC16f18877_v6.1.X/LCD.h
+"38 C:\Users\Sindri Jens\git_repos\bperl\b_perla/LCD.h
 [v _lcd_address lcd_address `uc  1 e 1 0 ]
 [v _RS RS `uc  1 e 1 0 ]
 "39
 [v _BackLight_State BackLight_State `uc  1 e 1 0 ]
-"157 C:\Users\user\Git_repos\perluflokk_v2\PIC16f18877_v6.1.X/litaflokkari.h
+"157 C:\Users\Sindri Jens\git_repos\bperl\b_perla/litaflokkari.h
 [v _yellow_bead yellow_bead `uc  1 e 1 0 ]
 [v _red_bead red_bead `uc  1 e 1 0 ]
 [v _green_bead green_bead `uc  1 e 1 0 ]
@@ -123,19 +129,19 @@
 [v _white_bead white_bead `uc  1 e 1 0 ]
 [v _brown_bead brown_bead `uc  1 e 1 0 ]
 [v _unsort_bead unsort_bead `uc  1 e 1 0 ]
-"30 C:\Users\user\Git_repos\perluflokk_v2\PIC16f18877_v6.1.X/PCA9685_driver.h
+"30 C:\Users\Sindri Jens\git_repos\bperl\b_perla/PCA9685_driver.h
 [v _pca_address pca_address `uc  1 e 1 0 ]
-"43 C:\Users\user\Git_repos\perluflokk_v2\PIC16f18877_v6.1.X/tcs3472.h
+"43 C:\Users\Sindri Jens\git_repos\bperl\b_perla/tcs3472.h
 [v _tcs_addr tcs_addr `uc  1 e 1 0 ]
-[s S787 . 1 `uc 1 INTEDG 1 0 :1:0 
+[s S765 . 1 `uc 1 INTEDG 1 0 :1:0 
 `uc 1 . 1 0 :5:1 
 `uc 1 PEIE 1 0 :1:6 
 `uc 1 GIE 1 0 :1:7 
 ]
 "371 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16F1xxxx_DFP/1.9.163/xc8\pic\include\proc\pic16f18877.h
-[u S792 . 1 `S787 1 . 1 0 ]
-[v _INTCONbits INTCONbits `VES792  1 e 1 @11 ]
-[s S612 . 1 `uc 1 RB0 1 0 :1:0 
+[u S770 . 1 `S765 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES770  1 e 1 @11 ]
+[s S590 . 1 `uc 1 RB0 1 0 :1:0 
 `uc 1 RB1 1 0 :1:1 
 `uc 1 RB2 1 0 :1:2 
 `uc 1 RB3 1 0 :1:3 
@@ -145,13 +151,13 @@
 `uc 1 RB7 1 0 :1:7 
 ]
 "470
-[u S621 . 1 `S612 1 . 1 0 ]
-[v _PORTBbits PORTBbits `VES621  1 e 1 @13 ]
+[u S599 . 1 `S590 1 . 1 0 ]
+[v _PORTBbits PORTBbits `VES599  1 e 1 @13 ]
 "677
 [v _TRISA TRISA `VEuc  1 e 1 @17 ]
 "739
 [v _TRISB TRISB `VEuc  1 e 1 @18 ]
-[s S92 . 1 `uc 1 TRISB0 1 0 :1:0 
+[s S66 . 1 `uc 1 TRISB0 1 0 :1:0 
 `uc 1 TRISB1 1 0 :1:1 
 `uc 1 TRISB2 1 0 :1:2 
 `uc 1 TRISB3 1 0 :1:3 
@@ -161,11 +167,11 @@
 `uc 1 TRISB7 1 0 :1:7 
 ]
 "756
-[u S101 . 1 `S92 1 . 1 0 ]
-[v _TRISBbits TRISBbits `VES101  1 e 1 @18 ]
+[u S75 . 1 `S66 1 . 1 0 ]
+[v _TRISBbits TRISBbits `VES75  1 e 1 @18 ]
 "801
 [v _TRISC TRISC `VEuc  1 e 1 @19 ]
-[s S176 . 1 `uc 1 TRISC0 1 0 :1:0 
+[s S150 . 1 `uc 1 TRISC0 1 0 :1:0 
 `uc 1 TRISC1 1 0 :1:1 
 `uc 1 TRISC2 1 0 :1:2 
 `uc 1 TRISC3 1 0 :1:3 
@@ -175,15 +181,15 @@
 `uc 1 TRISC7 1 0 :1:7 
 ]
 "818
-[u S185 . 1 `S176 1 . 1 0 ]
-[v _TRISCbits TRISCbits `VES185  1 e 1 @19 ]
+[u S159 . 1 `S150 1 . 1 0 ]
+[v _TRISCbits TRISCbits `VES159  1 e 1 @19 ]
 "863
 [v _TRISD TRISD `VEuc  1 e 1 @20 ]
 "925
 [v _TRISE TRISE `VEuc  1 e 1 @21 ]
 "957
 [v _LATA LATA `VEuc  1 e 1 @22 ]
-[s S577 . 1 `uc 1 LATA0 1 0 :1:0 
+[s S551 . 1 `uc 1 LATA0 1 0 :1:0 
 `uc 1 LATA1 1 0 :1:1 
 `uc 1 LATA2 1 0 :1:2 
 `uc 1 LATA3 1 0 :1:3 
@@ -193,11 +199,11 @@
 `uc 1 LATA7 1 0 :1:7 
 ]
 "974
-[u S586 . 1 `S577 1 . 1 0 ]
-[v _LATAbits LATAbits `VES586  1 e 1 @22 ]
+[u S560 . 1 `S551 1 . 1 0 ]
+[v _LATAbits LATAbits `VES560  1 e 1 @22 ]
 "1019
 [v _LATB LATB `VEuc  1 e 1 @23 ]
-[s S113 . 1 `uc 1 LATB0 1 0 :1:0 
+[s S87 . 1 `uc 1 LATB0 1 0 :1:0 
 `uc 1 LATB1 1 0 :1:1 
 `uc 1 LATB2 1 0 :1:2 
 `uc 1 LATB3 1 0 :1:3 
@@ -207,8 +213,8 @@
 `uc 1 LATB7 1 0 :1:7 
 ]
 "1036
-[u S122 . 1 `S113 1 . 1 0 ]
-[v _LATBbits LATBbits `VES122  1 e 1 @23 ]
+[u S96 . 1 `S87 1 . 1 0 ]
+[v _LATBbits LATBbits `VES96  1 e 1 @23 ]
 "1081
 [v _LATC LATC `VEuc  1 e 1 @24 ]
 "1143
@@ -233,7 +239,7 @@
 [v _SSP1ADD SSP1ADD `VEuc  1 e 1 @397 ]
 "4820
 [v _SSP1STAT SSP1STAT `VEuc  1 e 1 @399 ]
-[s S341 . 1 `uc 1 BF 1 0 :1:0 
+[s S315 . 1 `uc 1 BF 1 0 :1:0 
 `uc 1 UA 1 0 :1:1 
 `uc 1 R_nW 1 0 :1:2 
 `uc 1 S 1 0 :1:3 
@@ -243,33 +249,33 @@
 `uc 1 SMP 1 0 :1:7 
 ]
 "4929
-[s S350 . 1 `uc 1 . 1 0 :2:0 
+[s S324 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 R_W 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 D_A 1 0 :1:5 
 ]
-[s S355 . 1 `uc 1 . 1 0 :2:0 
+[s S329 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 nW 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 nA 1 0 :1:5 
 ]
-[s S360 . 1 `uc 1 . 1 0 :2:0 
+[s S334 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 nWRITE 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 nADDRESS 1 0 :1:5 
 ]
-[s S365 . 1 `uc 1 . 1 0 :2:0 
+[s S339 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 READ_WRITE 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 DATA_ADDRESS 1 0 :1:5 
 ]
-[s S370 . 1 `uc 1 . 1 0 :2:0 
+[s S344 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 I2C_READ 1 0 :1:2 
 `uc 1 I2C_START 1 0 :1:3 
 `uc 1 I2C_STOP 1 0 :1:4 
 `uc 1 I2C_DAT 1 0 :1:5 
 ]
-[s S376 . 1 `uc 1 BF1 1 0 :1:0 
+[s S350 . 1 `uc 1 BF1 1 0 :1:0 
 `uc 1 UA1 1 0 :1:1 
 `uc 1 R 1 0 :1:2 
 `uc 1 START 1 0 :1:3 
@@ -278,66 +284,66 @@
 `uc 1 CKE1 1 0 :1:6 
 `uc 1 SMP1 1 0 :1:7 
 ]
-[s S385 . 1 `uc 1 . 1 0 :2:0 
+[s S359 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 RW 1 0 :1:2 
 `uc 1 START1 1 0 :1:3 
 `uc 1 STOP1 1 0 :1:4 
 `uc 1 DA 1 0 :1:5 
 ]
-[s S391 . 1 `uc 1 . 1 0 :2:0 
+[s S365 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 RW1 1 0 :1:2 
 `uc 1 I2C_START1 1 0 :1:3 
 `uc 1 I2C_STOP2 1 0 :1:4 
 `uc 1 DA1 1 0 :1:5 
 ]
-[s S397 . 1 `uc 1 . 1 0 :2:0 
+[s S371 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 I2C_READ1 1 0 :1:2 
 `uc 1 S2 1 0 :1:3 
 `uc 1 P2 1 0 :1:4 
 `uc 1 DATA_ADDRESS1 1 0 :1:5 
 ]
-[s S403 . 1 `uc 1 . 1 0 :2:0 
+[s S377 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 READ_WRITE1 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 D_A1 1 0 :1:5 
 ]
-[s S408 . 1 `uc 1 . 1 0 :2:0 
+[s S382 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 R_W1 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 D_nA1 1 0 :1:5 
 ]
-[s S413 . 1 `uc 1 . 1 0 :2:0 
+[s S387 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 R_nW1 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 I2C_DAT1 1 0 :1:5 
 ]
-[s S418 . 1 `uc 1 . 1 0 :2:0 
+[s S392 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 nW2 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 nA2 1 0 :1:5 
 ]
-[s S423 . 1 `uc 1 . 1 0 :2:0 
+[s S397 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 nWRITE1 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 nADDRESS1 1 0 :1:5 
 ]
-[u S428 . 1 `S341 1 . 1 0 `S350 1 . 1 0 `S355 1 . 1 0 `S360 1 . 1 0 `S365 1 . 1 0 `S370 1 . 1 0 `S376 1 . 1 0 `S385 1 . 1 0 `S391 1 . 1 0 `S397 1 . 1 0 `S403 1 . 1 0 `S408 1 . 1 0 `S413 1 . 1 0 `S418 1 . 1 0 `S423 1 . 1 0 ]
-[v _SSP1STATbits SSP1STATbits `VES428  1 e 1 @399 ]
+[u S402 . 1 `S315 1 . 1 0 `S324 1 . 1 0 `S329 1 . 1 0 `S334 1 . 1 0 `S339 1 . 1 0 `S344 1 . 1 0 `S350 1 . 1 0 `S359 1 . 1 0 `S365 1 . 1 0 `S371 1 . 1 0 `S377 1 . 1 0 `S382 1 . 1 0 `S387 1 . 1 0 `S392 1 . 1 0 `S397 1 . 1 0 ]
+[v _SSP1STATbits SSP1STATbits `VES402  1 e 1 @399 ]
 "5184
 [v _SSP1CON1 SSP1CON1 `VEuc  1 e 1 @400 ]
-[s S197 . 1 `uc 1 SSPM 1 0 :4:0 
+[s S171 . 1 `uc 1 SSPM 1 0 :4:0 
 `uc 1 CKP 1 0 :1:4 
 `uc 1 SSPEN 1 0 :1:5 
 `uc 1 SSPOV 1 0 :1:6 
 `uc 1 WCOL 1 0 :1:7 
 ]
 "5214
-[s S203 . 1 `uc 1 SSPM0 1 0 :1:0 
+[s S177 . 1 `uc 1 SSPM0 1 0 :1:0 
 `uc 1 SSPM1 1 0 :1:1 
 `uc 1 SSPM2 1 0 :1:2 
 `uc 1 SSPM3 1 0 :1:3 
 ]
-[s S208 . 1 `uc 1 SSPM01 1 0 :1:0 
+[s S182 . 1 `uc 1 SSPM01 1 0 :1:0 
 `uc 1 SSPM11 1 0 :1:1 
 `uc 1 SSPM21 1 0 :1:2 
 `uc 1 SSPM31 1 0 :1:3 
@@ -346,11 +352,11 @@
 `uc 1 SSPOV1 1 0 :1:6 
 `uc 1 WCOL1 1 0 :1:7 
 ]
-[u S217 . 1 `S197 1 . 1 0 `S203 1 . 1 0 `S208 1 . 1 0 ]
-[v _SSP1CON1bits SSP1CON1bits `VES217  1 e 1 @400 ]
+[u S191 . 1 `S171 1 . 1 0 `S177 1 . 1 0 `S182 1 . 1 0 ]
+[v _SSP1CON1bits SSP1CON1bits `VES191  1 e 1 @400 ]
 "5304
 [v _SSP1CON2 SSP1CON2 `VEuc  1 e 1 @401 ]
-[s S242 . 1 `uc 1 SEN 1 0 :1:0 
+[s S216 . 1 `uc 1 SEN 1 0 :1:0 
 `uc 1 RSEN 1 0 :1:1 
 `uc 1 PEN 1 0 :1:2 
 `uc 1 RCEN 1 0 :1:3 
@@ -360,17 +366,17 @@
 `uc 1 GCEN 1 0 :1:7 
 ]
 "5351
-[s S251 . 1 `uc 1 . 1 0 :1:0 
+[s S225 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 ADMSK 1 0 :5:1 
 ]
-[s S254 . 1 `uc 1 . 1 0 :1:0 
+[s S228 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 ADMSK1 1 0 :1:1 
 `uc 1 ADMSK2 1 0 :1:2 
 `uc 1 ADMSK3 1 0 :1:3 
 `uc 1 ADMSK4 1 0 :1:4 
 `uc 1 ADMSK5 1 0 :1:5 
 ]
-[s S261 . 1 `uc 1 SEN1 1 0 :1:0 
+[s S235 . 1 `uc 1 SEN1 1 0 :1:0 
 `uc 1 ADMSK11 1 0 :1:1 
 `uc 1 ADMSK21 1 0 :1:2 
 `uc 1 ADMSK31 1 0 :1:3 
@@ -379,15 +385,15 @@
 `uc 1 ACKSTAT1 1 0 :1:6 
 `uc 1 GCEN1 1 0 :1:7 
 ]
-[s S270 . 1 `uc 1 . 1 0 :1:0 
+[s S244 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 RSEN1 1 0 :1:1 
 `uc 1 PEN1 1 0 :1:2 
 `uc 1 RCEN1 1 0 :1:3 
 `uc 1 ADMSK41 1 0 :1:4 
 `uc 1 ADMSK51 1 0 :1:5 
 ]
-[u S277 . 1 `S242 1 . 1 0 `S251 1 . 1 0 `S254 1 . 1 0 `S261 1 . 1 0 `S270 1 . 1 0 ]
-[v _SSP1CON2bits SSP1CON2bits `VES277  1 e 1 @401 ]
+[u S251 . 1 `S216 1 . 1 0 `S225 1 . 1 0 `S228 1 . 1 0 `S235 1 . 1 0 `S244 1 . 1 0 ]
+[v _SSP1CON2bits SSP1CON2bits `VES251  1 e 1 @401 ]
 "5491
 [v _SSP1CON3 SSP1CON3 `VEuc  1 e 1 @402 ]
 "6503
@@ -396,36 +402,36 @@
 [v _TMR1H TMR1H `VEuc  1 e 1 @525 ]
 "6793
 [v _T1CON T1CON `VEuc  1 e 1 @526 ]
-[s S852 . 1 `uc 1 ON 1 0 :1:0 
+[s S830 . 1 `uc 1 ON 1 0 :1:0 
 `uc 1 RD16 1 0 :1:1 
 `uc 1 nSYNC 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
 `uc 1 CKPS 1 0 :2:4 
 ]
 "6824
-[s S858 . 1 `uc 1 TMR1ON 1 0 :1:0 
+[s S836 . 1 `uc 1 TMR1ON 1 0 :1:0 
 `uc 1 T1RD16 1 0 :1:1 
 `uc 1 nT1SYNC 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
 `uc 1 T1CKPS0 1 0 :1:4 
 `uc 1 T1CKPS1 1 0 :1:5 
 ]
-[s S865 . 1 `uc 1 . 1 0 :4:0 
+[s S843 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 CKPS0 1 0 :1:4 
 `uc 1 CKPS1 1 0 :1:5 
 ]
-[s S869 . 1 `uc 1 . 1 0 :1:0 
+[s S847 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 RD161 1 0 :1:1 
 ]
-[u S872 . 1 `S852 1 . 1 0 `S858 1 . 1 0 `S865 1 . 1 0 `S869 1 . 1 0 ]
-[v _T1CONbits T1CONbits `VES872  1 e 1 @526 ]
+[u S850 . 1 `S830 1 . 1 0 `S836 1 . 1 0 `S843 1 . 1 0 `S847 1 . 1 0 ]
+[v _T1CONbits T1CONbits `VES850  1 e 1 @526 ]
 "6889
 [v _T1GCON T1GCON `VEuc  1 e 1 @527 ]
 "7085
 [v _T1GATE T1GATE `VEuc  1 e 1 @528 ]
 "7251
 [v _T1CLK T1CLK `VEuc  1 e 1 @529 ]
-[s S323 . 1 `uc 1 SSP1IF 1 0 :1:0 
+[s S297 . 1 `uc 1 SSP1IF 1 0 :1:0 
 `uc 1 BCL1IF 1 0 :1:1 
 `uc 1 SSP2IF 1 0 :1:2 
 `uc 1 BCL2IF 1 0 :1:3 
@@ -433,9 +439,9 @@
 `uc 1 RCIF 1 0 :1:5 
 ]
 "21382
-[u S330 . 1 `S323 1 . 1 0 ]
-[v _PIR3bits PIR3bits `VES330  1 e 1 @1807 ]
-[s S813 . 1 `uc 1 TMR1IF 1 0 :1:0 
+[u S304 . 1 `S297 1 . 1 0 ]
+[v _PIR3bits PIR3bits `VES304  1 e 1 @1807 ]
+[s S791 . 1 `uc 1 TMR1IF 1 0 :1:0 
 `uc 1 TMR2IF 1 0 :1:1 
 `uc 1 TMR3IF 1 0 :1:2 
 `uc 1 TMR4IF 1 0 :1:3 
@@ -443,9 +449,9 @@
 `uc 1 TMR6IF 1 0 :1:5 
 ]
 "21432
-[u S820 . 1 `S813 1 . 1 0 ]
-[v _PIR4bits PIR4bits `VES820  1 e 1 @1808 ]
-[s S830 . 1 `uc 1 TMR1GIF 1 0 :1:0 
+[u S798 . 1 `S791 1 . 1 0 ]
+[v _PIR4bits PIR4bits `VES798  1 e 1 @1808 ]
+[s S808 . 1 `uc 1 TMR1GIF 1 0 :1:0 
 `uc 1 TMR3GIF 1 0 :1:1 
 `uc 1 TMR5GIF 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
@@ -455,8 +461,8 @@
 `uc 1 CLC4IF 1 0 :1:7 
 ]
 "21484
-[u S839 . 1 `S830 1 . 1 0 ]
-[v _PIR5bits PIR5bits `VES839  1 e 1 @1809 ]
+[u S817 . 1 `S808 1 . 1 0 ]
+[v _PIR5bits PIR5bits `VES817  1 e 1 @1809 ]
 "23443
 [v _OSCCON1 OSCCON1 `VEuc  1 e 1 @2189 ]
 "23513
@@ -561,7 +567,7 @@
 [v _IOCEN IOCEN `VEuc  1 e 1 @8042 ]
 "36002
 [v _IOCEF IOCEF `VEuc  1 e 1 @8043 ]
-"55 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\doprnt.c
+"55 C:\Program Files\Microchip\pic\sources\c99\common\doprnt.c
 [v _flags flags `i  1 s 2 flags ]
 [v _prec prec `i  1 s 2 prec ]
 [v _width width `i  1 s 2 width ]
@@ -569,41 +575,17 @@
 [v _dbuf dbuf `[32]uc  1 s 32 dbuf ]
 "69
 [v _nout nout `i  1 s 2 nout ]
-"68 C:\Users\user\Git_repos\perluflokk_v2\PIC16f18877_v6.1.X\newmain.c
+"72 C:\Users\Sindri Jens\git_repos\bperl\b_perla\newmain.c
 [v _main main `(v  1 e 1 0 ]
 {
-"75
-[v main@buffer buffer `[50]uc  1 a 50 10 ]
-"74
-[v main@c c `s  1 a 2 66 ]
-[v main@b b `s  1 a 2 64 ]
-[v main@g g `s  1 a 2 62 ]
-[v main@r r `s  1 a 2 60 ]
-"89
+"84
 } 0
-"5 C:\Users\user\Git_repos\perluflokk_v2\PIC16f18877_v6.1.X\uart.c
+"5 C:\Users\Sindri Jens\git_repos\bperl\b_perla\uart.c
 [v _uart_init uart_init `(v  1 e 1 0 ]
 {
 "22
 } 0
-"30
-[v _uart_Write_String uart_Write_String `(v  1 e 1 0 ]
-{
-"31
-[v uart_Write_String@i i `i  1 a 2 4 ]
-"30
-[v uart_Write_String@buf buf `*.26uc  1 p 2 1 ]
-"35
-} 0
-"24
-[v _uart_Write uart_Write `(v  1 e 1 0 ]
-{
-[v uart_Write@data data `uc  1 a 1 wreg ]
-[v uart_Write@data data `uc  1 a 1 wreg ]
-[v uart_Write@data data `uc  1 a 1 0 ]
-"29
-} 0
-"12 C:\Users\user\Git_repos\perluflokk_v2\PIC16f18877_v6.1.X\system_init.c
+"12 C:\Users\Sindri Jens\git_repos\bperl\b_perla\system_init.c
 [v _system_init system_init `(v  1 e 1 0 ]
 {
 "16
@@ -623,170 +605,42 @@
 {
 "34
 } 0
-"9 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\nf_sprintf.c
-[v _sprintf sprintf `(i  1 e 2 0 ]
+"123 C:\Users\Sindri Jens\git_repos\bperl\b_perla\tcs3472.c
+[v _TCS3472_sample_beads TCS3472_sample_beads `(v  1 e 1 0 ]
 {
-[v sprintf@s s `*.4uc  1 a 1 wreg ]
-[s S1536 _IO_FILE 5 `*.4uc 1 buffer 1 0 `i 1 count 2 1 `i 1 limit 2 3 ]
-"13
-[v sprintf@f f `S1536  1 a 5 2 ]
-"12
-[v sprintf@ap ap `[1]*.4v  1 a 1 0 ]
-"9
-[v sprintf@s s `*.4uc  1 a 1 wreg ]
-[v sprintf@fmt fmt `*.25DCuc  1 p 2 70 ]
-"15
-[v sprintf@s s `*.4uc  1 a 1 1 ]
-"23
+"176
+[v TCS3472_sample_beads@i_1114 i `i  1 a 2 67 ]
+"170
+[v TCS3472_sample_beads@i_1112 i `i  1 a 2 65 ]
+"164
+[v TCS3472_sample_beads@i_1110 i `i  1 a 2 63 ]
+"158
+[v TCS3472_sample_beads@i_1108 i `i  1 a 2 61 ]
+"152
+[v TCS3472_sample_beads@i_1106 i `i  1 a 2 59 ]
+"146
+[v TCS3472_sample_beads@i_1104 i `i  1 a 2 57 ]
+"140
+[v TCS3472_sample_beads@i_1102 i `i  1 a 2 55 ]
+"134
+[v TCS3472_sample_beads@i_1100 i `i  1 a 2 53 ]
+"128
+[v TCS3472_sample_beads@i i `i  1 a 2 51 ]
+"124
+[v TCS3472_sample_beads@buffer buffer `[50]uc  1 a 50 1 ]
+"179
 } 0
-"1390 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\doprnt.c
-[v _vfprintf vfprintf `(i  1 e 2 0 ]
+"181
+[v _TCS3472_sample_once_print TCS3472_sample_once_print `(v  1 e 1 0 ]
 {
-[s S1562 _IO_FILE 0 ]
-[v vfprintf@fp fp `*.4S1562  1 a 1 wreg ]
-"1393
-[v vfprintf@cfmt cfmt `*.25uc  1 a 2 68 ]
-"1390
-[v vfprintf@fp fp `*.4S1562  1 a 1 wreg ]
-[v vfprintf@fmt fmt `*.25DCuc  1 p 2 62 ]
-[v vfprintf@ap ap `*.4*.4v  1 p 1 64 ]
-"1395
-"1390
-[v vfprintf@fp fp `*.4S1562  1 a 1 67 ]
-"1404
-} 0
-"692
-[v _vfpfcnvrt vfpfcnvrt `(i  1 s 2 vfpfcnvrt ]
-{
-[s S1562 _IO_FILE 0 ]
-[v vfpfcnvrt@fp fp `*.4S1562  1 a 1 wreg ]
-"696
-[v vfpfcnvrt@ll ll `o  1 a 8 53 ]
-"692
-[v vfpfcnvrt@fp fp `*.4S1562  1 a 1 wreg ]
-[v vfpfcnvrt@fmt fmt `*.4*.25uc  1 p 1 46 ]
-[v vfpfcnvrt@ap ap `*.4*.4v  1 p 1 47 ]
-"702
-"692
-[v vfpfcnvrt@fp fp `*.4S1562  1 a 1 61 ]
-"1387
-} 0
-"287
-[v _dtoa dtoa `(i  1 s 2 dtoa ]
-{
-[s S1562 _IO_FILE 0 ]
-[v dtoa@fp fp `*.4S1562  1 a 1 wreg ]
-"290
-[v dtoa@n n `o  1 a 8 36 ]
-"289
-[v dtoa@i i `i  1 a 2 44 ]
-[v dtoa@s s `i  1 a 2 34 ]
-[v dtoa@w w `i  1 a 2 32 ]
-[v dtoa@p p `i  1 a 2 30 ]
-"287
-[v dtoa@fp fp `*.4S1562  1 a 1 wreg ]
-[v dtoa@d d `o  1 p 8 16 ]
-"293
-"287
-[v dtoa@fp fp `*.4S1562  1 a 1 29 ]
-"328
-} 0
-"72
-[v _pad pad `(i  1 s 2 pad ]
-{
-[s S1562 _IO_FILE 0 ]
-[v pad@fp fp `*.4S1562  1 a 1 wreg ]
-"74
-[v pad@w w `i  1 a 2 9 ]
-[v pad@i i `i  1 a 2 7 ]
-"72
-[v pad@fp fp `*.4S1562  1 a 1 wreg ]
-[v pad@buf buf `*.5uc  1 p 1 4 ]
-[v pad@p p `i  1 p 2 5 ]
-"77
-"72
-[v pad@fp fp `*.4S1562  1 a 1 11 ]
-"95
-} 0
-"5 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\strlen.c
-[v _strlen strlen `(ui  1 e 2 0 ]
-{
-[v strlen@s s `*.5DCuc  1 a 1 wreg ]
-"7
-[v strlen@a a `*.5DCuc  1 a 1 3 ]
-"5
-[v strlen@s s `*.5DCuc  1 a 1 wreg ]
-"7
-[v strlen@s s `*.5DCuc  1 a 1 4 ]
-"12
-} 0
-"8 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\nf_fputs.c
-[v _fputs fputs `(i  1 e 2 0 ]
-{
-[v fputs@s s `*.5DCuc  1 a 1 wreg ]
-"11
-[v fputs@i i `i  1 a 2 1 ]
-"10
-[v fputs@c c `uc  1 a 1 0 ]
-"8
-[v fputs@s s `*.5DCuc  1 a 1 wreg ]
-[s S1536 _IO_FILE 5 `*.4uc 1 buffer 1 0 `i 1 count 2 1 `i 1 limit 2 3 ]
-[v fputs@fp fp `*.4S1536  1 p 1 8 ]
-"13
-[v fputs@s s `*.5DCuc  1 a 1 3 ]
-"19
-} 0
-"8 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\nf_fputc.c
-[v _fputc fputc `(i  1 e 2 0 ]
-{
-[v fputc@c c `i  1 p 2 0 ]
-[s S1536 _IO_FILE 5 `*.4uc 1 buffer 1 0 `i 1 count 2 1 `i 1 limit 2 3 ]
-[v fputc@fp fp `*.4S1536  1 p 1 2 ]
-"24
-} 0
-"7 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\putch.c
-[v _putch putch `(v  1 e 1 0 ]
-{
-"9
-} 0
-"1 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\abs.c
-[v _abs abs `(i  1 e 2 0 ]
-{
-[v abs@a a `i  1 p 2 3 ]
-"4
-} 0
-"7 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\aomod.c
-[v ___aomod __aomod `(o  1 e 8 0 ]
-{
-"12
-[v ___aomod@sign sign `uc  1 a 1 2 ]
-[v ___aomod@counter counter `uc  1 a 1 1 ]
-"7
-[v ___aomod@divisor divisor `o  1 p 8 0 ]
-[v ___aomod@dividend dividend `o  1 p 8 8 ]
-"36
-} 0
-"7 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\aodiv.c
-[v ___aodiv __aodiv `(o  1 e 8 0 ]
-{
-"12
-[v ___aodiv@quotient quotient `o  1 a 8 3 ]
-"13
-[v ___aodiv@sign sign `uc  1 a 1 2 ]
-[v ___aodiv@counter counter `uc  1 a 1 1 ]
-"7
-[v ___aodiv@divisor divisor `o  1 p 8 0 ]
-[v ___aodiv@dividend dividend `o  1 p 8 8 ]
-"43
-} 0
-"17 C:\Users\user\Git_repos\perluflokk_v2\PIC16f18877_v6.1.X\tcs3472.c
-[v _TCS3472_Init TCS3472_Init `(v  1 e 1 0 ]
-{
-[v TCS3472_Init@addr addr `uc  1 a 1 wreg ]
-[v TCS3472_Init@addr addr `uc  1 a 1 wreg ]
-[v TCS3472_Init@troubleshoot troubleshoot `uc  1 p 1 1 ]
-[v TCS3472_Init@addr addr `uc  1 a 1 3 ]
-"59
+"183
+[v TCS3472_sample_once_print@buffer buffer `[50]uc  1 a 50 12 ]
+"182
+[v TCS3472_sample_once_print@c c `s  1 a 2 68 ]
+[v TCS3472_sample_once_print@b b `s  1 a 2 66 ]
+[v TCS3472_sample_once_print@g g `s  1 a 2 64 ]
+[v TCS3472_sample_once_print@r r `s  1 a 2 62 ]
+"194
 } 0
 "81
 [v _TCS3472_Colors TCS3472_Colors `(v  1 e 1 0 ]
@@ -808,42 +662,230 @@
 [v TCS3472_Colors@clear clear `*.4s  1 p 1 5 ]
 "84
 [v TCS3472_Colors@red red `*.4s  1 a 1 8 ]
-"105
+"104
 } 0
-"61 C:\Users\user\Git_repos\perluflokk_v2\PIC16f18877_v6.1.X\I2C_MSSP1_driver.c
+"106
+[v _TCS3472_getId TCS3472_getId `(v  1 e 1 0 ]
+{
+"108
+[v TCS3472_getId@buff buff `[40]uc  1 a 40 12 ]
+"107
+[v TCS3472_getId@read_id read_id `uc  1 a 1 52 ]
+"121
+} 0
+"30 C:\Users\Sindri Jens\git_repos\bperl\b_perla\uart.c
+[v _uart_Write_String uart_Write_String `(v  1 e 1 0 ]
+{
+"31
+[v uart_Write_String@i i `i  1 a 2 4 ]
+"30
+[v uart_Write_String@buf buf `*.26uc  1 p 2 1 ]
+"35
+} 0
+"24
+[v _uart_Write uart_Write `(v  1 e 1 0 ]
+{
+[v uart_Write@data data `uc  1 a 1 wreg ]
+[v uart_Write@data data `uc  1 a 1 wreg ]
+[v uart_Write@data data `uc  1 a 1 0 ]
+"29
+} 0
+"9 C:\Program Files\Microchip\pic\sources\c99\common\nf_sprintf.c
+[v _sprintf sprintf `(i  1 e 2 0 ]
+{
+[s S1558 _IO_FILE 6 `*.39uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
+"13
+[v sprintf@f f `S1558  1 a 6 71 ]
+"12
+[v sprintf@ap ap `[1]*.4v  1 a 1 70 ]
+"9
+[v sprintf@s s `*.39uc  1 p 2 0 ]
+[v sprintf@fmt fmt `*.25DCuc  1 p 2 2 ]
+"23
+} 0
+"1390 C:\Program Files\Microchip\pic\sources\c99\common\doprnt.c
+[v _vfprintf vfprintf `(i  1 e 2 0 ]
+{
+[s S1584 _IO_FILE 0 ]
+[v vfprintf@fp fp `*.4S1584  1 a 1 wreg ]
+"1393
+[v vfprintf@cfmt cfmt `*.25uc  1 a 2 68 ]
+"1390
+[v vfprintf@fp fp `*.4S1584  1 a 1 wreg ]
+[v vfprintf@fmt fmt `*.25DCuc  1 p 2 62 ]
+[v vfprintf@ap ap `*.4*.4v  1 p 1 64 ]
+"1395
+"1390
+[v vfprintf@fp fp `*.4S1584  1 a 1 67 ]
+"1404
+} 0
+"692
+[v _vfpfcnvrt vfpfcnvrt `(i  1 s 2 vfpfcnvrt ]
+{
+[s S1584 _IO_FILE 0 ]
+[v vfpfcnvrt@fp fp `*.4S1584  1 a 1 wreg ]
+"696
+[v vfpfcnvrt@ll ll `o  1 a 8 53 ]
+"692
+[v vfpfcnvrt@fp fp `*.4S1584  1 a 1 wreg ]
+[v vfpfcnvrt@fmt fmt `*.4*.25uc  1 p 1 46 ]
+[v vfpfcnvrt@ap ap `*.4*.4v  1 p 1 47 ]
+"702
+"692
+[v vfpfcnvrt@fp fp `*.4S1584  1 a 1 61 ]
+"1387
+} 0
+"287
+[v _dtoa dtoa `(i  1 s 2 dtoa ]
+{
+[s S1584 _IO_FILE 0 ]
+[v dtoa@fp fp `*.4S1584  1 a 1 wreg ]
+"290
+[v dtoa@n n `o  1 a 8 36 ]
+"289
+[v dtoa@i i `i  1 a 2 44 ]
+[v dtoa@s s `i  1 a 2 34 ]
+[v dtoa@w w `i  1 a 2 32 ]
+[v dtoa@p p `i  1 a 2 30 ]
+"287
+[v dtoa@fp fp `*.4S1584  1 a 1 wreg ]
+[v dtoa@d d `o  1 p 8 16 ]
+"293
+"287
+[v dtoa@fp fp `*.4S1584  1 a 1 29 ]
+"328
+} 0
+"72
+[v _pad pad `(i  1 s 2 pad ]
+{
+[s S1584 _IO_FILE 0 ]
+[v pad@fp fp `*.4S1584  1 a 1 wreg ]
+"74
+[v pad@w w `i  1 a 2 9 ]
+[v pad@i i `i  1 a 2 7 ]
+"72
+[v pad@fp fp `*.4S1584  1 a 1 wreg ]
+[v pad@buf buf `*.5uc  1 p 1 4 ]
+[v pad@p p `i  1 p 2 5 ]
+"77
+"72
+[v pad@fp fp `*.4S1584  1 a 1 11 ]
+"95
+} 0
+"5 C:\Program Files\Microchip\pic\sources\c99\common\strlen.c
+[v _strlen strlen `(ui  1 e 2 0 ]
+{
+[v strlen@s s `*.5DCuc  1 a 1 wreg ]
+"7
+[v strlen@a a `*.5DCuc  1 a 1 3 ]
+"5
+[v strlen@s s `*.5DCuc  1 a 1 wreg ]
+"7
+[v strlen@s s `*.5DCuc  1 a 1 4 ]
+"12
+} 0
+"8 C:\Program Files\Microchip\pic\sources\c99\common\nf_fputs.c
+[v _fputs fputs `(i  1 e 2 0 ]
+{
+[v fputs@s s `*.5DCuc  1 a 1 wreg ]
+"11
+[v fputs@i i `i  1 a 2 1 ]
+"10
+[v fputs@c c `uc  1 a 1 0 ]
+"8
+[v fputs@s s `*.5DCuc  1 a 1 wreg ]
+[s S1558 _IO_FILE 6 `*.39uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
+[v fputs@fp fp `*.4S1558  1 p 1 8 ]
+"13
+[v fputs@s s `*.5DCuc  1 a 1 3 ]
+"19
+} 0
+"8 C:\Program Files\Microchip\pic\sources\c99\common\nf_fputc.c
+[v _fputc fputc `(i  1 e 2 0 ]
+{
+[v fputc@c c `i  1 p 2 0 ]
+[s S1558 _IO_FILE 6 `*.39uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
+[v fputc@fp fp `*.4S1558  1 p 1 2 ]
+"24
+} 0
+"7 C:\Program Files\Microchip\pic\sources\c99\common\putch.c
+[v _putch putch `(v  1 e 1 0 ]
+{
+"9
+} 0
+"1 C:\Program Files\Microchip\pic\sources\c99\common\abs.c
+[v _abs abs `(i  1 e 2 0 ]
+{
+[v abs@a a `i  1 p 2 3 ]
+"4
+} 0
+"7 C:\Program Files\Microchip\pic\sources\c99\common\aomod.c
+[v ___aomod __aomod `(o  1 e 8 0 ]
+{
+"12
+[v ___aomod@sign sign `uc  1 a 1 2 ]
+[v ___aomod@counter counter `uc  1 a 1 1 ]
+"7
+[v ___aomod@divisor divisor `o  1 p 8 0 ]
+[v ___aomod@dividend dividend `o  1 p 8 8 ]
+"36
+} 0
+"7 C:\Program Files\Microchip\pic\sources\c99\common\aodiv.c
+[v ___aodiv __aodiv `(o  1 e 8 0 ]
+{
+"12
+[v ___aodiv@quotient quotient `o  1 a 8 3 ]
+"13
+[v ___aodiv@sign sign `uc  1 a 1 2 ]
+[v ___aodiv@counter counter `uc  1 a 1 1 ]
+"7
+[v ___aodiv@divisor divisor `o  1 p 8 0 ]
+[v ___aodiv@dividend dividend `o  1 p 8 8 ]
+"43
+} 0
+"61 C:\Users\Sindri Jens\git_repos\bperl\b_perla\I2C_MSSP1_driver.c
+[v _I2C_Read I2C_Read `(uc  1 e 1 0 ]
+{
+[v I2C_Read@ackbit ackbit `c  1 a 1 wreg ]
+"62
+[v I2C_Read@tempreadbuffer tempreadbuffer `uc  1 a 1 2 ]
+"61
+[v I2C_Read@ackbit ackbit `c  1 a 1 wreg ]
+"64
+[v I2C_Read@ackbit ackbit `c  1 a 1 1 ]
+"75
+} 0
+"17 C:\Users\Sindri Jens\git_repos\bperl\b_perla\tcs3472.c
+[v _TCS3472_Init TCS3472_Init `(v  1 e 1 0 ]
+{
+[v TCS3472_Init@addr addr `uc  1 a 1 wreg ]
+[v TCS3472_Init@addr addr `uc  1 a 1 wreg ]
+[v TCS3472_Init@troubleshoot troubleshoot `uc  1 p 1 1 ]
+[v TCS3472_Init@addr addr `uc  1 a 1 3 ]
+"59
+} 0
+"55 C:\Users\Sindri Jens\git_repos\bperl\b_perla\I2C_MSSP1_driver.c
 [v _I2C_Write I2C_Write `(v  1 e 1 0 ]
 {
 [v I2C_Write@data data `uc  1 a 1 wreg ]
 [v I2C_Write@data data `uc  1 a 1 wreg ]
 [v I2C_Write@data data `uc  1 a 1 0 ]
-"64
+"58
 } 0
-"55
+"49
 [v _I2C_Stop I2C_Stop `(v  1 e 1 0 ]
 {
-"58
+"52
 } 0
 "30
 [v _I2C_Start I2C_Start `(v  1 e 1 0 ]
 {
 "33
 } 0
-"67
-[v _I2C_Read I2C_Read `(uc  1 e 1 0 ]
-{
-[v I2C_Read@ackbit ackbit `c  1 a 1 wreg ]
-"68
-[v I2C_Read@tempreadbuffer tempreadbuffer `uc  1 a 1 2 ]
-"67
-[v I2C_Read@ackbit ackbit `c  1 a 1 wreg ]
-"70
-[v I2C_Read@ackbit ackbit `c  1 a 1 1 ]
-"81
-} 0
 "35
 [v _I2C_Wait I2C_Wait `(v  1 e 1 0 ]
 {
-"46
+"40
 } 0
 "5
 [v _I2C_init I2C_init `(v  1 e 1 0 ]

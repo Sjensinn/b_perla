@@ -73,6 +73,10 @@ void TCS3472_Colors(int16_t *red, int16_t *green, int16_t *blue, int16_t *clear)
 
 void TCS3472_getId(void);
 
+void TCS3472_sample_beads(void);
+
+void TCS3472_sample_once_print(void);
+
 
 
 

@@ -103,7 +103,7 @@ void print_welcome_message(void){
     __delay_ms(5000);
 }
 
-uint8_t find_raw_color(uint16_t *red, uint16_t *green, uint16_t *blue, uint16_t *clear){
+void find_raw_color(uint16_t *red, uint16_t *green, uint16_t *blue, uint16_t *clear){
     /*Sample the red filter*/
     filter_red();
     __delay_ms(10);

@@ -119,3 +119,77 @@ void TCS3472_getId(void){
     sprintf(buff, "TCS3472 address read from ID register: %d\n\r", read_id);
     uart_Write_String(buff);
 }
+
+void TCS3472_sample_beads(void){
+        char buffer[50];
+        
+        sprintf(buffer, "Yellow Bead - 10 samples\n\r");
+        uart_Write_String(buffer);
+        for(int i = 0; i < 10; i++){
+         TCS3472_sample_once_print();
+
+        }
+        
+        sprintf(buffer, "Red Bead - 10 samples");
+        uart_Write_String(buffer);
+        for(int i = 0; i < 10; i++){
+         TCS3472_sample_once_print();
+        }
+        
+        sprintf(buffer, "Green Bead - 10 samples");
+        uart_Write_String(buffer);
+        for(int i = 0; i < 10; i++){
+         TCS3472_sample_once_print();
+        }
+        
+        sprintf(buffer, "Blue Bead - 10 samples");
+        uart_Write_String(buffer);
+        for(int i = 0; i < 10; i++){
+         TCS3472_sample_once_print();
+        }
+        
+        sprintf(buffer, "Black Bead - 10 samples");
+        uart_Write_String(buffer);
+        for(int i = 0; i < 10; i++){
+         TCS3472_sample_once_print();
+        }
+        
+        sprintf(buffer, "White Bead - 10 samples");
+        uart_Write_String(buffer);
+        for(int i = 0; i < 10; i++){
+         TCS3472_sample_once_print();
+        }
+        
+        sprintf(buffer, "Purple Bead - 10 samples");
+        uart_Write_String(buffer);
+        for(int i = 0; i < 10; i++){
+         TCS3472_sample_once_print();
+        }
+        
+        sprintf(buffer, "Pink Bead - 10 samples");
+        uart_Write_String(buffer);
+        for(int i = 0; i < 10; i++){
+         TCS3472_sample_once_print();
+        }
+        
+        sprintf(buffer, "Orange Bead - 10 samples");
+        uart_Write_String(buffer);
+        for(int i = 0; i < 10; i++){
+         TCS3472_sample_once_print();
+        }
+}
+
+void TCS3472_sample_once_print(void){
+        int16_t r, g, b, c;
+        char buffer[50];
+        
+        TCS3472_Colors(&r, &g, &b, &c);
+        sprintf(buffer, "R: %d\t", r);
+        uart_Write_String(buffer);
+        sprintf(buffer, "G: %d\t", g);
+        uart_Write_String(buffer);
+        sprintf(buffer, "B: %d\t", b);
+        uart_Write_String(buffer);
+        sprintf(buffer, "C: %d\n\r", c);
+        uart_Write_String(buffer);
+}

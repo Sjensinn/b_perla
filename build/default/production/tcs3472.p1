@@ -1,21 +1,24 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"61 ./I2C_MSSP1_driver.h
-[; ;./I2C_MSSP1_driver.h: 61: void I2C_Start(void);
+"56 ./I2C_MSSP1_driver.h
+[; ;./I2C_MSSP1_driver.h: 56: void I2C_Start(void);
 [v _I2C_Start `(v ~T0 @X0 0 ef ]
-"91
-[; ;./I2C_MSSP1_driver.h: 91: void I2C_Write(uint8_t data);
+"86
+[; ;./I2C_MSSP1_driver.h: 86: void I2C_Write(uint8_t data);
 [v _I2C_Write `(v ~T0 @X0 0 ef1`uc ]
-"105
-[; ;./I2C_MSSP1_driver.h: 105: void I2C_Stop(void);
+"100
+[; ;./I2C_MSSP1_driver.h: 100: void I2C_Stop(void);
 [v _I2C_Stop `(v ~T0 @X0 0 ef ]
-"139
-[; ;./I2C_MSSP1_driver.h: 139: uint8_t I2C_Read(int8_t ackbit);
+"134
+[; ;./I2C_MSSP1_driver.h: 134: uint8_t I2C_Read(int8_t ackbit);
 [v _I2C_Read `(uc ~T0 @X0 0 ef1`c ]
-"113 C:\Program Files\Microchip\xc8\v2.32\pic\include\c99\stdio.h
+"113 C:\Program Files\Microchip\pic\include\c99\stdio.h
 [v _sprintf `(i ~T0 @X0 0 e1v`*uc`*Cuc ]
 "36 ./uart.h
 [; ;./uart.h: 36: void uart_Write_String(char* buf);
 [v _uart_Write_String `(v ~T0 @X0 0 ef1`*uc ]
+"78 ./tcs3472.h
+[; ;./tcs3472.h: 78: void TCS3472_sample_once_print(void);
+[v _TCS3472_sample_once_print `(v ~T0 @X0 0 ef ]
 "55 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16F1xxxx_DFP/1.9.163/xc8\pic\include\proc\pic16f18877.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16F1xxxx_DFP/1.9.163/xc8\pic\include\proc\pic16f18877.h: 55: __asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
@@ -1943,5 +1946,302 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;tcs3472.c: 121: }
 [e :UE 1619 ]
 }
+"123
+[; ;tcs3472.c: 123: void TCS3472_sample_beads(void){
+[v _TCS3472_sample_beads `(v ~T0 @X0 1 ef ]
+{
+[e :U _TCS3472_sample_beads ]
+[f ]
+"124
+[; ;tcs3472.c: 124:         char buffer[50];
+[v _buffer `uc ~T0 @X0 -> 50 `i a ]
+"126
+[; ;tcs3472.c: 126:         sprintf(buffer, "Yellow Bead - 10 samples");
+[e ( _sprintf (1 , &U _buffer :s 2C ]
+"127
+[; ;tcs3472.c: 127:         uart_Write_String(buffer);
+[e ( _uart_Write_String (1 &U _buffer ]
+"128
+[; ;tcs3472.c: 128:         for(int i = 0; i < 10; i++){
+{
+[v _i `i ~T0 @X0 1 a ]
+[e = _i -> 0 `i ]
+[e $ < _i -> 10 `i 1621  ]
+[e $U 1622  ]
+[e :U 1621 ]
+{
+"129
+[; ;tcs3472.c: 129:          TCS3472_sample_once_print();
+[e ( _TCS3472_sample_once_print ..  ]
+"130
+[; ;tcs3472.c: 130:         }
+}
+[e ++ _i -> 1 `i ]
+[e $ < _i -> 10 `i 1621  ]
+[e :U 1622 ]
+}
+"132
+[; ;tcs3472.c: 132:         sprintf(buffer, "Red Bead - 10 samples");
+[e ( _sprintf (1 , &U _buffer :s 3C ]
+"133
+[; ;tcs3472.c: 133:         uart_Write_String(buffer);
+[e ( _uart_Write_String (1 &U _buffer ]
+"134
+[; ;tcs3472.c: 134:         for(int i = 0; i < 10; i++){
+{
+[v _i `i ~T0 @X0 1 a ]
+[e = _i -> 0 `i ]
+[e $ < _i -> 10 `i 1624  ]
+[e $U 1625  ]
+[e :U 1624 ]
+{
+"135
+[; ;tcs3472.c: 135:          TCS3472_sample_once_print();
+[e ( _TCS3472_sample_once_print ..  ]
+"136
+[; ;tcs3472.c: 136:         }
+}
+[e ++ _i -> 1 `i ]
+[e $ < _i -> 10 `i 1624  ]
+[e :U 1625 ]
+}
+"138
+[; ;tcs3472.c: 138:         sprintf(buffer, "Green Bead - 10 samples");
+[e ( _sprintf (1 , &U _buffer :s 4C ]
+"139
+[; ;tcs3472.c: 139:         uart_Write_String(buffer);
+[e ( _uart_Write_String (1 &U _buffer ]
+"140
+[; ;tcs3472.c: 140:         for(int i = 0; i < 10; i++){
+{
+[v _i `i ~T0 @X0 1 a ]
+[e = _i -> 0 `i ]
+[e $ < _i -> 10 `i 1627  ]
+[e $U 1628  ]
+[e :U 1627 ]
+{
+"141
+[; ;tcs3472.c: 141:          TCS3472_sample_once_print();
+[e ( _TCS3472_sample_once_print ..  ]
+"142
+[; ;tcs3472.c: 142:         }
+}
+[e ++ _i -> 1 `i ]
+[e $ < _i -> 10 `i 1627  ]
+[e :U 1628 ]
+}
+"144
+[; ;tcs3472.c: 144:         sprintf(buffer, "Blue Bead - 10 samples");
+[e ( _sprintf (1 , &U _buffer :s 5C ]
+"145
+[; ;tcs3472.c: 145:         uart_Write_String(buffer);
+[e ( _uart_Write_String (1 &U _buffer ]
+"146
+[; ;tcs3472.c: 146:         for(int i = 0; i < 10; i++){
+{
+[v _i `i ~T0 @X0 1 a ]
+[e = _i -> 0 `i ]
+[e $ < _i -> 10 `i 1630  ]
+[e $U 1631  ]
+[e :U 1630 ]
+{
+"147
+[; ;tcs3472.c: 147:          TCS3472_sample_once_print();
+[e ( _TCS3472_sample_once_print ..  ]
+"148
+[; ;tcs3472.c: 148:         }
+}
+[e ++ _i -> 1 `i ]
+[e $ < _i -> 10 `i 1630  ]
+[e :U 1631 ]
+}
+"150
+[; ;tcs3472.c: 150:         sprintf(buffer, "Black Bead - 10 samples");
+[e ( _sprintf (1 , &U _buffer :s 6C ]
+"151
+[; ;tcs3472.c: 151:         uart_Write_String(buffer);
+[e ( _uart_Write_String (1 &U _buffer ]
+"152
+[; ;tcs3472.c: 152:         for(int i = 0; i < 10; i++){
+{
+[v _i `i ~T0 @X0 1 a ]
+[e = _i -> 0 `i ]
+[e $ < _i -> 10 `i 1633  ]
+[e $U 1634  ]
+[e :U 1633 ]
+{
+"153
+[; ;tcs3472.c: 153:          TCS3472_sample_once_print();
+[e ( _TCS3472_sample_once_print ..  ]
+"154
+[; ;tcs3472.c: 154:         }
+}
+[e ++ _i -> 1 `i ]
+[e $ < _i -> 10 `i 1633  ]
+[e :U 1634 ]
+}
+"156
+[; ;tcs3472.c: 156:         sprintf(buffer, "White Bead - 10 samples");
+[e ( _sprintf (1 , &U _buffer :s 7C ]
+"157
+[; ;tcs3472.c: 157:         uart_Write_String(buffer);
+[e ( _uart_Write_String (1 &U _buffer ]
+"158
+[; ;tcs3472.c: 158:         for(int i = 0; i < 10; i++){
+{
+[v _i `i ~T0 @X0 1 a ]
+[e = _i -> 0 `i ]
+[e $ < _i -> 10 `i 1636  ]
+[e $U 1637  ]
+[e :U 1636 ]
+{
+"159
+[; ;tcs3472.c: 159:          TCS3472_sample_once_print();
+[e ( _TCS3472_sample_once_print ..  ]
+"160
+[; ;tcs3472.c: 160:         }
+}
+[e ++ _i -> 1 `i ]
+[e $ < _i -> 10 `i 1636  ]
+[e :U 1637 ]
+}
+"162
+[; ;tcs3472.c: 162:         sprintf(buffer, "Purple Bead - 10 samples");
+[e ( _sprintf (1 , &U _buffer :s 8C ]
+"163
+[; ;tcs3472.c: 163:         uart_Write_String(buffer);
+[e ( _uart_Write_String (1 &U _buffer ]
+"164
+[; ;tcs3472.c: 164:         for(int i = 0; i < 10; i++){
+{
+[v _i `i ~T0 @X0 1 a ]
+[e = _i -> 0 `i ]
+[e $ < _i -> 10 `i 1639  ]
+[e $U 1640  ]
+[e :U 1639 ]
+{
+"165
+[; ;tcs3472.c: 165:          TCS3472_sample_once_print();
+[e ( _TCS3472_sample_once_print ..  ]
+"166
+[; ;tcs3472.c: 166:         }
+}
+[e ++ _i -> 1 `i ]
+[e $ < _i -> 10 `i 1639  ]
+[e :U 1640 ]
+}
+"168
+[; ;tcs3472.c: 168:         sprintf(buffer, "Pink Bead - 10 samples");
+[e ( _sprintf (1 , &U _buffer :s 9C ]
+"169
+[; ;tcs3472.c: 169:         uart_Write_String(buffer);
+[e ( _uart_Write_String (1 &U _buffer ]
+"170
+[; ;tcs3472.c: 170:         for(int i = 0; i < 10; i++){
+{
+[v _i `i ~T0 @X0 1 a ]
+[e = _i -> 0 `i ]
+[e $ < _i -> 10 `i 1642  ]
+[e $U 1643  ]
+[e :U 1642 ]
+{
+"171
+[; ;tcs3472.c: 171:          TCS3472_sample_once_print();
+[e ( _TCS3472_sample_once_print ..  ]
+"172
+[; ;tcs3472.c: 172:         }
+}
+[e ++ _i -> 1 `i ]
+[e $ < _i -> 10 `i 1642  ]
+[e :U 1643 ]
+}
+"174
+[; ;tcs3472.c: 174:         sprintf(buffer, "Orange Bead - 10 samples");
+[e ( _sprintf (1 , &U _buffer :s 10C ]
+"175
+[; ;tcs3472.c: 175:         uart_Write_String(buffer);
+[e ( _uart_Write_String (1 &U _buffer ]
+"176
+[; ;tcs3472.c: 176:         for(int i = 0; i < 10; i++){
+{
+[v _i `i ~T0 @X0 1 a ]
+[e = _i -> 0 `i ]
+[e $ < _i -> 10 `i 1645  ]
+[e $U 1646  ]
+[e :U 1645 ]
+{
+"177
+[; ;tcs3472.c: 177:          TCS3472_sample_once_print();
+[e ( _TCS3472_sample_once_print ..  ]
+"178
+[; ;tcs3472.c: 178:         }
+}
+[e ++ _i -> 1 `i ]
+[e $ < _i -> 10 `i 1645  ]
+[e :U 1646 ]
+}
+"179
+[; ;tcs3472.c: 179: }
+[e :UE 1620 ]
+}
+"181
+[; ;tcs3472.c: 181: void TCS3472_sample_once_print(void){
+[v _TCS3472_sample_once_print `(v ~T0 @X0 1 ef ]
+{
+[e :U _TCS3472_sample_once_print ]
+[f ]
+"182
+[; ;tcs3472.c: 182:         int16_t r, g, b, c;
+[v _r `s ~T0 @X0 1 a ]
+[v _g `s ~T0 @X0 1 a ]
+[v _b `s ~T0 @X0 1 a ]
+[v _c `s ~T0 @X0 1 a ]
+"183
+[; ;tcs3472.c: 183:         char buffer[50];
+[v _buffer `uc ~T0 @X0 -> 50 `i a ]
+"185
+[; ;tcs3472.c: 185:         TCS3472_Colors(&r, &g, &b, &c);
+[e ( _TCS3472_Colors (4 , , , &U _r &U _g &U _b &U _c ]
+"186
+[; ;tcs3472.c: 186:         sprintf(buffer, "R: %d\t", r);
+[e ( _sprintf (1 , (. , &U _buffer :s 11C -> _r `i ]
+"187
+[; ;tcs3472.c: 187:         uart_Write_String(buffer);
+[e ( _uart_Write_String (1 &U _buffer ]
+"188
+[; ;tcs3472.c: 188:         sprintf(buffer, "G: %d\t", g);
+[e ( _sprintf (1 , (. , &U _buffer :s 12C -> _g `i ]
+"189
+[; ;tcs3472.c: 189:         uart_Write_String(buffer);
+[e ( _uart_Write_String (1 &U _buffer ]
+"190
+[; ;tcs3472.c: 190:         sprintf(buffer, "B: %d\t", b);
+[e ( _sprintf (1 , (. , &U _buffer :s 13C -> _b `i ]
+"191
+[; ;tcs3472.c: 191:         uart_Write_String(buffer);
+[e ( _uart_Write_String (1 &U _buffer ]
+"192
+[; ;tcs3472.c: 192:         sprintf(buffer, "C: %d\n\r", c);
+[e ( _sprintf (1 , (. , &U _buffer :s 14C -> _c `i ]
+"193
+[; ;tcs3472.c: 193:         uart_Write_String(buffer);
+[e ( _uart_Write_String (1 &U _buffer ]
+"194
+[; ;tcs3472.c: 194: }
+[e :UE 1648 ]
+}
 [p f _sprintf 8388736 ]
+[a 2C 89 101 108 108 111 119 32 66 101 97 100 32 45 32 49 48 32 115 97 109 112 108 101 115 0 ]
+[a 4C 71 114 101 101 110 32 66 101 97 100 32 45 32 49 48 32 115 97 109 112 108 101 115 0 ]
+[a 9C 80 105 110 107 32 66 101 97 100 32 45 32 49 48 32 115 97 109 112 108 101 115 0 ]
+[a 6C 66 108 97 99 107 32 66 101 97 100 32 45 32 49 48 32 115 97 109 112 108 101 115 0 ]
+[a 5C 66 108 117 101 32 66 101 97 100 32 45 32 49 48 32 115 97 109 112 108 101 115 0 ]
+[a 7C 87 104 105 116 101 32 66 101 97 100 32 45 32 49 48 32 115 97 109 112 108 101 115 0 ]
+[a 8C 80 117 114 112 108 101 32 66 101 97 100 32 45 32 49 48 32 115 97 109 112 108 101 115 0 ]
+[a 10C 79 114 97 110 103 101 32 66 101 97 100 32 45 32 49 48 32 115 97 109 112 108 101 115 0 ]
+[a 3C 82 101 100 32 66 101 97 100 32 45 32 49 48 32 115 97 109 112 108 101 115 0 ]
 [a 1C 84 67 83 51 52 55 50 32 97 100 100 114 101 115 115 32 114 101 97 100 32 102 114 111 109 32 73 68 32 114 101 103 105 115 116 101 114 58 32 37 100 10 13 0 ]
+[a 14C 67 58 32 37 100 10 13 0 ]
+[a 11C 82 58 32 37 100 9 0 ]
+[a 12C 71 58 32 37 100 9 0 ]
+[a 13C 66 58 32 37 100 9 0 ]

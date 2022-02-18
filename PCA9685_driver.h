@@ -24,7 +24,7 @@ extern "C" {
 #define _XTAL_FREQ 16000000
 #endif
     
-#define PCA_OE_ENABLE() LATBbits.LATB3 = 0;
+#define PCA_OE_ENABLE() LATBbits.LATB<3 = 0;
 #define PCA_OE_DISABLE() LATBbits.LATB3 = 1;
 
     uint8_t pca_address;

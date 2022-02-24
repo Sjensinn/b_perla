@@ -8,6 +8,21 @@ Version 4.0 HI-TECH Software Intermediate Code
 "62
 [; ;./system_init.h: 62: void int_init(void);
 [v _int_init `(v ~T0 @X0 0 ef ]
+"22 ./uart.h
+[; ;./uart.h: 22: void uart_init(void);
+[v _uart_init `(v ~T0 @X0 0 ef ]
+"37 ./timer1.h
+[; ;./timer1.h: 37: void Timer1_Initialize(void);
+[v _Timer1_Initialize `(v ~T0 @X0 0 ef ]
+"35 ./I2C_MSSP1_driver.h
+[; ;./I2C_MSSP1_driver.h: 35: void I2C_init(void);
+[v _I2C_init `(v ~T0 @X0 0 ef ]
+"49 ./PCA9685_driver.h
+[; ;./PCA9685_driver.h: 49: void PCA_Init(uint8_t prescalar, uint8_t pca_addr);
+[v _PCA_Init `(v ~T0 @X0 0 ef2`uc`uc ]
+"52 ./tcs3200.h
+[; ;./tcs3200.h: 52: void sensor_init(void);
+[v _sensor_init `(v ~T0 @X0 0 ef ]
 "23443 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16F1xxxx_DFP/1.9.163/xc8\pic\include\proc\pic16f18877.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16F1xxxx_DFP/1.9.163/xc8\pic\include\proc\pic16f18877.h: 23443: extern volatile unsigned char OSCCON1 __attribute__((address(0x88D)));
 [v _OSCCON1 `Vuc ~T0 @X0 0 e@2189 ]
@@ -1886,244 +1901,262 @@ Version 4.0 HI-TECH Software Intermediate Code
 "36301
 [; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16F1xxxx_DFP/1.9.163/xc8\pic\include\proc\pic16f18877.h: 36301: __asm("TOSH equ 01FEFh");
 [; <" TOSH equ 01FEFh ;# ">
-"12 system_init.c
-[; ;system_init.c: 12: void system_init(){
+"30 ./PCA9685_driver.h
+[; ;./PCA9685_driver.h: 30:     uint8_t pca_address;
+[v _pca_address `uc ~T0 @X0 1 e ]
+"17 system_init.c
+[; ;system_init.c: 17: void system_init(){
 [v _system_init `(v ~T0 @X0 1 ef ]
 {
 [e :U _system_init ]
 [f ]
-"13
-[; ;system_init.c: 13:     clock_init();
+"18
+[; ;system_init.c: 18:     clock_init();
 [e ( _clock_init ..  ]
-"14
-[; ;system_init.c: 14:     pin_init();
-[e ( _pin_init ..  ]
-"15
-[; ;system_init.c: 15:     int_init();
-[e ( _int_init ..  ]
-"16
-[; ;system_init.c: 16: }
-[e :UE 1613 ]
-}
 "19
-[; ;system_init.c: 19: void clock_init(){
+[; ;system_init.c: 19:     pin_init();
+[e ( _pin_init ..  ]
+"20
+[; ;system_init.c: 20:     int_init();
+[e ( _int_init ..  ]
+"21
+[; ;system_init.c: 21:     uart_init();
+[e ( _uart_init ..  ]
+"22
+[; ;system_init.c: 22:     Timer1_Initialize();
+[e ( _Timer1_Initialize ..  ]
+"23
+[; ;system_init.c: 23:     I2C_init();
+[e ( _I2C_init ..  ]
+"24
+[; ;system_init.c: 24:     PCA_Init(130, 0x80);
+[e ( _PCA_Init (2 , -> -> 130 `i `uc -> -> 128 `i `uc ]
+"25
+[; ;system_init.c: 25:     sensor_init();
+[e ( _sensor_init ..  ]
+"26
+[; ;system_init.c: 26: }
+[e :UE 1615 ]
+}
+"29
+[; ;system_init.c: 29: void clock_init(){
 [v _clock_init `(v ~T0 @X0 1 ef ]
 {
 [e :U _clock_init ]
 [f ]
-"22
-[; ;system_init.c: 22:     OSCCON1 = 0x61;
+"32
+[; ;system_init.c: 32:     OSCCON1 = 0x61;
 [e = _OSCCON1 -> -> 97 `i `uc ]
-"23
-[; ;system_init.c: 23:     OSCCON2 = 0x70;
-[e = _OSCCON2 -> -> 112 `i `uc ]
-"25
-[; ;system_init.c: 25:     OSCCON3 = 0x0;
-[e = _OSCCON3 -> -> 0 `i `uc ]
-"27
-[; ;system_init.c: 27:     OSCEN = 0x40;
-[e = _OSCEN -> -> 64 `i `uc ]
-"29
-[; ;system_init.c: 29:     OSCFRQ = 0x6;
-[e = _OSCFRQ -> -> 6 `i `uc ]
-"31
-[; ;system_init.c: 31:     OSCSTAT = 0x0;
-[e = _OSCSTAT -> -> 0 `i `uc ]
 "33
-[; ;system_init.c: 33:     OSCTUNE = 0x0;
+[; ;system_init.c: 33:     OSCCON2 = 0x70;
+[e = _OSCCON2 -> -> 112 `i `uc ]
+"35
+[; ;system_init.c: 35:     OSCCON3 = 0x0;
+[e = _OSCCON3 -> -> 0 `i `uc ]
+"37
+[; ;system_init.c: 37:     OSCEN = 0x40;
+[e = _OSCEN -> -> 64 `i `uc ]
+"39
+[; ;system_init.c: 39:     OSCFRQ = 0x6;
+[e = _OSCFRQ -> -> 6 `i `uc ]
+"41
+[; ;system_init.c: 41:     OSCSTAT = 0x0;
+[e = _OSCSTAT -> -> 0 `i `uc ]
+"43
+[; ;system_init.c: 43:     OSCTUNE = 0x0;
 [e = _OSCTUNE -> -> 0 `i `uc ]
-"34
-[; ;system_init.c: 34: }
-[e :UE 1614 ]
+"44
+[; ;system_init.c: 44: }
+[e :UE 1616 ]
 }
-"36
-[; ;system_init.c: 36: void pin_init(){
+"46
+[; ;system_init.c: 46: void pin_init(){
 [v _pin_init `(v ~T0 @X0 1 ef ]
 {
 [e :U _pin_init ]
 [f ]
-"40
-[; ;system_init.c: 40:     LATA = 0x0;
-[e = _LATA -> -> 0 `i `uc ]
-"41
-[; ;system_init.c: 41:     LATB = 0x0;
-[e = _LATB -> -> 0 `i `uc ]
-"42
-[; ;system_init.c: 42:     LATC = 0x18;
-[e = _LATC -> -> 24 `i `uc ]
-"43
-[; ;system_init.c: 43:     LATD = 0x0;
-[e = _LATD -> -> 0 `i `uc ]
-"44
-[; ;system_init.c: 44:     LATE = 0x0;
-[e = _LATE -> -> 0 `i `uc ]
-"49
-[; ;system_init.c: 49:     TRISA = 0x30;
-[e = _TRISA -> -> 48 `i `uc ]
 "50
-[; ;system_init.c: 50:     TRISB = 0xF1;
-[e = _TRISB -> -> 241 `i `uc ]
+[; ;system_init.c: 50:     LATA = 0x0;
+[e = _LATA -> -> 0 `i `uc ]
 "51
-[; ;system_init.c: 51:     TRISC = 0xBF;
-[e = _TRISC -> -> 191 `i `uc ]
+[; ;system_init.c: 51:     LATB = 0x0;
+[e = _LATB -> -> 0 `i `uc ]
 "52
-[; ;system_init.c: 52:     TRISD = 0x0;
-[e = _TRISD -> -> 0 `i `uc ]
+[; ;system_init.c: 52:     LATC = 0x18;
+[e = _LATC -> -> 24 `i `uc ]
 "53
-[; ;system_init.c: 53:     TRISE = 0x7;
-[e = _TRISE -> -> 7 `i `uc ]
-"58
-[; ;system_init.c: 58:     ANSELA = 0x30;
-[e = _ANSELA -> -> 48 `i `uc ]
+[; ;system_init.c: 53:     LATD = 0x0;
+[e = _LATD -> -> 0 `i `uc ]
+"54
+[; ;system_init.c: 54:     LATE = 0x0;
+[e = _LATE -> -> 0 `i `uc ]
 "59
-[; ;system_init.c: 59:     ANSELB = 0xF0;
-[e = _ANSELB -> -> 240 `i `uc ]
+[; ;system_init.c: 59:     TRISA = 0x30;
+[e = _TRISA -> -> 48 `i `uc ]
 "60
-[; ;system_init.c: 60:     ANSELC = 0x67;
-[e = _ANSELC -> -> 103 `i `uc ]
+[; ;system_init.c: 60:     TRISB = 0xF1;
+[e = _TRISB -> -> 241 `i `uc ]
 "61
-[; ;system_init.c: 61:     ANSELD = 0x0;
-[e = _ANSELD -> -> 0 `i `uc ]
+[; ;system_init.c: 61:     TRISC = 0xBF;
+[e = _TRISC -> -> 191 `i `uc ]
 "62
-[; ;system_init.c: 62:     ANSELE = 0x7;
-[e = _ANSELE -> -> 7 `i `uc ]
-"67
-[; ;system_init.c: 67:     WPUA = 0x0;
-[e = _WPUA -> -> 0 `i `uc ]
+[; ;system_init.c: 62:     TRISD = 0x0;
+[e = _TRISD -> -> 0 `i `uc ]
+"63
+[; ;system_init.c: 63:     TRISE = 0x7;
+[e = _TRISE -> -> 7 `i `uc ]
 "68
-[; ;system_init.c: 68:     WPUB = 0x0;
-[e = _WPUB -> -> 0 `i `uc ]
+[; ;system_init.c: 68:     ANSELA = 0x30;
+[e = _ANSELA -> -> 48 `i `uc ]
 "69
-[; ;system_init.c: 69:     WPUC = 0x0;
-[e = _WPUC -> -> 0 `i `uc ]
+[; ;system_init.c: 69:     ANSELB = 0xF0;
+[e = _ANSELB -> -> 240 `i `uc ]
 "70
-[; ;system_init.c: 70:     WPUD = 0x0;
-[e = _WPUD -> -> 0 `i `uc ]
+[; ;system_init.c: 70:     ANSELC = 0x67;
+[e = _ANSELC -> -> 103 `i `uc ]
 "71
-[; ;system_init.c: 71:     WPUE = 0x0;
+[; ;system_init.c: 71:     ANSELD = 0x0;
+[e = _ANSELD -> -> 0 `i `uc ]
+"72
+[; ;system_init.c: 72:     ANSELE = 0x7;
+[e = _ANSELE -> -> 7 `i `uc ]
+"77
+[; ;system_init.c: 77:     WPUA = 0x0;
+[e = _WPUA -> -> 0 `i `uc ]
+"78
+[; ;system_init.c: 78:     WPUB = 0x0;
+[e = _WPUB -> -> 0 `i `uc ]
+"79
+[; ;system_init.c: 79:     WPUC = 0x0;
+[e = _WPUC -> -> 0 `i `uc ]
+"80
+[; ;system_init.c: 80:     WPUD = 0x0;
+[e = _WPUD -> -> 0 `i `uc ]
+"81
+[; ;system_init.c: 81:     WPUE = 0x0;
 [e = _WPUE -> -> 0 `i `uc ]
-"82
-[; ;system_init.c: 82:     ODCONA = 0x0;
-[e = _ODCONA -> -> 0 `i `uc ]
-"83
-[; ;system_init.c: 83:     ODCONB = 0x0;
-[e = _ODCONB -> -> 0 `i `uc ]
-"84
-[; ;system_init.c: 84:     ODCONC = 0x0;
-[e = _ODCONC -> -> 0 `i `uc ]
-"85
-[; ;system_init.c: 85:     ODCOND = 0x0;
-[e = _ODCOND -> -> 0 `i `uc ]
-"86
-[; ;system_init.c: 86:     ODCONE = 0x0;
-[e = _ODCONE -> -> 0 `i `uc ]
-"90
-[; ;system_init.c: 90:     SLRCONA = 0xFF;
-[e = _SLRCONA -> -> 255 `i `uc ]
-"91
-[; ;system_init.c: 91:     SLRCONB = 0xFF;
-[e = _SLRCONB -> -> 255 `i `uc ]
 "92
-[; ;system_init.c: 92:     SLRCONC = 0xFF;
-[e = _SLRCONC -> -> 255 `i `uc ]
+[; ;system_init.c: 92:     ODCONA = 0x0;
+[e = _ODCONA -> -> 0 `i `uc ]
 "93
-[; ;system_init.c: 93:     SLRCOND = 0xFF;
-[e = _SLRCOND -> -> 255 `i `uc ]
+[; ;system_init.c: 93:     ODCONB = 0x0;
+[e = _ODCONB -> -> 0 `i `uc ]
 "94
-[; ;system_init.c: 94:     SLRCONE = 0x7;
-[e = _SLRCONE -> -> 7 `i `uc ]
-"98
-[; ;system_init.c: 98:     INLVLA = 0xFF;
-[e = _INLVLA -> -> 255 `i `uc ]
-"99
-[; ;system_init.c: 99:     INLVLB = 0xFF;
-[e = _INLVLB -> -> 255 `i `uc ]
+[; ;system_init.c: 94:     ODCONC = 0x0;
+[e = _ODCONC -> -> 0 `i `uc ]
+"95
+[; ;system_init.c: 95:     ODCOND = 0x0;
+[e = _ODCOND -> -> 0 `i `uc ]
+"96
+[; ;system_init.c: 96:     ODCONE = 0x0;
+[e = _ODCONE -> -> 0 `i `uc ]
 "100
-[; ;system_init.c: 100:     INLVLC = 0xFF;
-[e = _INLVLC -> -> 255 `i `uc ]
+[; ;system_init.c: 100:     SLRCONA = 0xFF;
+[e = _SLRCONA -> -> 255 `i `uc ]
 "101
-[; ;system_init.c: 101:     INLVLD = 0xFF;
-[e = _INLVLD -> -> 255 `i `uc ]
+[; ;system_init.c: 101:     SLRCONB = 0xFF;
+[e = _SLRCONB -> -> 255 `i `uc ]
 "102
-[; ;system_init.c: 102:     INLVLE = 0xF;
-[e = _INLVLE -> -> 15 `i `uc ]
-"107
-[; ;system_init.c: 107:     RXPPS = 0x17;
-[e = _RXPPS -> -> 23 `i `uc ]
+[; ;system_init.c: 102:     SLRCONC = 0xFF;
+[e = _SLRCONC -> -> 255 `i `uc ]
+"103
+[; ;system_init.c: 103:     SLRCOND = 0xFF;
+[e = _SLRCOND -> -> 255 `i `uc ]
+"104
+[; ;system_init.c: 104:     SLRCONE = 0x7;
+[e = _SLRCONE -> -> 7 `i `uc ]
 "108
-[; ;system_init.c: 108:     T1CKIPPS = 0x10;
-[e = _T1CKIPPS -> -> 16 `i `uc ]
+[; ;system_init.c: 108:     INLVLA = 0xFF;
+[e = _INLVLA -> -> 255 `i `uc ]
 "109
-[; ;system_init.c: 109:     T1GPPS = 0xD;
-[e = _T1GPPS -> -> 13 `i `uc ]
+[; ;system_init.c: 109:     INLVLB = 0xFF;
+[e = _INLVLB -> -> 255 `i `uc ]
 "110
-[; ;system_init.c: 110:     RC6PPS = 0x10;
-[e = _RC6PPS -> -> 16 `i `uc ]
+[; ;system_init.c: 110:     INLVLC = 0xFF;
+[e = _INLVLC -> -> 255 `i `uc ]
 "111
-[; ;system_init.c: 111:     SSP1CLKPPS = 0x13;
-[e = _SSP1CLKPPS -> -> 19 `i `uc ]
+[; ;system_init.c: 111:     INLVLD = 0xFF;
+[e = _INLVLD -> -> 255 `i `uc ]
 "112
-[; ;system_init.c: 112:     RC3PPS = 0x14;
-[e = _RC3PPS -> -> 20 `i `uc ]
-"113
-[; ;system_init.c: 113:     SSP1DATPPS = 0x14;
-[e = _SSP1DATPPS -> -> 20 `i `uc ]
-"114
-[; ;system_init.c: 114:     RC4PPS = 0x15;
-[e = _RC4PPS -> -> 21 `i `uc ]
+[; ;system_init.c: 112:     INLVLE = 0xF;
+[e = _INLVLE -> -> 15 `i `uc ]
+"117
+[; ;system_init.c: 117:     RXPPS = 0x17;
+[e = _RXPPS -> -> 23 `i `uc ]
+"118
+[; ;system_init.c: 118:     T1CKIPPS = 0x10;
+[e = _T1CKIPPS -> -> 16 `i `uc ]
 "119
-[; ;system_init.c: 119:     IOCAP = 0x0;
-[e = _IOCAP -> -> 0 `i `uc ]
+[; ;system_init.c: 119:     T1GPPS = 0xD;
+[e = _T1GPPS -> -> 13 `i `uc ]
 "120
-[; ;system_init.c: 120:     IOCAN = 0x0;
-[e = _IOCAN -> -> 0 `i `uc ]
+[; ;system_init.c: 120:     RC6PPS = 0x10;
+[e = _RC6PPS -> -> 16 `i `uc ]
 "121
-[; ;system_init.c: 121:     IOCAF = 0x0;
-[e = _IOCAF -> -> 0 `i `uc ]
+[; ;system_init.c: 121:     SSP1CLKPPS = 0x13;
+[e = _SSP1CLKPPS -> -> 19 `i `uc ]
 "122
-[; ;system_init.c: 122:     IOCBP = 0x0;
-[e = _IOCBP -> -> 0 `i `uc ]
+[; ;system_init.c: 122:     RC3PPS = 0x14;
+[e = _RC3PPS -> -> 20 `i `uc ]
 "123
-[; ;system_init.c: 123:     IOCBN = 0x0;
-[e = _IOCBN -> -> 0 `i `uc ]
+[; ;system_init.c: 123:     SSP1DATPPS = 0x14;
+[e = _SSP1DATPPS -> -> 20 `i `uc ]
 "124
-[; ;system_init.c: 124:     IOCBF = 0x0;
-[e = _IOCBF -> -> 0 `i `uc ]
-"125
-[; ;system_init.c: 125:     IOCCP = 0x0;
-[e = _IOCCP -> -> 0 `i `uc ]
-"126
-[; ;system_init.c: 126:     IOCCN = 0x0;
-[e = _IOCCN -> -> 0 `i `uc ]
-"127
-[; ;system_init.c: 127:     IOCCF = 0x0;
-[e = _IOCCF -> -> 0 `i `uc ]
-"128
-[; ;system_init.c: 128:     IOCEP = 0x0;
-[e = _IOCEP -> -> 0 `i `uc ]
+[; ;system_init.c: 124:     RC4PPS = 0x15;
+[e = _RC4PPS -> -> 21 `i `uc ]
 "129
-[; ;system_init.c: 129:     IOCEN = 0x0;
-[e = _IOCEN -> -> 0 `i `uc ]
+[; ;system_init.c: 129:     IOCAP = 0x0;
+[e = _IOCAP -> -> 0 `i `uc ]
 "130
-[; ;system_init.c: 130:     IOCEF = 0x0;
-[e = _IOCEF -> -> 0 `i `uc ]
+[; ;system_init.c: 130:     IOCAN = 0x0;
+[e = _IOCAN -> -> 0 `i `uc ]
 "131
-[; ;system_init.c: 131: }
-[e :UE 1615 ]
-}
+[; ;system_init.c: 131:     IOCAF = 0x0;
+[e = _IOCAF -> -> 0 `i `uc ]
+"132
+[; ;system_init.c: 132:     IOCBP = 0x0;
+[e = _IOCBP -> -> 0 `i `uc ]
 "133
-[; ;system_init.c: 133: void int_init(void){
+[; ;system_init.c: 133:     IOCBN = 0x0;
+[e = _IOCBN -> -> 0 `i `uc ]
+"134
+[; ;system_init.c: 134:     IOCBF = 0x0;
+[e = _IOCBF -> -> 0 `i `uc ]
+"135
+[; ;system_init.c: 135:     IOCCP = 0x0;
+[e = _IOCCP -> -> 0 `i `uc ]
+"136
+[; ;system_init.c: 136:     IOCCN = 0x0;
+[e = _IOCCN -> -> 0 `i `uc ]
+"137
+[; ;system_init.c: 137:     IOCCF = 0x0;
+[e = _IOCCF -> -> 0 `i `uc ]
+"138
+[; ;system_init.c: 138:     IOCEP = 0x0;
+[e = _IOCEP -> -> 0 `i `uc ]
+"139
+[; ;system_init.c: 139:     IOCEN = 0x0;
+[e = _IOCEN -> -> 0 `i `uc ]
+"140
+[; ;system_init.c: 140:     IOCEF = 0x0;
+[e = _IOCEF -> -> 0 `i `uc ]
+"141
+[; ;system_init.c: 141: }
+[e :UE 1617 ]
+}
+"143
+[; ;system_init.c: 143: void int_init(void){
 [v _int_init `(v ~T0 @X0 1 ef ]
 {
 [e :U _int_init ]
 [f ]
-"134
-[; ;system_init.c: 134:     INTCONbits.GIE = 1;
+"144
+[; ;system_init.c: 144:     INTCONbits.GIE = 1;
 [e = . . _INTCONbits 0 3 -> -> 1 `i `uc ]
-"135
-[; ;system_init.c: 135:     INTCONbits.PEIE = 1;
+"145
+[; ;system_init.c: 145:     INTCONbits.PEIE = 1;
 [e = . . _INTCONbits 0 2 -> -> 1 `i `uc ]
-"136
-[; ;system_init.c: 136: }
-[e :UE 1616 ]
+"146
+[; ;system_init.c: 146: }
+[e :UE 1618 ]
 }

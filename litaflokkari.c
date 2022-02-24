@@ -94,8 +94,7 @@ void PCA_Servo_Pos(uint8_t pos){
     }
 }
 
-void print_welcome_message(void){
-    
+void print_welcome_message(void){ 
     LCD_Set_Cursor(1,1);
     LCD_write_string("Beads Color Sorter 2^3");
     LCD_Set_Cursor(2,1);
@@ -253,55 +252,11 @@ void print_color_quantity(){
 }
 
 void calibrate_bead_values(void){
-    //Yellow
-    uart_Write_String("Measure 10 pieces Yellow Bead now: \n\r");
-    for(int i = 0; i < 10; i++){
-        find_print();
+    slide_to_mid();
+    find_print(); //take measurements of the pearl
+    PCA_Servo_Pos(0);
     }
     
-    //Red
-    uart_Write_String("Measure 10 pieces Red Bead now: \n\r");
-    for(int i = 0; i < 10; i++){
-
-    }
-    //Green
-    uart_Write_String("Measure 10 pieces Green Bead now: \n\r");
-    for(int i = 0; i < 10; i++){
-        find_print();
-    }
-    //Blue
-    uart_Write_String("Measure 10 pieces Blue Bead now: \n\r");
-    for(int i = 0; i < 10; i++){
-        find_print();
-    }
-    //Black
-    uart_Write_String("Measure 10 pieces Black Bead now: \n\r");
-    for(int i = 0; i < 10; i++){
-        find_print();
-    }
-    //White
-    uart_Write_String("Measure 10 pieces White Bead now: \n\r");
-    for(int i = 0; i < 10; i++){
-        find_print();
-    }
-    //Purple
-    uart_Write_String("Measure 10 pieces Purple Bead now: \n\r");
-    for(int i = 0; i < 10; i++){
-        find_print();
-    }
-    //Pink
-    uart_Write_String("Measure 10 pieces Pink Bead now: \n\r");
-    for(int i = 0; i < 10; i++){
-        find_print();
-    }
-    //Orange
-    uart_Write_String("Measure 10 pieces Orange Bead now: \n\r");
-    for(int i = 0; i < 10; i++){
-        find_print();   
-    }
-    
-}
-
 void find_print(void){
     //Values for colors
     uint16_t red, green, blue, clear;
@@ -334,5 +289,7 @@ void slide_to_mid(void){
     PCA_Write(0, 0, RAILMID);
     __delay_ms(100);
 }
+
+
 
 

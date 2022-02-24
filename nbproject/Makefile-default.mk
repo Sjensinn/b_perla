@@ -30,12 +30,12 @@ ifeq ($(TYPE_IMAGE), DEBUG_RUN)
 IMAGE_TYPE=debug
 OUTPUT_SUFFIX=elf
 DEBUGGABLE_SUFFIX=elf
-FINAL_IMAGE=${DISTDIR}/b_perla.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
+FINAL_IMAGE=${DISTDIR}/PIC16f18877_v6.1.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
 else
 IMAGE_TYPE=production
 OUTPUT_SUFFIX=hex
 DEBUGGABLE_SUFFIX=elf
-FINAL_IMAGE=${DISTDIR}/b_perla.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
+FINAL_IMAGE=${DISTDIR}/PIC16f18877_v6.1.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
 endif
 
 ifeq ($(COMPARE_BUILD), true)
@@ -57,17 +57,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=newmain.c PCA9685_driver.c I2C_MSSP1_driver.c tcs3200.c LCD.c system_init.c timer1.c litaflokkari.c uart.c tcs3472.c
+SOURCEFILES_QUOTED_IF_SPACED=newmain.c PCA9685_driver.c I2C_MSSP1_driver.c tcs3200.c LCD.c system_init.c timer1.c litaflokkari.c uart.c tcs3472.c rgbc.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/newmain.p1 ${OBJECTDIR}/PCA9685_driver.p1 ${OBJECTDIR}/I2C_MSSP1_driver.p1 ${OBJECTDIR}/tcs3200.p1 ${OBJECTDIR}/LCD.p1 ${OBJECTDIR}/system_init.p1 ${OBJECTDIR}/timer1.p1 ${OBJECTDIR}/litaflokkari.p1 ${OBJECTDIR}/uart.p1 ${OBJECTDIR}/tcs3472.p1
-POSSIBLE_DEPFILES=${OBJECTDIR}/newmain.p1.d ${OBJECTDIR}/PCA9685_driver.p1.d ${OBJECTDIR}/I2C_MSSP1_driver.p1.d ${OBJECTDIR}/tcs3200.p1.d ${OBJECTDIR}/LCD.p1.d ${OBJECTDIR}/system_init.p1.d ${OBJECTDIR}/timer1.p1.d ${OBJECTDIR}/litaflokkari.p1.d ${OBJECTDIR}/uart.p1.d ${OBJECTDIR}/tcs3472.p1.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/newmain.p1 ${OBJECTDIR}/PCA9685_driver.p1 ${OBJECTDIR}/I2C_MSSP1_driver.p1 ${OBJECTDIR}/tcs3200.p1 ${OBJECTDIR}/LCD.p1 ${OBJECTDIR}/system_init.p1 ${OBJECTDIR}/timer1.p1 ${OBJECTDIR}/litaflokkari.p1 ${OBJECTDIR}/uart.p1 ${OBJECTDIR}/tcs3472.p1 ${OBJECTDIR}/rgbc.p1
+POSSIBLE_DEPFILES=${OBJECTDIR}/newmain.p1.d ${OBJECTDIR}/PCA9685_driver.p1.d ${OBJECTDIR}/I2C_MSSP1_driver.p1.d ${OBJECTDIR}/tcs3200.p1.d ${OBJECTDIR}/LCD.p1.d ${OBJECTDIR}/system_init.p1.d ${OBJECTDIR}/timer1.p1.d ${OBJECTDIR}/litaflokkari.p1.d ${OBJECTDIR}/uart.p1.d ${OBJECTDIR}/tcs3472.p1.d ${OBJECTDIR}/rgbc.p1.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/newmain.p1 ${OBJECTDIR}/PCA9685_driver.p1 ${OBJECTDIR}/I2C_MSSP1_driver.p1 ${OBJECTDIR}/tcs3200.p1 ${OBJECTDIR}/LCD.p1 ${OBJECTDIR}/system_init.p1 ${OBJECTDIR}/timer1.p1 ${OBJECTDIR}/litaflokkari.p1 ${OBJECTDIR}/uart.p1 ${OBJECTDIR}/tcs3472.p1
+OBJECTFILES=${OBJECTDIR}/newmain.p1 ${OBJECTDIR}/PCA9685_driver.p1 ${OBJECTDIR}/I2C_MSSP1_driver.p1 ${OBJECTDIR}/tcs3200.p1 ${OBJECTDIR}/LCD.p1 ${OBJECTDIR}/system_init.p1 ${OBJECTDIR}/timer1.p1 ${OBJECTDIR}/litaflokkari.p1 ${OBJECTDIR}/uart.p1 ${OBJECTDIR}/tcs3472.p1 ${OBJECTDIR}/rgbc.p1
 
 # Source Files
-SOURCEFILES=newmain.c PCA9685_driver.c I2C_MSSP1_driver.c tcs3200.c LCD.c system_init.c timer1.c litaflokkari.c uart.c tcs3472.c
+SOURCEFILES=newmain.c PCA9685_driver.c I2C_MSSP1_driver.c tcs3200.c LCD.c system_init.c timer1.c litaflokkari.c uart.c tcs3472.c rgbc.c
 
 
 
@@ -88,7 +88,7 @@ FIXDEPS=fixDeps
 ifneq ($(INFORMATION_MESSAGE), )
 	@echo $(INFORMATION_MESSAGE)
 endif
-	${MAKE}  -f nbproject/Makefile-default.mk ${DISTDIR}/b_perla.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
+	${MAKE}  -f nbproject/Makefile-default.mk ${DISTDIR}/PIC16f18877_v6.1.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
 
 MP_PROCESSOR_OPTION=16F18877
 # ------------------------------------------------------------------------------------
@@ -174,6 +174,14 @@ ${OBJECTDIR}/tcs3472.p1: tcs3472.c  nbproject/Makefile-${CND_CONF}.mk
 	@-${MV} ${OBJECTDIR}/tcs3472.d ${OBJECTDIR}/tcs3472.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/tcs3472.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
+${OBJECTDIR}/rgbc.p1: rgbc.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/rgbc.p1.d 
+	@${RM} ${OBJECTDIR}/rgbc.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -mdebugger=pickit3   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/rgbc.p1 rgbc.c 
+	@-${MV} ${OBJECTDIR}/rgbc.d ${OBJECTDIR}/rgbc.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/rgbc.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
 else
 ${OBJECTDIR}/newmain.p1: newmain.c  nbproject/Makefile-${CND_CONF}.mk 
 	@${MKDIR} "${OBJECTDIR}" 
@@ -255,6 +263,14 @@ ${OBJECTDIR}/tcs3472.p1: tcs3472.c  nbproject/Makefile-${CND_CONF}.mk
 	@-${MV} ${OBJECTDIR}/tcs3472.d ${OBJECTDIR}/tcs3472.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/tcs3472.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
+${OBJECTDIR}/rgbc.p1: rgbc.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/rgbc.p1.d 
+	@${RM} ${OBJECTDIR}/rgbc.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/rgbc.p1 rgbc.c 
+	@-${MV} ${OBJECTDIR}/rgbc.d ${OBJECTDIR}/rgbc.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/rgbc.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
 endif
 
 # ------------------------------------------------------------------------------------
@@ -272,15 +288,15 @@ endif
 # ------------------------------------------------------------------------------------
 # Rules for buildStep: link
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
-${DISTDIR}/b_perla.${IMAGE_TYPE}.${OUTPUT_SUFFIX}: ${OBJECTFILES}  nbproject/Makefile-${CND_CONF}.mk    
+${DISTDIR}/PIC16f18877_v6.1.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}: ${OBJECTFILES}  nbproject/Makefile-${CND_CONF}.mk    
 	@${MKDIR} ${DISTDIR} 
-	${MP_CC} $(MP_EXTRA_LD_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -Wl,-Map=${DISTDIR}/b_perla.${IMAGE_TYPE}.map  -D__DEBUG=1  -mdebugger=pickit3  -DXPRJ_default=$(CND_CONF)  -Wl,--defsym=__MPLAB_BUILD=1   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall -mdefault-config-bits -std=c99 -gdwarf-3 -mstack=compiled:auto:auto        $(COMPARISON_BUILD) -Wl,--memorysummary,${DISTDIR}/memoryfile.xml -o ${DISTDIR}/b_perla.${IMAGE_TYPE}.${DEBUGGABLE_SUFFIX}  ${OBJECTFILES_QUOTED_IF_SPACED}     
-	@${RM} ${DISTDIR}/b_perla.${IMAGE_TYPE}.hex 
+	${MP_CC} $(MP_EXTRA_LD_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -Wl,-Map=${DISTDIR}/PIC16f18877_v6.1.X.${IMAGE_TYPE}.map  -D__DEBUG=1  -mdebugger=pickit3  -DXPRJ_default=$(CND_CONF)  -Wl,--defsym=__MPLAB_BUILD=1   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall -mdefault-config-bits -std=c99 -gdwarf-3 -mstack=compiled:auto:auto        $(COMPARISON_BUILD) -Wl,--memorysummary,${DISTDIR}/memoryfile.xml -o ${DISTDIR}/PIC16f18877_v6.1.X.${IMAGE_TYPE}.${DEBUGGABLE_SUFFIX}  ${OBJECTFILES_QUOTED_IF_SPACED}     
+	@${RM} ${DISTDIR}/PIC16f18877_v6.1.X.${IMAGE_TYPE}.hex 
 	
 else
-${DISTDIR}/b_perla.${IMAGE_TYPE}.${OUTPUT_SUFFIX}: ${OBJECTFILES}  nbproject/Makefile-${CND_CONF}.mk   
+${DISTDIR}/PIC16f18877_v6.1.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}: ${OBJECTFILES}  nbproject/Makefile-${CND_CONF}.mk   
 	@${MKDIR} ${DISTDIR} 
-	${MP_CC} $(MP_EXTRA_LD_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -Wl,-Map=${DISTDIR}/b_perla.${IMAGE_TYPE}.map  -DXPRJ_default=$(CND_CONF)  -Wl,--defsym=__MPLAB_BUILD=1   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall -mdefault-config-bits -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     $(COMPARISON_BUILD) -Wl,--memorysummary,${DISTDIR}/memoryfile.xml -o ${DISTDIR}/b_perla.${IMAGE_TYPE}.${DEBUGGABLE_SUFFIX}  ${OBJECTFILES_QUOTED_IF_SPACED}     
+	${MP_CC} $(MP_EXTRA_LD_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -Wl,-Map=${DISTDIR}/PIC16f18877_v6.1.X.${IMAGE_TYPE}.map  -DXPRJ_default=$(CND_CONF)  -Wl,--defsym=__MPLAB_BUILD=1   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall -mdefault-config-bits -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     $(COMPARISON_BUILD) -Wl,--memorysummary,${DISTDIR}/memoryfile.xml -o ${DISTDIR}/PIC16f18877_v6.1.X.${IMAGE_TYPE}.${DEBUGGABLE_SUFFIX}  ${OBJECTFILES_QUOTED_IF_SPACED}     
 	
 endif
 

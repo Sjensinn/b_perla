@@ -14,6 +14,7 @@
       <itemPath>litaflokkari.h</itemPath>
       <itemPath>uart.h</itemPath>
       <itemPath>tcs3472.h</itemPath>
+      <itemPath>rgbc.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -32,6 +33,7 @@
       <itemPath>litaflokkari.c</itemPath>
       <itemPath>uart.c</itemPath>
       <itemPath>tcs3472.c</itemPath>
+      <itemPath>rgbc.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"

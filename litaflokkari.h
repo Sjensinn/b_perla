@@ -67,6 +67,16 @@ extern "C" {
 #define RAILMID 255
 #endif
     
+#ifndef PEARL
+#define PEARL
+
+typedef struct pearl
+{ 
+    uint16_t red, green, blue, clear;
+};
+struct pearl *pearlptr;
+#endif
+    
 //Yellow beat color ranges
 #define YELLOW_RED_MAX 4033
 #define YELLOW_RED_MIN 1945
@@ -158,6 +168,8 @@ extern "C" {
 #define NA_CLEAR_MAX 3320
 #define NA_CLEAR_MIN 1190
 uint8_t yellow_bead, red_bead, green_bead, blue_bead, black_bead, white_bead, brown_bead, unsort_bead = 0;
+
+uint8_t nr_known_pearls = 0;
     
 /**
  * @brief   This function turns one servo to position according to passed value 0/1
@@ -246,6 +258,8 @@ void calibrate_bead_values(void);
 void find_print(void);
 
 void slide_to_mid(void);
+
+void pearl_compare(uint16_t red, uint16_t green, uint16_t blue, uint16_t clear);
 
 
 #endif

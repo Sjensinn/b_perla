@@ -1,4 +1,8 @@
 Version 4.0 HI-TECH Software Intermediate Code
+"74 ./litaflokkari.h
+[; ;./litaflokkari.h: 74: {
+[s S1615 `us 1 `us 1 `us 1 `us 1 ]
+[n S1615 pearl red green blue clear ]
 "71 ./PCA9685_driver.h
 [; ;./PCA9685_driver.h: 71: void PCA_Write(uint8_t ChannelN, uint16_t on, uint16_t off);
 [v _PCA_Write `(v ~T0 @X0 0 ef3`uc`us`us ]
@@ -38,17 +42,20 @@ Version 4.0 HI-TECH Software Intermediate Code
 "80
 [; ;./tcs3200.h: 80: void filter_clear(void);
 [v _filter_clear `(v ~T0 @X0 0 ef ]
-"228 ./litaflokkari.h
-[; ;./litaflokkari.h: 228: uint8_t color_compare_return(uint16_t red, uint16_t green, uint16_t blue, uint16_t clear);
+"240 ./litaflokkari.h
+[; ;./litaflokkari.h: 240: uint8_t color_compare_return(uint16_t red, uint16_t green, uint16_t blue, uint16_t clear);
 [v _color_compare_return `(uc ~T0 @X0 0 ef4`us`us`us`us ]
-"113 C:\Program Files\Microchip\pic\include\c99\stdio.h
+"113 C:\Program Files\Microchip\xc8\v2.32\pic\include\c99\stdio.h
 [v _sprintf `(i ~T0 @X0 0 e1v`*uc`*Cuc ]
+"260 ./litaflokkari.h
+[; ;./litaflokkari.h: 260: void slide_to_mid(void);
+[v _slide_to_mid `(v ~T0 @X0 0 ef ]
+"258
+[; ;./litaflokkari.h: 258: void find_print(void);
+[v _find_print `(v ~T0 @X0 0 ef ]
 "36 ./uart.h
 [; ;./uart.h: 36: void uart_Write_String(char* buf);
 [v _uart_Write_String `(v ~T0 @X0 0 ef1`*uc ]
-"246 ./litaflokkari.h
-[; ;./litaflokkari.h: 246: void find_print(void);
-[v _find_print `(v ~T0 @X0 0 ef ]
 "55 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16F1xxxx_DFP/1.9.163/xc8\pic\include\proc\pic16f18877.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16F1xxxx_DFP/1.9.163/xc8\pic\include\proc\pic16f18877.h: 55: __asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
@@ -1687,8 +1694,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 "30 ./PCA9685_driver.h
 [; ;./PCA9685_driver.h: 30:     uint8_t pca_address;
 [v _pca_address `uc ~T0 @X0 1 e ]
-"160 ./litaflokkari.h
-[; ;./litaflokkari.h: 160: uint8_t yellow_bead, red_bead, green_bead, blue_bead, black_bead, white_bead, brown_bead, unsort_bead = 0;
+"77 ./litaflokkari.h
+[; ;./litaflokkari.h: 77: struct pearl *pearlptr;
+[v _pearlptr `*S1615 ~T0 @X0 1 e ]
+"170
+[; ;./litaflokkari.h: 170: uint8_t yellow_bead, red_bead, green_bead, blue_bead, black_bead, white_bead, brown_bead, unsort_bead = 0;
 [v _yellow_bead `uc ~T0 @X0 1 e ]
 [v _red_bead `uc ~T0 @X0 1 e ]
 [v _green_bead `uc ~T0 @X0 1 e ]
@@ -1698,6 +1708,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _brown_bead `uc ~T0 @X0 1 e ]
 [v _unsort_bead `uc ~T0 @X0 1 e ]
 [i _unsort_bead
+-> -> 0 `i `uc
+]
+"172
+[; ;./litaflokkari.h: 172: uint8_t nr_known_pearls = 0;
+[v _nr_known_pearls `uc ~T0 @X0 1 e ]
+[i _nr_known_pearls
 -> -> 0 `i `uc
 ]
 "38 ./LCD.h
@@ -1724,7 +1740,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _stateTest _servo_on_off ]
 "21
 [; ;litaflokkari.c: 21:     if(stateTest == 0){
-[e $ ! == -> _stateTest `i -> 0 `i 1616  ]
+[e $ ! == -> _stateTest `i -> 0 `i 1617  ]
 {
 "22
 [; ;litaflokkari.c: 22:         PCA_Write(servo_nr, 0x0, 160);
@@ -1732,10 +1748,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 "23
 [; ;litaflokkari.c: 23:     }
 }
-[e :U 1616 ]
+[e :U 1617 ]
 "25
 [; ;litaflokkari.c: 25:     if(stateTest == 1){
-[e $ ! == -> _stateTest `i -> 1 `i 1617  ]
+[e $ ! == -> _stateTest `i -> 1 `i 1618  ]
 {
 "26
 [; ;litaflokkari.c: 26:         PCA_Write(servo_nr, 0x0, 350);
@@ -1743,10 +1759,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 "27
 [; ;litaflokkari.c: 27:     }
 }
-[e $U 1618  ]
+[e $U 1619  ]
 "29
 [; ;litaflokkari.c: 29:     else{
-[e :U 1617 ]
+[e :U 1618 ]
 {
 "30
 [; ;litaflokkari.c: 30:         LATBbits.LATB2 = ~LATBbits.LATB2;
@@ -1757,13 +1773,13 @@ Version 4.0 HI-TECH Software Intermediate Code
 "32
 [; ;litaflokkari.c: 32:     }
 }
-[e :U 1618 ]
+[e :U 1619 ]
 "34
 [; ;litaflokkari.c: 34:     return;
-[e $UE 1615  ]
+[e $UE 1616  ]
 "35
 [; ;litaflokkari.c: 35: }
-[e :UE 1615 ]
+[e :UE 1616 ]
 }
 "37
 [; ;litaflokkari.c: 37: void PCA_Servo_Pos(uint8_t pos){
@@ -1774,11 +1790,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [f ]
 "38
 [; ;litaflokkari.c: 38:     switch(pos){
-[e $U 1621  ]
+[e $U 1622  ]
 {
 "39
 [; ;litaflokkari.c: 39:         case 1:
-[e :U 1622 ]
+[e :U 1623 ]
 "41
 [; ;litaflokkari.c: 41:         PCA_Servo_Command(0, 0);
 [e ( _PCA_Servo_Command (2 , -> -> 0 `i `uc -> -> 0 `i `uc ]
@@ -1790,10 +1806,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _PCA_Servo_Command (2 , -> -> 2 `i `uc -> -> 1 `i `uc ]
 "44
 [; ;litaflokkari.c: 44:         break;
-[e $U 1620  ]
+[e $U 1621  ]
 "46
 [; ;litaflokkari.c: 46:         case 2:
-[e :U 1623 ]
+[e :U 1624 ]
 "48
 [; ;litaflokkari.c: 48:         PCA_Servo_Command(0, 0);
 [e ( _PCA_Servo_Command (2 , -> -> 0 `i `uc -> -> 0 `i `uc ]
@@ -1805,10 +1821,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _PCA_Servo_Command (2 , -> -> 2 `i `uc -> -> 0 `i `uc ]
 "51
 [; ;litaflokkari.c: 51:         break;
-[e $U 1620  ]
+[e $U 1621  ]
 "53
 [; ;litaflokkari.c: 53:         case 3:
-[e :U 1624 ]
+[e :U 1625 ]
 "55
 [; ;litaflokkari.c: 55:         PCA_Servo_Command(0, 0);
 [e ( _PCA_Servo_Command (2 , -> -> 0 `i `uc -> -> 0 `i `uc ]
@@ -1820,10 +1836,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _PCA_Servo_Command (2 , -> -> 2 `i `uc -> -> 1 `i `uc ]
 "58
 [; ;litaflokkari.c: 58:         break;
-[e $U 1620  ]
+[e $U 1621  ]
 "60
 [; ;litaflokkari.c: 60:         case 4:
-[e :U 1625 ]
+[e :U 1626 ]
 "62
 [; ;litaflokkari.c: 62:         PCA_Servo_Command(0, 1);
 [e ( _PCA_Servo_Command (2 , -> -> 0 `i `uc -> -> 1 `i `uc ]
@@ -1835,10 +1851,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _PCA_Servo_Command (2 , -> -> 2 `i `uc -> -> 0 `i `uc ]
 "65
 [; ;litaflokkari.c: 65:         break;
-[e $U 1620  ]
+[e $U 1621  ]
 "67
 [; ;litaflokkari.c: 67:         case 5:
-[e :U 1626 ]
+[e :U 1627 ]
 "69
 [; ;litaflokkari.c: 69:         PCA_Servo_Command(0, 1);
 [e ( _PCA_Servo_Command (2 , -> -> 0 `i `uc -> -> 1 `i `uc ]
@@ -1850,10 +1866,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _PCA_Servo_Command (2 , -> -> 2 `i `uc -> -> 1 `i `uc ]
 "72
 [; ;litaflokkari.c: 72:         break;
-[e $U 1620  ]
+[e $U 1621  ]
 "74
 [; ;litaflokkari.c: 74:         case 6:
-[e :U 1627 ]
+[e :U 1628 ]
 "76
 [; ;litaflokkari.c: 76:         PCA_Servo_Command(0, 1);
 [e ( _PCA_Servo_Command (2 , -> -> 0 `i `uc -> -> 1 `i `uc ]
@@ -1865,10 +1881,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _PCA_Servo_Command (2 , -> -> 2 `i `uc -> -> 0 `i `uc ]
 "79
 [; ;litaflokkari.c: 79:         break;
-[e $U 1620  ]
+[e $U 1621  ]
 "81
 [; ;litaflokkari.c: 81:         case 7:
-[e :U 1628 ]
+[e :U 1629 ]
 "83
 [; ;litaflokkari.c: 83:         PCA_Servo_Command(0, 1);
 [e ( _PCA_Servo_Command (2 , -> -> 0 `i `uc -> -> 1 `i `uc ]
@@ -1880,10 +1896,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _PCA_Servo_Command (2 , -> -> 2 `i `uc -> -> 1 `i `uc ]
 "86
 [; ;litaflokkari.c: 86:         break;
-[e $U 1620  ]
+[e $U 1621  ]
 "88
 [; ;litaflokkari.c: 88:         default:
-[e :U 1629 ]
+[e :U 1630 ]
 "90
 [; ;litaflokkari.c: 90:         PCA_Servo_Command(0, 0);
 [e ( _PCA_Servo_Command (2 , -> -> 0 `i `uc -> -> 0 `i `uc ]
@@ -1895,24 +1911,24 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _PCA_Servo_Command (2 , -> -> 2 `i `uc -> -> 0 `i `uc ]
 "93
 [; ;litaflokkari.c: 93:         break;
-[e $U 1620  ]
+[e $U 1621  ]
 "94
 [; ;litaflokkari.c: 94:     }
 }
-[e $U 1620  ]
+[e $U 1621  ]
+[e :U 1622 ]
+[e [\ -> _pos `i , $ -> 1 `i 1623
+ , $ -> 2 `i 1624
+ , $ -> 3 `i 1625
+ , $ -> 4 `i 1626
+ , $ -> 5 `i 1627
+ , $ -> 6 `i 1628
+ , $ -> 7 `i 1629
+ 1630 ]
 [e :U 1621 ]
-[e [\ -> _pos `i , $ -> 1 `i 1622
- , $ -> 2 `i 1623
- , $ -> 3 `i 1624
- , $ -> 4 `i 1625
- , $ -> 5 `i 1626
- , $ -> 6 `i 1627
- , $ -> 7 `i 1628
- 1629 ]
-[e :U 1620 ]
 "95
 [; ;litaflokkari.c: 95: }
-[e :UE 1619 ]
+[e :UE 1620 ]
 }
 "97
 [; ;litaflokkari.c: 97: void print_welcome_message(void){
@@ -1920,27 +1936,27 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 [e :U _print_welcome_message ]
 [f ]
-"99
-[; ;litaflokkari.c: 99:     LCD_Set_Cursor(1,1);
+"98
+[; ;litaflokkari.c: 98:     LCD_Set_Cursor(1,1);
 [e ( _LCD_Set_Cursor (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
-"100
-[; ;litaflokkari.c: 100:     LCD_write_string("Beads Color Sorter 2^3");
+"99
+[; ;litaflokkari.c: 99:     LCD_write_string("Beads Color Sorter 2^3");
 [e ( _LCD_write_string (1 :s 1C ]
-"101
-[; ;litaflokkari.c: 101:     LCD_Set_Cursor(2,1);
+"100
+[; ;litaflokkari.c: 100:     LCD_Set_Cursor(2,1);
 [e ( _LCD_Set_Cursor (2 , -> -> 2 `i `uc -> -> 1 `i `uc ]
-"102
-[; ;litaflokkari.c: 102:     LCD_write_string("Group : B");
+"101
+[; ;litaflokkari.c: 101:     LCD_write_string("Group : B");
 [e ( _LCD_write_string (1 :s 2C ]
-"103
-[; ;litaflokkari.c: 103:     _delay((unsigned long)((5000)*(16000000/4000.0)));
+"102
+[; ;litaflokkari.c: 102:     _delay((unsigned long)((5000)*(16000000/4000.0)));
 [e ( __delay (1 -> * -> -> 5000 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
-"104
-[; ;litaflokkari.c: 104: }
-[e :UE 1630 ]
+"103
+[; ;litaflokkari.c: 103: }
+[e :UE 1631 ]
 }
-"107
-[; ;litaflokkari.c: 107: void find_raw_color(uint16_t *red, uint16_t *green, uint16_t *blue, uint16_t *clear){
+"106
+[; ;litaflokkari.c: 106: void find_raw_color(uint16_t *red, uint16_t *green, uint16_t *blue, uint16_t *clear){
 [v _find_raw_color `(v ~T0 @X0 1 ef4`*us`*us`*us`*us ]
 {
 [e :U _find_raw_color ]
@@ -1949,104 +1965,104 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _blue `*us ~T0 @X0 1 r3 ]
 [v _clear `*us ~T0 @X0 1 r4 ]
 [f ]
-"109
-[; ;litaflokkari.c: 109:     filter_red();
+"108
+[; ;litaflokkari.c: 108:     filter_red();
 [e ( _filter_red ..  ]
+"109
+[; ;litaflokkari.c: 109:     _delay((unsigned long)((10)*(16000000/4000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
 "110
-[; ;litaflokkari.c: 110:     _delay((unsigned long)((10)*(16000000/4000.0)));
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
-"111
-[; ;litaflokkari.c: 111:     *red = sample_reading();
+[; ;litaflokkari.c: 110:     *red = sample_reading();
 [e = *U _red ( _sample_reading ..  ]
-"114
-[; ;litaflokkari.c: 114:     filter_green();
+"113
+[; ;litaflokkari.c: 113:     filter_green();
 [e ( _filter_green ..  ]
+"114
+[; ;litaflokkari.c: 114:     _delay((unsigned long)((10)*(16000000/4000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
 "115
-[; ;litaflokkari.c: 115:     _delay((unsigned long)((10)*(16000000/4000.0)));
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
-"116
-[; ;litaflokkari.c: 116:     *green = sample_reading();
+[; ;litaflokkari.c: 115:     *green = sample_reading();
 [e = *U _green ( _sample_reading ..  ]
-"119
-[; ;litaflokkari.c: 119:     filter_blue();
+"118
+[; ;litaflokkari.c: 118:     filter_blue();
 [e ( _filter_blue ..  ]
+"119
+[; ;litaflokkari.c: 119:     _delay((unsigned long)((10)*(16000000/4000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
 "120
-[; ;litaflokkari.c: 120:     _delay((unsigned long)((10)*(16000000/4000.0)));
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
-"121
-[; ;litaflokkari.c: 121:     *blue = sample_reading();
+[; ;litaflokkari.c: 120:     *blue = sample_reading();
 [e = *U _blue ( _sample_reading ..  ]
-"124
-[; ;litaflokkari.c: 124:     filter_clear();
+"123
+[; ;litaflokkari.c: 123:     filter_clear();
 [e ( _filter_clear ..  ]
-"125
-[; ;litaflokkari.c: 125:     _delay((unsigned long)((10)*(16000000/4000.0)));
+"124
+[; ;litaflokkari.c: 124:     _delay((unsigned long)((10)*(16000000/4000.0)));
 [e ( __delay (1 -> * -> -> 10 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
-"126
-[; ;litaflokkari.c: 126:     *clear = sample_reading();
+"125
+[; ;litaflokkari.c: 125:     *clear = sample_reading();
 [e = *U _clear ( _sample_reading ..  ]
-"127
-[; ;litaflokkari.c: 127: }
-[e :UE 1631 ]
+"126
+[; ;litaflokkari.c: 126: }
+[e :UE 1632 ]
 }
-"129
-[; ;litaflokkari.c: 129: uint8_t find_color(){
+"128
+[; ;litaflokkari.c: 128: uint8_t find_color(){
 [v _find_color `(uc ~T0 @X0 1 ef ]
 {
 [e :U _find_color ]
 [f ]
-"131
-[; ;litaflokkari.c: 131:     uint16_t red, green, blue, clear;
+"130
+[; ;litaflokkari.c: 130:     uint16_t red, green, blue, clear;
 [v _red `us ~T0 @X0 1 a ]
 [v _green `us ~T0 @X0 1 a ]
 [v _blue `us ~T0 @X0 1 a ]
 [v _clear `us ~T0 @X0 1 a ]
-"134
-[; ;litaflokkari.c: 134:     filter_red();
+"133
+[; ;litaflokkari.c: 133:     filter_red();
 [e ( _filter_red ..  ]
+"134
+[; ;litaflokkari.c: 134:     _delay((unsigned long)((10)*(16000000/4000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
 "135
-[; ;litaflokkari.c: 135:     _delay((unsigned long)((10)*(16000000/4000.0)));
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
-"136
-[; ;litaflokkari.c: 136:     red = sample_reading();
+[; ;litaflokkari.c: 135:     red = sample_reading();
 [e = _red ( _sample_reading ..  ]
-"139
-[; ;litaflokkari.c: 139:     filter_green();
+"138
+[; ;litaflokkari.c: 138:     filter_green();
 [e ( _filter_green ..  ]
+"139
+[; ;litaflokkari.c: 139:     _delay((unsigned long)((10)*(16000000/4000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
 "140
-[; ;litaflokkari.c: 140:     _delay((unsigned long)((10)*(16000000/4000.0)));
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
-"141
-[; ;litaflokkari.c: 141:     green = sample_reading();
+[; ;litaflokkari.c: 140:     green = sample_reading();
 [e = _green ( _sample_reading ..  ]
-"144
-[; ;litaflokkari.c: 144:     filter_blue();
+"143
+[; ;litaflokkari.c: 143:     filter_blue();
 [e ( _filter_blue ..  ]
+"144
+[; ;litaflokkari.c: 144:     _delay((unsigned long)((10)*(16000000/4000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
 "145
-[; ;litaflokkari.c: 145:     _delay((unsigned long)((10)*(16000000/4000.0)));
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
-"146
-[; ;litaflokkari.c: 146:     blue = sample_reading();
+[; ;litaflokkari.c: 145:     blue = sample_reading();
 [e = _blue ( _sample_reading ..  ]
-"149
-[; ;litaflokkari.c: 149:     filter_clear();
+"148
+[; ;litaflokkari.c: 148:     filter_clear();
 [e ( _filter_clear ..  ]
-"150
-[; ;litaflokkari.c: 150:     _delay((unsigned long)((10)*(16000000/4000.0)));
+"149
+[; ;litaflokkari.c: 149:     _delay((unsigned long)((10)*(16000000/4000.0)));
 [e ( __delay (1 -> * -> -> 10 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
-"151
-[; ;litaflokkari.c: 151:     clear = sample_reading();
+"150
+[; ;litaflokkari.c: 150:     clear = sample_reading();
 [e = _clear ( _sample_reading ..  ]
-"154
-[; ;litaflokkari.c: 154:     return (color_compare_return(red, green, blue, clear));
+"153
+[; ;litaflokkari.c: 153:     return (color_compare_return(red, green, blue, clear));
 [e ) ( _color_compare_return (4 , , , _red _green _blue _clear ]
-[e $UE 1632  ]
-"155
-[; ;litaflokkari.c: 155: }
-[e :UE 1632 ]
+[e $UE 1633  ]
+"154
+[; ;litaflokkari.c: 154: }
+[e :UE 1633 ]
 }
-"157
-[; ;litaflokkari.c: 157: uint8_t color_compare_return(uint16_t red, uint16_t green, uint16_t blue, uint16_t clear){
+"156
+[; ;litaflokkari.c: 156: uint8_t color_compare_return(uint16_t red, uint16_t green, uint16_t blue, uint16_t clear){
 [v _color_compare_return `(uc ~T0 @X0 1 ef4`us`us`us`us ]
 {
 [e :U _color_compare_return ]
@@ -2055,587 +2071,392 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _blue `us ~T0 @X0 1 r3 ]
 [v _clear `us ~T0 @X0 1 r4 ]
 [f ]
-"159
-[; ;litaflokkari.c: 159:     uint8_t cVal = 0;
+"158
+[; ;litaflokkari.c: 158:     uint8_t cVal = 0;
 [v _cVal `uc ~T0 @X0 1 a ]
 [e = _cVal -> -> 0 `i `uc ]
-"160
-[; ;litaflokkari.c: 160:     uint16_t a, b, c, d;
+"159
+[; ;litaflokkari.c: 159:     uint16_t a, b, c, d;
 [v _a `us ~T0 @X0 1 a ]
 [v _b `us ~T0 @X0 1 a ]
 [v _c `us ~T0 @X0 1 a ]
 [v _d `us ~T0 @X0 1 a ]
-"163
-[; ;litaflokkari.c: 163:     a = (red-1945)*(red-4033);
+"162
+[; ;litaflokkari.c: 162:     a = (red-1945)*(red-4033);
 [e = _a -> * - -> _red `ui -> -> 1945 `i `ui - -> _red `ui -> -> 4033 `i `ui `us ]
-"164
-[; ;litaflokkari.c: 164:     b = (green-3775)*(green-7171);
+"163
+[; ;litaflokkari.c: 163:     b = (green-3775)*(green-7171);
 [e = _b -> * - -> _green `ui -> -> 3775 `i `ui - -> _green `ui -> -> 7171 `i `ui `us ]
-"165
-[; ;litaflokkari.c: 165:     c = (blue-4159)*(blue-7129);
+"164
+[; ;litaflokkari.c: 164:     c = (blue-4159)*(blue-7129);
 [e = _c -> * - -> _blue `ui -> -> 4159 `i `ui - -> _blue `ui -> -> 7129 `i `ui `us ]
-"166
-[; ;litaflokkari.c: 166:     d = (clear-1075)*(blue-1969);
+"165
+[; ;litaflokkari.c: 165:     d = (clear-1075)*(blue-1969);
 [e = _d -> * - -> _clear `ui -> -> 1075 `i `ui - -> _blue `ui -> -> 1969 `i `ui `us ]
-"167
-[; ;litaflokkari.c: 167:     if(a <= 0 && b <= 0 && c <= 0 && d <= 0){
-[e $ ! && && && <= -> _a `ui -> -> 0 `i `ui <= -> _b `ui -> -> 0 `i `ui <= -> _c `ui -> -> 0 `i `ui <= -> _d `ui -> -> 0 `i `ui 1634  ]
-{
-"168
-[; ;litaflokkari.c: 168:         cVal = 1;
-[e = _cVal -> -> 1 `i `uc ]
-"169
-[; ;litaflokkari.c: 169:         yellow_bead++;
-[e ++ _yellow_bead -> -> 1 `i `uc ]
-"170
-[; ;litaflokkari.c: 170:         return cVal;
-[e ) _cVal ]
-[e $UE 1633  ]
-"171
-[; ;litaflokkari.c: 171:     }
-}
-[e :U 1634 ]
-"174
-[; ;litaflokkari.c: 174:     a = (red-2551)*(red-4507);
-[e = _a -> * - -> _red `ui -> -> 2551 `i `ui - -> _red `ui -> -> 4507 `i `ui `us ]
-"175
-[; ;litaflokkari.c: 175:     b = (green-5743)*(green-8923);
-[e = _b -> * - -> _green `ui -> -> 5743 `i `ui - -> _green `ui -> -> 8923 `i `ui `us ]
-"176
-[; ;litaflokkari.c: 176:     c = (blue-4639)*(blue-7177);
-[e = _c -> * - -> _blue `ui -> -> 4639 `i `ui - -> _blue `ui -> -> 7177 `i `ui `us ]
-"177
-[; ;litaflokkari.c: 177:     d = (clear-1369)*(blue-2221);
-[e = _d -> * - -> _clear `ui -> -> 1369 `i `ui - -> _blue `ui -> -> 2221 `i `ui `us ]
-"178
-[; ;litaflokkari.c: 178:     if( a <= 0 && b <= 0 && c <= 0 && d <= 0){
+"166
+[; ;litaflokkari.c: 166:     if(a <= 0 && b <= 0 && c <= 0 && d <= 0){
 [e $ ! && && && <= -> _a `ui -> -> 0 `i `ui <= -> _b `ui -> -> 0 `i `ui <= -> _c `ui -> -> 0 `i `ui <= -> _d `ui -> -> 0 `i `ui 1635  ]
 {
-"179
-[; ;litaflokkari.c: 179:         cVal = 2;
-[e = _cVal -> -> 2 `i `uc ]
-"180
-[; ;litaflokkari.c: 180:         red_bead++;
-[e ++ _red_bead -> -> 1 `i `uc ]
-"181
-[; ;litaflokkari.c: 181:         return cVal;
+"167
+[; ;litaflokkari.c: 167:         cVal = 1;
+[e = _cVal -> -> 1 `i `uc ]
+"168
+[; ;litaflokkari.c: 168:         yellow_bead++;
+[e ++ _yellow_bead -> -> 1 `i `uc ]
+"169
+[; ;litaflokkari.c: 169:         return cVal;
 [e ) _cVal ]
-[e $UE 1633  ]
-"182
-[; ;litaflokkari.c: 182:     }
+[e $UE 1634  ]
+"170
+[; ;litaflokkari.c: 170:     }
 }
 [e :U 1635 ]
-"185
-[; ;litaflokkari.c: 185:     a = (red-4135)*(red-7033);
-[e = _a -> * - -> _red `ui -> -> 4135 `i `ui - -> _red `ui -> -> 7033 `i `ui `us ]
-"186
-[; ;litaflokkari.c: 186:     b = (green-6169)*(green-9985);
-[e = _b -> * - -> _green `ui -> -> 6169 `i `ui - -> _green `ui -> -> 9985 `i `ui `us ]
-"187
-[; ;litaflokkari.c: 187:     c = (blue-5527)*(blue-9343) ;
-[e = _c -> * - -> _blue `ui -> -> 5527 `i `ui - -> _blue `ui -> -> 9343 `i `ui `us ]
-"188
-[; ;litaflokkari.c: 188:     d = (clear-1795)*(blue-2791);
-[e = _d -> * - -> _clear `ui -> -> 1795 `i `ui - -> _blue `ui -> -> 2791 `i `ui `us ]
-"189
-[; ;litaflokkari.c: 189:     if(a <= 0 && b <= 0 && c <= 0 && d <= 0){
+"173
+[; ;litaflokkari.c: 173:     a = (red-2551)*(red-4507);
+[e = _a -> * - -> _red `ui -> -> 2551 `i `ui - -> _red `ui -> -> 4507 `i `ui `us ]
+"174
+[; ;litaflokkari.c: 174:     b = (green-5743)*(green-8923);
+[e = _b -> * - -> _green `ui -> -> 5743 `i `ui - -> _green `ui -> -> 8923 `i `ui `us ]
+"175
+[; ;litaflokkari.c: 175:     c = (blue-4639)*(blue-7177);
+[e = _c -> * - -> _blue `ui -> -> 4639 `i `ui - -> _blue `ui -> -> 7177 `i `ui `us ]
+"176
+[; ;litaflokkari.c: 176:     d = (clear-1369)*(blue-2221);
+[e = _d -> * - -> _clear `ui -> -> 1369 `i `ui - -> _blue `ui -> -> 2221 `i `ui `us ]
+"177
+[; ;litaflokkari.c: 177:     if( a <= 0 && b <= 0 && c <= 0 && d <= 0){
 [e $ ! && && && <= -> _a `ui -> -> 0 `i `ui <= -> _b `ui -> -> 0 `i `ui <= -> _c `ui -> -> 0 `i `ui <= -> _d `ui -> -> 0 `i `ui 1636  ]
 {
-"190
-[; ;litaflokkari.c: 190:         cVal = 3;
-[e = _cVal -> -> 3 `i `uc ]
-"191
-[; ;litaflokkari.c: 191:         green_bead++;
-[e ++ _green_bead -> -> 1 `i `uc ]
-"192
-[; ;litaflokkari.c: 192:         return cVal;
+"178
+[; ;litaflokkari.c: 178:         cVal = 2;
+[e = _cVal -> -> 2 `i `uc ]
+"179
+[; ;litaflokkari.c: 179:         red_bead++;
+[e ++ _red_bead -> -> 1 `i `uc ]
+"180
+[; ;litaflokkari.c: 180:         return cVal;
 [e ) _cVal ]
-[e $UE 1633  ]
-"193
-[; ;litaflokkari.c: 193:     }
+[e $UE 1634  ]
+"181
+[; ;litaflokkari.c: 181:     }
 }
 [e :U 1636 ]
-"196
-[; ;litaflokkari.c: 196:     a =(red-3409)*(red-6583);
-[e = _a -> * - -> _red `ui -> -> 3409 `i `ui - -> _red `ui -> -> 6583 `i `ui `us ]
-"197
-[; ;litaflokkari.c: 197:     b =(green-15323)*(green-9301);
-[e = _b -> * - -> _green `ui -> -> 15323 `i `ui - -> _green `ui -> -> 9301 `i `ui `us ]
-"198
-[; ;litaflokkari.c: 198:     c =(blue-4453)*(blue-7411);
-[e = _c -> * - -> _blue `ui -> -> 4453 `i `ui - -> _blue `ui -> -> 7411 `i `ui `us ]
-"199
-[; ;litaflokkari.c: 199:     d =(clear-1429)*(blue-2569) ;
-[e = _d -> * - -> _clear `ui -> -> 1429 `i `ui - -> _blue `ui -> -> 2569 `i `ui `us ]
-"200
-[; ;litaflokkari.c: 200:     if( a <= 0 && b <= 0 && c <= 0 && d <= 0){
+"184
+[; ;litaflokkari.c: 184:     a = (red-4135)*(red-7033);
+[e = _a -> * - -> _red `ui -> -> 4135 `i `ui - -> _red `ui -> -> 7033 `i `ui `us ]
+"185
+[; ;litaflokkari.c: 185:     b = (green-6169)*(green-9985);
+[e = _b -> * - -> _green `ui -> -> 6169 `i `ui - -> _green `ui -> -> 9985 `i `ui `us ]
+"186
+[; ;litaflokkari.c: 186:     c = (blue-5527)*(blue-9343) ;
+[e = _c -> * - -> _blue `ui -> -> 5527 `i `ui - -> _blue `ui -> -> 9343 `i `ui `us ]
+"187
+[; ;litaflokkari.c: 187:     d = (clear-1795)*(blue-2791);
+[e = _d -> * - -> _clear `ui -> -> 1795 `i `ui - -> _blue `ui -> -> 2791 `i `ui `us ]
+"188
+[; ;litaflokkari.c: 188:     if(a <= 0 && b <= 0 && c <= 0 && d <= 0){
 [e $ ! && && && <= -> _a `ui -> -> 0 `i `ui <= -> _b `ui -> -> 0 `i `ui <= -> _c `ui -> -> 0 `i `ui <= -> _d `ui -> -> 0 `i `ui 1637  ]
 {
-"201
-[; ;litaflokkari.c: 201:         cVal = 4;
-[e = _cVal -> -> 4 `i `uc ]
-"202
-[; ;litaflokkari.c: 202:         blue_bead++;
-[e ++ _blue_bead -> -> 1 `i `uc ]
-"203
-[; ;litaflokkari.c: 203:         return cVal;
+"189
+[; ;litaflokkari.c: 189:         cVal = 3;
+[e = _cVal -> -> 3 `i `uc ]
+"190
+[; ;litaflokkari.c: 190:         green_bead++;
+[e ++ _green_bead -> -> 1 `i `uc ]
+"191
+[; ;litaflokkari.c: 191:         return cVal;
 [e ) _cVal ]
-[e $UE 1633  ]
-"204
-[; ;litaflokkari.c: 204:     }
+[e $UE 1634  ]
+"192
+[; ;litaflokkari.c: 192:     }
 }
 [e :U 1637 ]
-"207
-[; ;litaflokkari.c: 207:     a =(red-3271)*(red-5863);
-[e = _a -> * - -> _red `ui -> -> 3271 `i `ui - -> _red `ui -> -> 5863 `i `ui `us ]
-"208
-[; ;litaflokkari.c: 208:     b =(green-5419)*(green-9595);
-[e = _b -> * - -> _green `ui -> -> 5419 `i `ui - -> _green `ui -> -> 9595 `i `ui `us ]
-"209
-[; ;litaflokkari.c: 209:     c =(blue-4879)*(blue-8521);
-[e = _c -> * - -> _blue `ui -> -> 4879 `i `ui - -> _blue `ui -> -> 8521 `i `ui `us ]
-"210
-[; ;litaflokkari.c: 210:     d =(clear-1459)*(blue-2521);
-[e = _d -> * - -> _clear `ui -> -> 1459 `i `ui - -> _blue `ui -> -> 2521 `i `ui `us ]
-"211
-[; ;litaflokkari.c: 211:     if( a <= 0 && b <= 0 && c <= 0 && d <= 0){
+"195
+[; ;litaflokkari.c: 195:     a =(red-3409)*(red-6583);
+[e = _a -> * - -> _red `ui -> -> 3409 `i `ui - -> _red `ui -> -> 6583 `i `ui `us ]
+"196
+[; ;litaflokkari.c: 196:     b =(green-15323)*(green-9301);
+[e = _b -> * - -> _green `ui -> -> 15323 `i `ui - -> _green `ui -> -> 9301 `i `ui `us ]
+"197
+[; ;litaflokkari.c: 197:     c =(blue-4453)*(blue-7411);
+[e = _c -> * - -> _blue `ui -> -> 4453 `i `ui - -> _blue `ui -> -> 7411 `i `ui `us ]
+"198
+[; ;litaflokkari.c: 198:     d =(clear-1429)*(blue-2569) ;
+[e = _d -> * - -> _clear `ui -> -> 1429 `i `ui - -> _blue `ui -> -> 2569 `i `ui `us ]
+"199
+[; ;litaflokkari.c: 199:     if( a <= 0 && b <= 0 && c <= 0 && d <= 0){
 [e $ ! && && && <= -> _a `ui -> -> 0 `i `ui <= -> _b `ui -> -> 0 `i `ui <= -> _c `ui -> -> 0 `i `ui <= -> _d `ui -> -> 0 `i `ui 1638  ]
 {
-"212
-[; ;litaflokkari.c: 212:         cVal = 5;
-[e = _cVal -> -> 5 `i `uc ]
-"213
-[; ;litaflokkari.c: 213:         black_bead++;
-[e ++ _black_bead -> -> 1 `i `uc ]
-"214
-[; ;litaflokkari.c: 214:         return cVal;
+"200
+[; ;litaflokkari.c: 200:         cVal = 4;
+[e = _cVal -> -> 4 `i `uc ]
+"201
+[; ;litaflokkari.c: 201:         blue_bead++;
+[e ++ _blue_bead -> -> 1 `i `uc ]
+"202
+[; ;litaflokkari.c: 202:         return cVal;
 [e ) _cVal ]
-[e $UE 1633  ]
-"215
-[; ;litaflokkari.c: 215:     }
+[e $UE 1634  ]
+"203
+[; ;litaflokkari.c: 203:     }
 }
 [e :U 1638 ]
-"218
-[; ;litaflokkari.c: 218:     a =(red-2137)*(red-2725);
-[e = _a -> * - -> _red `ui -> -> 2137 `i `ui - -> _red `ui -> -> 2725 `i `ui `us ]
-"219
-[; ;litaflokkari.c: 219:     b =(green-5143)*(green-6901);
-[e = _b -> * - -> _green `ui -> -> 5143 `i `ui - -> _green `ui -> -> 6901 `i `ui `us ]
-"220
-[; ;litaflokkari.c: 220:     c = (blue-5143)*(blue-6070) ;
-[e = _c -> * - -> _blue `ui -> -> 5143 `i `ui - -> _blue `ui -> -> 6070 `i `ui `us ]
-"221
-[; ;litaflokkari.c: 221:     d =(clear-1220)*(blue-1570);
-[e = _d -> * - -> _clear `ui -> -> 1220 `i `ui - -> _blue `ui -> -> 1570 `i `ui `us ]
-"222
-[; ;litaflokkari.c: 222:     if(a <= 0 && b <= 0 && c <= 0 && d <= 0){
+"206
+[; ;litaflokkari.c: 206:     a =(red-3271)*(red-5863);
+[e = _a -> * - -> _red `ui -> -> 3271 `i `ui - -> _red `ui -> -> 5863 `i `ui `us ]
+"207
+[; ;litaflokkari.c: 207:     b =(green-5419)*(green-9595);
+[e = _b -> * - -> _green `ui -> -> 5419 `i `ui - -> _green `ui -> -> 9595 `i `ui `us ]
+"208
+[; ;litaflokkari.c: 208:     c =(blue-4879)*(blue-8521);
+[e = _c -> * - -> _blue `ui -> -> 4879 `i `ui - -> _blue `ui -> -> 8521 `i `ui `us ]
+"209
+[; ;litaflokkari.c: 209:     d =(clear-1459)*(blue-2521);
+[e = _d -> * - -> _clear `ui -> -> 1459 `i `ui - -> _blue `ui -> -> 2521 `i `ui `us ]
+"210
+[; ;litaflokkari.c: 210:     if( a <= 0 && b <= 0 && c <= 0 && d <= 0){
 [e $ ! && && && <= -> _a `ui -> -> 0 `i `ui <= -> _b `ui -> -> 0 `i `ui <= -> _c `ui -> -> 0 `i `ui <= -> _d `ui -> -> 0 `i `ui 1639  ]
 {
-"223
-[; ;litaflokkari.c: 223:         cVal = 6;
-[e = _cVal -> -> 6 `i `uc ]
-"224
-[; ;litaflokkari.c: 224:         white_bead++;
-[e ++ _white_bead -> -> 1 `i `uc ]
-"225
-[; ;litaflokkari.c: 225:         return cVal;
+"211
+[; ;litaflokkari.c: 211:         cVal = 5;
+[e = _cVal -> -> 5 `i `uc ]
+"212
+[; ;litaflokkari.c: 212:         black_bead++;
+[e ++ _black_bead -> -> 1 `i `uc ]
+"213
+[; ;litaflokkari.c: 213:         return cVal;
 [e ) _cVal ]
-[e $UE 1633  ]
-"226
-[; ;litaflokkari.c: 226:     }
+[e $UE 1634  ]
+"214
+[; ;litaflokkari.c: 214:     }
 }
 [e :U 1639 ]
-"229
-[; ;litaflokkari.c: 229:     a =(red-2130)*(red-4810) ;
-[e = _a -> * - -> _red `ui -> -> 2130 `i `ui - -> _red `ui -> -> 4810 `i `ui `us ]
-"230
-[; ;litaflokkari.c: 230:     b =(green-4110)*(green-7270) ;
-[e = _b -> * - -> _green `ui -> -> 4110 `i `ui - -> _green `ui -> -> 7270 `i `ui `us ]
-"231
-[; ;litaflokkari.c: 231:     c =(blue-3380)*(blue-5540);
-[e = _c -> * - -> _blue `ui -> -> 3380 `i `ui - -> _blue `ui -> -> 5540 `i `ui `us ]
-"232
-[; ;litaflokkari.c: 232:     d =(clear-1070)*(blue-1990);
-[e = _d -> * - -> _clear `ui -> -> 1070 `i `ui - -> _blue `ui -> -> 1990 `i `ui `us ]
-"233
-[; ;litaflokkari.c: 233:     if(a <= 0 && b <= 0 && c <= 0 && d <= 0){
+"217
+[; ;litaflokkari.c: 217:     a =(red-2137)*(red-2725);
+[e = _a -> * - -> _red `ui -> -> 2137 `i `ui - -> _red `ui -> -> 2725 `i `ui `us ]
+"218
+[; ;litaflokkari.c: 218:     b =(green-5143)*(green-6901);
+[e = _b -> * - -> _green `ui -> -> 5143 `i `ui - -> _green `ui -> -> 6901 `i `ui `us ]
+"219
+[; ;litaflokkari.c: 219:     c = (blue-5143)*(blue-6070) ;
+[e = _c -> * - -> _blue `ui -> -> 5143 `i `ui - -> _blue `ui -> -> 6070 `i `ui `us ]
+"220
+[; ;litaflokkari.c: 220:     d =(clear-1220)*(blue-1570);
+[e = _d -> * - -> _clear `ui -> -> 1220 `i `ui - -> _blue `ui -> -> 1570 `i `ui `us ]
+"221
+[; ;litaflokkari.c: 221:     if(a <= 0 && b <= 0 && c <= 0 && d <= 0){
 [e $ ! && && && <= -> _a `ui -> -> 0 `i `ui <= -> _b `ui -> -> 0 `i `ui <= -> _c `ui -> -> 0 `i `ui <= -> _d `ui -> -> 0 `i `ui 1640  ]
 {
-"234
-[; ;litaflokkari.c: 234:         cVal = 7;
-[e = _cVal -> -> 7 `i `uc ]
-"235
-[; ;litaflokkari.c: 235:         brown_bead++;
-[e ++ _brown_bead -> -> 1 `i `uc ]
-"236
-[; ;litaflokkari.c: 236:         return cVal;
+"222
+[; ;litaflokkari.c: 222:         cVal = 6;
+[e = _cVal -> -> 6 `i `uc ]
+"223
+[; ;litaflokkari.c: 223:         white_bead++;
+[e ++ _white_bead -> -> 1 `i `uc ]
+"224
+[; ;litaflokkari.c: 224:         return cVal;
 [e ) _cVal ]
-[e $UE 1633  ]
-"237
-[; ;litaflokkari.c: 237:     }
+[e $UE 1634  ]
+"225
+[; ;litaflokkari.c: 225:     }
 }
-[e $U 1641  ]
-"238
-[; ;litaflokkari.c: 238:     else{
 [e :U 1640 ]
+"228
+[; ;litaflokkari.c: 228:     a =(red-2130)*(red-4810) ;
+[e = _a -> * - -> _red `ui -> -> 2130 `i `ui - -> _red `ui -> -> 4810 `i `ui `us ]
+"229
+[; ;litaflokkari.c: 229:     b =(green-4110)*(green-7270) ;
+[e = _b -> * - -> _green `ui -> -> 4110 `i `ui - -> _green `ui -> -> 7270 `i `ui `us ]
+"230
+[; ;litaflokkari.c: 230:     c =(blue-3380)*(blue-5540);
+[e = _c -> * - -> _blue `ui -> -> 3380 `i `ui - -> _blue `ui -> -> 5540 `i `ui `us ]
+"231
+[; ;litaflokkari.c: 231:     d =(clear-1070)*(blue-1990);
+[e = _d -> * - -> _clear `ui -> -> 1070 `i `ui - -> _blue `ui -> -> 1990 `i `ui `us ]
+"232
+[; ;litaflokkari.c: 232:     if(a <= 0 && b <= 0 && c <= 0 && d <= 0){
+[e $ ! && && && <= -> _a `ui -> -> 0 `i `ui <= -> _b `ui -> -> 0 `i `ui <= -> _c `ui -> -> 0 `i `ui <= -> _d `ui -> -> 0 `i `ui 1641  ]
 {
-"239
-[; ;litaflokkari.c: 239:         cVal = 0;
-[e = _cVal -> -> 0 `i `uc ]
-"240
-[; ;litaflokkari.c: 240:         unsort_bead++;
-[e ++ _unsort_bead -> -> 1 `i `uc ]
-"241
-[; ;litaflokkari.c: 241:         return cVal;
+"233
+[; ;litaflokkari.c: 233:         cVal = 7;
+[e = _cVal -> -> 7 `i `uc ]
+"234
+[; ;litaflokkari.c: 234:         brown_bead++;
+[e ++ _brown_bead -> -> 1 `i `uc ]
+"235
+[; ;litaflokkari.c: 235:         return cVal;
 [e ) _cVal ]
-[e $UE 1633  ]
-"242
-[; ;litaflokkari.c: 242:     }
+[e $UE 1634  ]
+"236
+[; ;litaflokkari.c: 236:     }
 }
+[e $U 1642  ]
+"237
+[; ;litaflokkari.c: 237:     else{
 [e :U 1641 ]
-"243
-[; ;litaflokkari.c: 243: }
-[e :UE 1633 ]
+{
+"238
+[; ;litaflokkari.c: 238:         cVal = 0;
+[e = _cVal -> -> 0 `i `uc ]
+"239
+[; ;litaflokkari.c: 239:         unsort_bead++;
+[e ++ _unsort_bead -> -> 1 `i `uc ]
+"240
+[; ;litaflokkari.c: 240:         return cVal;
+[e ) _cVal ]
+[e $UE 1634  ]
+"241
+[; ;litaflokkari.c: 241:     }
 }
-"245
-[; ;litaflokkari.c: 245: void print_color_quantity(){
+[e :U 1642 ]
+"242
+[; ;litaflokkari.c: 242: }
+[e :UE 1634 ]
+}
+"244
+[; ;litaflokkari.c: 244: void print_color_quantity(){
 [v _print_color_quantity `(v ~T0 @X0 1 ef ]
 {
 [e :U _print_color_quantity ]
 [f ]
-"246
-[; ;litaflokkari.c: 246:     char strbuff[40];
+"245
+[; ;litaflokkari.c: 245:     char strbuff[40];
 [v _strbuff `uc ~T0 @X0 -> 40 `i a ]
-"247
-[; ;litaflokkari.c: 247:     LCD_Set_Cursor(1,1);
+"246
+[; ;litaflokkari.c: 246:     LCD_Set_Cursor(1,1);
 [e ( _LCD_Set_Cursor (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
-"248
-[; ;litaflokkari.c: 248:     sprintf(strbuff, "Y%d R%d G%d BE%d", yellow_bead, red_bead, green_bead, blue_bead);
+"247
+[; ;litaflokkari.c: 247:     sprintf(strbuff, "Y%d R%d G%d BE%d", yellow_bead, red_bead, green_bead, blue_bead);
 [e ( _sprintf (1 , , , , (. , &U _strbuff :s 3C -> _yellow_bead `i -> _red_bead `i -> _green_bead `i -> _blue_bead `i ]
+"248
+[; ;litaflokkari.c: 248:     LCD_write_string(strbuff);
+[e ( _LCD_write_string (1 &U _strbuff ]
 "249
-[; ;litaflokkari.c: 249:     LCD_write_string(strbuff);
-[e ( _LCD_write_string (1 &U _strbuff ]
-"250
-[; ;litaflokkari.c: 250:     LCD_Set_Cursor(2,1);
+[; ;litaflokkari.c: 249:     LCD_Set_Cursor(2,1);
 [e ( _LCD_Set_Cursor (2 , -> -> 2 `i `uc -> -> 1 `i `uc ]
-"251
-[; ;litaflokkari.c: 251:     sprintf(strbuff, "BK%d W%d BN%d U%d", black_bead, white_bead, brown_bead, unsort_bead);
+"250
+[; ;litaflokkari.c: 250:     sprintf(strbuff, "BK%d W%d BN%d U%d", black_bead, white_bead, brown_bead, unsort_bead);
 [e ( _sprintf (1 , , , , (. , &U _strbuff :s 4C -> _black_bead `i -> _white_bead `i -> _brown_bead `i -> _unsort_bead `i ]
-"252
-[; ;litaflokkari.c: 252:     LCD_write_string(strbuff);
+"251
+[; ;litaflokkari.c: 251:     LCD_write_string(strbuff);
 [e ( _LCD_write_string (1 &U _strbuff ]
-"253
-[; ;litaflokkari.c: 253: }
-[e :UE 1642 ]
+"252
+[; ;litaflokkari.c: 252: }
+[e :UE 1643 ]
 }
-"255
-[; ;litaflokkari.c: 255: void calibrate_bead_values(void){
+"254
+[; ;litaflokkari.c: 254: void calibrate_bead_values(void){
 [v _calibrate_bead_values `(v ~T0 @X0 1 ef ]
 {
 [e :U _calibrate_bead_values ]
 [f ]
+"255
+[; ;litaflokkari.c: 255:     slide_to_mid();
+[e ( _slide_to_mid ..  ]
+"256
+[; ;litaflokkari.c: 256:     find_print();
+[e ( _find_print ..  ]
 "257
-[; ;litaflokkari.c: 257:     uart_Write_String("Measure 10 pieces Yellow Bead now: \n\r");
-[e ( _uart_Write_String (1 :s 5C ]
+[; ;litaflokkari.c: 257:     PCA_Servo_Pos(0);
+[e ( _PCA_Servo_Pos (1 -> -> 0 `i `uc ]
 "258
-[; ;litaflokkari.c: 258:     for(int i = 0; i < 10; i++){
-{
-[v _i `i ~T0 @X0 1 a ]
-[e = _i -> 0 `i ]
-[e $ < _i -> 10 `i 1644  ]
-[e $U 1645  ]
-[e :U 1644 ]
-{
-"259
-[; ;litaflokkari.c: 259:         find_print();
-[e ( _find_print ..  ]
+[; ;litaflokkari.c: 258:     }
+[e :UE 1644 ]
+}
 "260
-[; ;litaflokkari.c: 260:     }
-}
-[e ++ _i -> 1 `i ]
-[e $ < _i -> 10 `i 1644  ]
-[e :U 1645 ]
-}
-"263
-[; ;litaflokkari.c: 263:     uart_Write_String("Measure 10 pieces Red Bead now: \n\r");
-[e ( _uart_Write_String (1 :s 6C ]
-"264
-[; ;litaflokkari.c: 264:     for(int i = 0; i < 10; i++){
-{
-[v _i `i ~T0 @X0 1 a ]
-[e = _i -> 0 `i ]
-[e $ < _i -> 10 `i 1647  ]
-[e $U 1648  ]
-[e :U 1647 ]
-{
-"266
-[; ;litaflokkari.c: 266:     }
-}
-[e ++ _i -> 1 `i ]
-[e $ < _i -> 10 `i 1647  ]
-[e :U 1648 ]
-}
-"268
-[; ;litaflokkari.c: 268:     uart_Write_String("Measure 10 pieces Green Bead now: \n\r");
-[e ( _uart_Write_String (1 :s 7C ]
-"269
-[; ;litaflokkari.c: 269:     for(int i = 0; i < 10; i++){
-{
-[v _i `i ~T0 @X0 1 a ]
-[e = _i -> 0 `i ]
-[e $ < _i -> 10 `i 1650  ]
-[e $U 1651  ]
-[e :U 1650 ]
-{
-"270
-[; ;litaflokkari.c: 270:         find_print();
-[e ( _find_print ..  ]
-"271
-[; ;litaflokkari.c: 271:     }
-}
-[e ++ _i -> 1 `i ]
-[e $ < _i -> 10 `i 1650  ]
-[e :U 1651 ]
-}
-"273
-[; ;litaflokkari.c: 273:     uart_Write_String("Measure 10 pieces Blue Bead now: \n\r");
-[e ( _uart_Write_String (1 :s 8C ]
-"274
-[; ;litaflokkari.c: 274:     for(int i = 0; i < 10; i++){
-{
-[v _i `i ~T0 @X0 1 a ]
-[e = _i -> 0 `i ]
-[e $ < _i -> 10 `i 1653  ]
-[e $U 1654  ]
-[e :U 1653 ]
-{
-"275
-[; ;litaflokkari.c: 275:         find_print();
-[e ( _find_print ..  ]
-"276
-[; ;litaflokkari.c: 276:     }
-}
-[e ++ _i -> 1 `i ]
-[e $ < _i -> 10 `i 1653  ]
-[e :U 1654 ]
-}
-"278
-[; ;litaflokkari.c: 278:     uart_Write_String("Measure 10 pieces Black Bead now: \n\r");
-[e ( _uart_Write_String (1 :s 9C ]
-"279
-[; ;litaflokkari.c: 279:     for(int i = 0; i < 10; i++){
-{
-[v _i `i ~T0 @X0 1 a ]
-[e = _i -> 0 `i ]
-[e $ < _i -> 10 `i 1656  ]
-[e $U 1657  ]
-[e :U 1656 ]
-{
-"280
-[; ;litaflokkari.c: 280:         find_print();
-[e ( _find_print ..  ]
-"281
-[; ;litaflokkari.c: 281:     }
-}
-[e ++ _i -> 1 `i ]
-[e $ < _i -> 10 `i 1656  ]
-[e :U 1657 ]
-}
-"283
-[; ;litaflokkari.c: 283:     uart_Write_String("Measure 10 pieces White Bead now: \n\r");
-[e ( _uart_Write_String (1 :s 10C ]
-"284
-[; ;litaflokkari.c: 284:     for(int i = 0; i < 10; i++){
-{
-[v _i `i ~T0 @X0 1 a ]
-[e = _i -> 0 `i ]
-[e $ < _i -> 10 `i 1659  ]
-[e $U 1660  ]
-[e :U 1659 ]
-{
-"285
-[; ;litaflokkari.c: 285:         find_print();
-[e ( _find_print ..  ]
-"286
-[; ;litaflokkari.c: 286:     }
-}
-[e ++ _i -> 1 `i ]
-[e $ < _i -> 10 `i 1659  ]
-[e :U 1660 ]
-}
-"288
-[; ;litaflokkari.c: 288:     uart_Write_String("Measure 10 pieces Purple Bead now: \n\r");
-[e ( _uart_Write_String (1 :s 11C ]
-"289
-[; ;litaflokkari.c: 289:     for(int i = 0; i < 10; i++){
-{
-[v _i `i ~T0 @X0 1 a ]
-[e = _i -> 0 `i ]
-[e $ < _i -> 10 `i 1662  ]
-[e $U 1663  ]
-[e :U 1662 ]
-{
-"290
-[; ;litaflokkari.c: 290:         find_print();
-[e ( _find_print ..  ]
-"291
-[; ;litaflokkari.c: 291:     }
-}
-[e ++ _i -> 1 `i ]
-[e $ < _i -> 10 `i 1662  ]
-[e :U 1663 ]
-}
-"293
-[; ;litaflokkari.c: 293:     uart_Write_String("Measure 10 pieces Pink Bead now: \n\r");
-[e ( _uart_Write_String (1 :s 12C ]
-"294
-[; ;litaflokkari.c: 294:     for(int i = 0; i < 10; i++){
-{
-[v _i `i ~T0 @X0 1 a ]
-[e = _i -> 0 `i ]
-[e $ < _i -> 10 `i 1665  ]
-[e $U 1666  ]
-[e :U 1665 ]
-{
-"295
-[; ;litaflokkari.c: 295:         find_print();
-[e ( _find_print ..  ]
-"296
-[; ;litaflokkari.c: 296:     }
-}
-[e ++ _i -> 1 `i ]
-[e $ < _i -> 10 `i 1665  ]
-[e :U 1666 ]
-}
-"298
-[; ;litaflokkari.c: 298:     uart_Write_String("Measure 10 pieces Orange Bead now: \n\r");
-[e ( _uart_Write_String (1 :s 13C ]
-"299
-[; ;litaflokkari.c: 299:     for(int i = 0; i < 10; i++){
-{
-[v _i `i ~T0 @X0 1 a ]
-[e = _i -> 0 `i ]
-[e $ < _i -> 10 `i 1668  ]
-[e $U 1669  ]
-[e :U 1668 ]
-{
-"300
-[; ;litaflokkari.c: 300:         find_print();
-[e ( _find_print ..  ]
-"301
-[; ;litaflokkari.c: 301:     }
-}
-[e ++ _i -> 1 `i ]
-[e $ < _i -> 10 `i 1668  ]
-[e :U 1669 ]
-}
-"303
-[; ;litaflokkari.c: 303: }
-[e :UE 1643 ]
-}
-"305
-[; ;litaflokkari.c: 305: void find_print(void){
+[; ;litaflokkari.c: 260: void find_print(void){
 [v _find_print `(v ~T0 @X0 1 ef ]
 {
 [e :U _find_print ]
 [f ]
-"307
-[; ;litaflokkari.c: 307:     uint16_t red, green, blue, clear;
+"262
+[; ;litaflokkari.c: 262:     uint16_t red, green, blue, clear;
 [v _red `us ~T0 @X0 1 a ]
 [v _green `us ~T0 @X0 1 a ]
 [v _blue `us ~T0 @X0 1 a ]
 [v _clear `us ~T0 @X0 1 a ]
-"309
-[; ;litaflokkari.c: 309:     char buffer[50];
+"264
+[; ;litaflokkari.c: 264:     char buffer[50];
 [v _buffer `uc ~T0 @X0 -> 50 `i a ]
-"311
-[; ;litaflokkari.c: 311:         find_raw_color(&red, &green, &blue, &clear);
+"266
+[; ;litaflokkari.c: 266:         find_raw_color(&red, &green, &blue, &clear);
 [e ( _find_raw_color (4 , , , &U _red &U _green &U _blue &U _clear ]
-"312
-[; ;litaflokkari.c: 312:         sprintf(buffer, "%d\t", red);
-[e ( _sprintf (1 , (. , &U _buffer :s 14C -> _red `ui ]
-"313
-[; ;litaflokkari.c: 313:         uart_Write_String(buffer);
+"267
+[; ;litaflokkari.c: 267:         sprintf(buffer, "%d\t", red);
+[e ( _sprintf (1 , (. , &U _buffer :s 5C -> _red `ui ]
+"268
+[; ;litaflokkari.c: 268:         uart_Write_String(buffer);
 [e ( _uart_Write_String (1 &U _buffer ]
-"314
-[; ;litaflokkari.c: 314:         sprintf(buffer, "%d\t", green);
-[e ( _sprintf (1 , (. , &U _buffer :s 15C -> _green `ui ]
-"315
-[; ;litaflokkari.c: 315:         uart_Write_String(buffer);
+"269
+[; ;litaflokkari.c: 269:         sprintf(buffer, "%d\t", green);
+[e ( _sprintf (1 , (. , &U _buffer :s 6C -> _green `ui ]
+"270
+[; ;litaflokkari.c: 270:         uart_Write_String(buffer);
 [e ( _uart_Write_String (1 &U _buffer ]
-"316
-[; ;litaflokkari.c: 316:         sprintf(buffer, "%d\t", blue);
-[e ( _sprintf (1 , (. , &U _buffer :s 16C -> _blue `ui ]
-"317
-[; ;litaflokkari.c: 317:         uart_Write_String(buffer);
+"271
+[; ;litaflokkari.c: 271:         sprintf(buffer, "%d\t", blue);
+[e ( _sprintf (1 , (. , &U _buffer :s 7C -> _blue `ui ]
+"272
+[; ;litaflokkari.c: 272:         uart_Write_String(buffer);
 [e ( _uart_Write_String (1 &U _buffer ]
-"318
-[; ;litaflokkari.c: 318:         sprintf(buffer, "%d\n\r", clear);
-[e ( _sprintf (1 , (. , &U _buffer :s 17C -> _clear `ui ]
-"319
-[; ;litaflokkari.c: 319:         uart_Write_String(buffer);
+"273
+[; ;litaflokkari.c: 273:         sprintf(buffer, "%d\n\r", clear);
+[e ( _sprintf (1 , (. , &U _buffer :s 8C -> _clear `ui ]
+"274
+[; ;litaflokkari.c: 274:         uart_Write_String(buffer);
 [e ( _uart_Write_String (1 &U _buffer ]
-"320
-[; ;litaflokkari.c: 320: }
-[e :UE 1671 ]
+"275
+[; ;litaflokkari.c: 275: }
+[e :UE 1645 ]
 }
-"322
-[; ;litaflokkari.c: 322: void slide_to_mid(void){
+"277
+[; ;litaflokkari.c: 277: void slide_to_mid(void){
 [v _slide_to_mid `(v ~T0 @X0 1 ef ]
 {
 [e :U _slide_to_mid ]
 [f ]
-"323
-[; ;litaflokkari.c: 323:     uint16_t shake1 = 255 + 10;
+"278
+[; ;litaflokkari.c: 278:     uint16_t shake1 = 255 + 10;
 [v _shake1 `us ~T0 @X0 1 a ]
 [e = _shake1 -> + -> 255 `i -> 10 `i `us ]
-"324
-[; ;litaflokkari.c: 324:     uint16_t shake2 = 255 - 10;
+"279
+[; ;litaflokkari.c: 279:     uint16_t shake2 = 255 - 10;
 [v _shake2 `us ~T0 @X0 1 a ]
 [e = _shake2 -> - -> 255 `i -> 10 `i `us ]
-"326
-[; ;litaflokkari.c: 326:     PCA_Write(0, 0, 255);
+"281
+[; ;litaflokkari.c: 281:     PCA_Write(0, 0, 255);
 [e ( _PCA_Write (3 , , -> -> 0 `i `uc -> -> 0 `i `us -> -> 255 `i `us ]
-"327
-[; ;litaflokkari.c: 327:     _delay((unsigned long)((100)*(16000000/4000.0)));
+"282
+[; ;litaflokkari.c: 282:     _delay((unsigned long)((100)*(16000000/4000.0)));
 [e ( __delay (1 -> * -> -> 100 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
-"329
-[; ;litaflokkari.c: 329:     PCA_Write(0, 0, shake1);
+"284
+[; ;litaflokkari.c: 284:     PCA_Write(0, 0, shake1);
 [e ( _PCA_Write (3 , , -> -> 0 `i `uc -> -> 0 `i `us _shake1 ]
-"330
-[; ;litaflokkari.c: 330:     _delay((unsigned long)((100)*(16000000/4000.0)));
+"285
+[; ;litaflokkari.c: 285:     _delay((unsigned long)((100)*(16000000/4000.0)));
 [e ( __delay (1 -> * -> -> 100 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
-"331
-[; ;litaflokkari.c: 331:     PCA_Write(0, 0, shake2);
+"286
+[; ;litaflokkari.c: 286:     PCA_Write(0, 0, shake2);
 [e ( _PCA_Write (3 , , -> -> 0 `i `uc -> -> 0 `i `us _shake2 ]
-"332
-[; ;litaflokkari.c: 332:     _delay((unsigned long)((100)*(16000000/4000.0)));
+"287
+[; ;litaflokkari.c: 287:     _delay((unsigned long)((100)*(16000000/4000.0)));
 [e ( __delay (1 -> * -> -> 100 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
-"334
-[; ;litaflokkari.c: 334:     PCA_Write(0, 0, 255);
+"289
+[; ;litaflokkari.c: 289:     PCA_Write(0, 0, 255);
 [e ( _PCA_Write (3 , , -> -> 0 `i `uc -> -> 0 `i `us -> -> 255 `i `us ]
-"335
-[; ;litaflokkari.c: 335:     _delay((unsigned long)((100)*(16000000/4000.0)));
+"290
+[; ;litaflokkari.c: 290:     _delay((unsigned long)((100)*(16000000/4000.0)));
 [e ( __delay (1 -> * -> -> 100 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
-"336
-[; ;litaflokkari.c: 336: }
-[e :UE 1672 ]
+"291
+[; ;litaflokkari.c: 291: }
+[e :UE 1646 ]
 }
 [p f _sprintf 8388736 ]
 [a 4C 66 75 37 100 32 87 37 100 32 66 78 37 100 32 85 37 100 0 ]
 [a 3C 89 37 100 32 82 37 100 32 71 37 100 32 66 69 37 100 0 ]
 [a 2C 71 114 111 117 112 32 58 32 66 0 ]
 [a 1C 66 101 97 100 115 32 67 111 108 111 114 32 83 111 114 116 101 114 32 50 94 51 0 ]
-[a 17C 37 100 10 13 0 ]
-[a 5C 77 101 97 115 117 114 101 32 49 48 32 112 105 101 99 101 115 32 89 101 108 108 111 119 32 66 101 97 100 32 110 111 119 58 32 10 13 0 ]
-[a 7C 77 101 97 115 117 114 101 32 49 48 32 112 105 101 99 101 115 32 71 114 101 101 110 32 66 101 97 100 32 110 111 119 58 32 10 13 0 ]
-[a 12C 77 101 97 115 117 114 101 32 49 48 32 112 105 101 99 101 115 32 80 105 110 107 32 66 101 97 100 32 110 111 119 58 32 10 13 0 ]
-[a 9C 77 101 97 115 117 114 101 32 49 48 32 112 105 101 99 101 115 32 66 108 97 99 107 32 66 101 97 100 32 110 111 119 58 32 10 13 0 ]
-[a 8C 77 101 97 115 117 114 101 32 49 48 32 112 105 101 99 101 115 32 66 108 117 101 32 66 101 97 100 32 110 111 119 58 32 10 13 0 ]
-[a 10C 77 101 97 115 117 114 101 32 49 48 32 112 105 101 99 101 115 32 87 104 105 116 101 32 66 101 97 100 32 110 111 119 58 32 10 13 0 ]
-[a 11C 77 101 97 115 117 114 101 32 49 48 32 112 105 101 99 101 115 32 80 117 114 112 108 101 32 66 101 97 100 32 110 111 119 58 32 10 13 0 ]
-[a 13C 77 101 97 115 117 114 101 32 49 48 32 112 105 101 99 101 115 32 79 114 97 110 103 101 32 66 101 97 100 32 110 111 119 58 32 10 13 0 ]
-[a 6C 77 101 97 115 117 114 101 32 49 48 32 112 105 101 99 101 115 32 82 101 100 32 66 101 97 100 32 110 111 119 58 32 10 13 0 ]
-[a 14C 37 100 9 0 ]
-[a 15C 37 100 9 0 ]
-[a 16C 37 100 9 0 ]
+[a 8C 37 100 10 13 0 ]
+[a 5C 37 100 9 0 ]
+[a 6C 37 100 9 0 ]
+[a 7C 37 100 9 0 ]

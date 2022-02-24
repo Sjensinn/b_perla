@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project>
-  <executable name="dist/default/production\b_perla.production.hex">
+  <executable name="dist/default/production\PIC16f18877_v6.1.X.production.hex">
     <memory name="program">
       <units>words</units>
       <length>32768</length>
-      <used>3236</used>
-      <free>29532</free>
+      <used>2837</used>
+      <free>29931</free>
     </memory>
     <memory name="data">
       <units>bytes</units>
       <length>4096</length>
-      <used>221</used>
-      <free>3875</free>
+      <used>219</used>
+      <free>3877</free>
     </memory>
   </executable>
 </project>

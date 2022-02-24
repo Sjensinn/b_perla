@@ -7,12 +7,22 @@
 
 #include "system_init.h"
 #include "config_bits.h"
+#include "uart.h"
+#include "timer1.h"
+#include "I2C_MSSP1_driver.h"
+#include "PCA9685_driver.h"
+#include "tcs3200.h"
 #include <xc.h>
 
 void system_init(){
     clock_init();
     pin_init();
     int_init();
+    uart_init();
+    Timer1_Initialize();
+    I2C_init();
+    PCA_Init(130, 0x80);
+    sensor_init();
 }
 
 

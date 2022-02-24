@@ -16,35 +16,35 @@ extern double __fpnormalize(double);
 
 
 
-# 1 "C:\\Program Files\\Microchip\\pic\\include\\c99\\xc8debug.h" 1 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\xc8debug.h" 1 3
 
 
 
-# 1 "C:\\Program Files\\Microchip\\pic\\include\\c99\\stdlib.h" 1 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\stdlib.h" 1 3
 
 
 
-# 1 "C:\\Program Files\\Microchip\\pic\\include\\c99\\musl_xc8.h" 1 3
-# 4 "C:\\Program Files\\Microchip\\pic\\include\\c99\\stdlib.h" 2 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\musl_xc8.h" 1 3
+# 4 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\stdlib.h" 2 3
 
 
 
 
 
 
-# 1 "C:\\Program Files\\Microchip\\pic\\include\\c99\\features.h" 1 3
-# 10 "C:\\Program Files\\Microchip\\pic\\include\\c99\\stdlib.h" 2 3
-# 21 "C:\\Program Files\\Microchip\\pic\\include\\c99\\stdlib.h" 3
-# 1 "C:\\Program Files\\Microchip\\pic\\include\\c99\\bits/alltypes.h" 1 3
-# 18 "C:\\Program Files\\Microchip\\pic\\include\\c99\\bits/alltypes.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\features.h" 1 3
+# 10 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\stdlib.h" 2 3
+# 21 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\stdlib.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\bits/alltypes.h" 1 3
+# 18 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\bits/alltypes.h" 3
 typedef long int wchar_t;
-# 122 "C:\\Program Files\\Microchip\\pic\\include\\c99\\bits/alltypes.h" 3
+# 122 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\bits/alltypes.h" 3
 typedef unsigned size_t;
-# 168 "C:\\Program Files\\Microchip\\pic\\include\\c99\\bits/alltypes.h" 3
+# 168 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\bits/alltypes.h" 3
 typedef __int24 int24_t;
-# 204 "C:\\Program Files\\Microchip\\pic\\include\\c99\\bits/alltypes.h" 3
+# 204 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\bits/alltypes.h" 3
 typedef __uint24 uint24_t;
-# 21 "C:\\Program Files\\Microchip\\pic\\include\\c99\\stdlib.h" 2 3
+# 21 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\stdlib.h" 2 3
 
 
 int atoi (const char *);
@@ -97,7 +97,7 @@ uldiv_t uldiv (unsigned long, unsigned long);
 
 
 size_t __ctype_get_mb_cur_max(void);
-# 4 "C:\\Program Files\\Microchip\\pic\\include\\c99\\xc8debug.h" 2 3
+# 4 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\xc8debug.h" 2 3
 
 
 
@@ -113,21 +113,21 @@ extern void __builtin_software_breakpoint(void);
 
 
 
-# 1 "C:\\Program Files\\Microchip\\pic\\include\\c99\\stdint.h" 1 3
-# 22 "C:\\Program Files\\Microchip\\pic\\include\\c99\\stdint.h" 3
-# 1 "C:\\Program Files\\Microchip\\pic\\include\\c99\\bits/alltypes.h" 1 3
-# 127 "C:\\Program Files\\Microchip\\pic\\include\\c99\\bits/alltypes.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\stdint.h" 1 3
+# 22 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\stdint.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\bits/alltypes.h" 1 3
+# 127 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\bits/alltypes.h" 3
 typedef unsigned long uintptr_t;
-# 142 "C:\\Program Files\\Microchip\\pic\\include\\c99\\bits/alltypes.h" 3
+# 142 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\bits/alltypes.h" 3
 typedef long intptr_t;
-# 158 "C:\\Program Files\\Microchip\\pic\\include\\c99\\bits/alltypes.h" 3
+# 158 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\bits/alltypes.h" 3
 typedef signed char int8_t;
 
 
 
 
 typedef short int16_t;
-# 173 "C:\\Program Files\\Microchip\\pic\\include\\c99\\bits/alltypes.h" 3
+# 173 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\bits/alltypes.h" 3
 typedef long int32_t;
 
 
@@ -135,7 +135,7 @@ typedef long int32_t;
 
 
 typedef long long int64_t;
-# 188 "C:\\Program Files\\Microchip\\pic\\include\\c99\\bits/alltypes.h" 3
+# 188 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\bits/alltypes.h" 3
 typedef long long intmax_t;
 
 
@@ -148,7 +148,7 @@ typedef unsigned char uint8_t;
 
 
 typedef unsigned short uint16_t;
-# 209 "C:\\Program Files\\Microchip\\pic\\include\\c99\\bits/alltypes.h" 3
+# 209 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\bits/alltypes.h" 3
 typedef unsigned long uint32_t;
 
 
@@ -156,9 +156,9 @@ typedef unsigned long uint32_t;
 
 
 typedef unsigned long long uint64_t;
-# 229 "C:\\Program Files\\Microchip\\pic\\include\\c99\\bits/alltypes.h" 3
+# 229 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\bits/alltypes.h" 3
 typedef unsigned long long uintmax_t;
-# 22 "C:\\Program Files\\Microchip\\pic\\include\\c99\\stdint.h" 2 3
+# 22 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\stdint.h" 2 3
 
 
 typedef int8_t int_fast8_t;
@@ -191,13 +191,13 @@ typedef uint24_t uint_fast24_t;
 typedef uint32_t uint_least32_t;
 
 typedef uint64_t uint_least64_t;
-# 144 "C:\\Program Files\\Microchip\\pic\\include\\c99\\stdint.h" 3
-# 1 "C:\\Program Files\\Microchip\\pic\\include\\c99\\bits/stdint.h" 1 3
+# 144 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\stdint.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\bits/stdint.h" 1 3
 typedef int16_t int_fast16_t;
 typedef int32_t int_fast32_t;
 typedef uint16_t uint_fast16_t;
 typedef uint32_t uint_fast32_t;
-# 144 "C:\\Program Files\\Microchip\\pic\\include\\c99\\stdint.h" 2 3
+# 144 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\stdint.h" 2 3
 # 5 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16F1xxxx_DFP/1.9.163/xc8\\pic\\include\\builtins.h" 2 3
 
 
@@ -20719,9 +20719,9 @@ extern __bank0 __bit __timeout;
 # 29 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16F1xxxx_DFP/1.9.163/xc8\\pic\\include\\xc.h" 2 3
 # 10 "litaflokkari.c" 2
 
-# 1 "C:\\Program Files\\Microchip\\pic\\include\\c99\\stdio.h" 1 3
-# 24 "C:\\Program Files\\Microchip\\pic\\include\\c99\\stdio.h" 3
-# 1 "C:\\Program Files\\Microchip\\pic\\include\\c99\\bits/alltypes.h" 1 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\stdio.h" 1 3
+# 24 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\stdio.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\bits/alltypes.h" 1 3
 
 
 
@@ -20733,14 +20733,14 @@ typedef void * va_list[1];
 
 
 typedef void * __isoc_va_list[1];
-# 137 "C:\\Program Files\\Microchip\\pic\\include\\c99\\bits/alltypes.h" 3
+# 137 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\bits/alltypes.h" 3
 typedef long ssize_t;
-# 246 "C:\\Program Files\\Microchip\\pic\\include\\c99\\bits/alltypes.h" 3
+# 246 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\bits/alltypes.h" 3
 typedef long long off_t;
-# 399 "C:\\Program Files\\Microchip\\pic\\include\\c99\\bits/alltypes.h" 3
+# 399 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\bits/alltypes.h" 3
 typedef struct _IO_FILE FILE;
-# 24 "C:\\Program Files\\Microchip\\pic\\include\\c99\\stdio.h" 2 3
-# 52 "C:\\Program Files\\Microchip\\pic\\include\\c99\\stdio.h" 3
+# 24 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\stdio.h" 2 3
+# 52 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\stdio.h" 3
 typedef union _G_fpos64_t {
  char __opaque[16];
  double __align;
@@ -20896,11 +20896,19 @@ void PCA_Write(uint8_t ChannelN, uint16_t on, uint16_t off);
 # 13 "litaflokkari.c" 2
 
 # 1 "./litaflokkari.h" 1
-# 160 "./litaflokkari.h"
-uint8_t yellow_bead, red_bead, green_bead, blue_bead, black_bead, white_bead, brown_bead, unsort_bead = 0;
+# 73 "./litaflokkari.h"
+typedef struct pearl
+{
+    uint16_t red, green, blue, clear;
+};
+struct pearl *pearlptr;
 # 170 "./litaflokkari.h"
+uint8_t yellow_bead, red_bead, green_bead, blue_bead, black_bead, white_bead, brown_bead, unsort_bead = 0;
+
+uint8_t nr_known_pearls = 0;
+# 182 "./litaflokkari.h"
 void PCA_Servo_Command(uint8_t servo_nr, uint8_t servo_on_off);
-# 190 "./litaflokkari.h"
+# 202 "./litaflokkari.h"
 void PCA_Servo_Pos(uint8_t pos);
 
 
@@ -20910,13 +20918,13 @@ void PCA_Servo_Pos(uint8_t pos);
 
 
 void print_welcome_message(void);
-# 207 "./litaflokkari.h"
+# 219 "./litaflokkari.h"
 void find_raw_color(uint16_t *red, uint16_t *green, uint16_t *blue, uint16_t *clear);
-# 216 "./litaflokkari.h"
-uint8_t find_color(void);
 # 228 "./litaflokkari.h"
+uint8_t find_color(void);
+# 240 "./litaflokkari.h"
 uint8_t color_compare_return(uint16_t red, uint16_t green, uint16_t blue, uint16_t clear);
-# 237 "./litaflokkari.h"
+# 249 "./litaflokkari.h"
 void print_color_quantity(void);
 
 
@@ -20929,6 +20937,8 @@ void calibrate_bead_values(void);
 void find_print(void);
 
 void slide_to_mid(void);
+
+void pearl_compare(uint16_t red, uint16_t green, uint16_t blue, uint16_t clear);
 # 14 "litaflokkari.c" 2
 
 # 1 "./tcs3200.h" 1
@@ -21142,7 +21152,6 @@ void PCA_Servo_Pos(uint8_t pos){
 }
 
 void print_welcome_message(void){
-
     LCD_Set_Cursor(1,1);
     LCD_write_string("Beads Color Sorter 2^3");
     LCD_Set_Cursor(2,1);
@@ -21300,54 +21309,10 @@ void print_color_quantity(){
 }
 
 void calibrate_bead_values(void){
-
-    uart_Write_String("Measure 10 pieces Yellow Bead now: \n\r");
-    for(int i = 0; i < 10; i++){
-        find_print();
+    slide_to_mid();
+    find_print();
+    PCA_Servo_Pos(0);
     }
-
-
-    uart_Write_String("Measure 10 pieces Red Bead now: \n\r");
-    for(int i = 0; i < 10; i++){
-
-    }
-
-    uart_Write_String("Measure 10 pieces Green Bead now: \n\r");
-    for(int i = 0; i < 10; i++){
-        find_print();
-    }
-
-    uart_Write_String("Measure 10 pieces Blue Bead now: \n\r");
-    for(int i = 0; i < 10; i++){
-        find_print();
-    }
-
-    uart_Write_String("Measure 10 pieces Black Bead now: \n\r");
-    for(int i = 0; i < 10; i++){
-        find_print();
-    }
-
-    uart_Write_String("Measure 10 pieces White Bead now: \n\r");
-    for(int i = 0; i < 10; i++){
-        find_print();
-    }
-
-    uart_Write_String("Measure 10 pieces Purple Bead now: \n\r");
-    for(int i = 0; i < 10; i++){
-        find_print();
-    }
-
-    uart_Write_String("Measure 10 pieces Pink Bead now: \n\r");
-    for(int i = 0; i < 10; i++){
-        find_print();
-    }
-
-    uart_Write_String("Measure 10 pieces Orange Bead now: \n\r");
-    for(int i = 0; i < 10; i++){
-        find_print();
-    }
-
-}
 
 void find_print(void){
 

@@ -1689,144 +1689,144 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 [e :U _sensor_init ]
 [f ]
-"11
-[; ;tcs3200.c: 11:     LATAbits.LATA0 = 1;
-[e = . . _LATAbits 0 0 -> -> 1 `i `uc ]
-"12
-[; ;tcs3200.c: 12:     LATAbits.LATA1 = 0;
-[e = . . _LATAbits 0 1 -> -> 0 `i `uc ]
-"14
-[; ;tcs3200.c: 14:     LATBbits.LATB1 = 0;
+"8
+[; ;tcs3200.c: 8:     LATAbits.LATA0 = 0;
+[e = . . _LATAbits 0 0 -> -> 0 `i `uc ]
+"9
+[; ;tcs3200.c: 9:     LATAbits.LATA1 = 1;
+[e = . . _LATAbits 0 1 -> -> 1 `i `uc ]
+"17
+[; ;tcs3200.c: 17:     LATBbits.LATB1 = 0;
 [e = . . _LATBbits 0 1 -> -> 0 `i `uc ]
-"15
-[; ;tcs3200.c: 15:        _delay((unsigned long)((3000)*(16000000/4000.0)));
+"18
+[; ;tcs3200.c: 18:        _delay((unsigned long)((3000)*(16000000/4000.0)));
 [e ( __delay (1 -> * -> -> 3000 `i `d / -> -> 16000000 `l `d .4000.0 `ul ]
-"16
-[; ;tcs3200.c: 16: }
+"19
+[; ;tcs3200.c: 19: }
 [e :UE 1615 ]
 }
-"18
-[; ;tcs3200.c: 18: void filter_red(void)
+"21
+[; ;tcs3200.c: 21: void filter_red(void)
 [v _filter_red `(v ~T0 @X0 1 ef ]
-"19
-[; ;tcs3200.c: 19: {
+"22
+[; ;tcs3200.c: 22: {
 {
 [e :U _filter_red ]
 [f ]
-"20
-[; ;tcs3200.c: 20:     LATAbits.LATA2 = 0;
+"23
+[; ;tcs3200.c: 23:     LATAbits.LATA2 = 0;
 [e = . . _LATAbits 0 2 -> -> 0 `i `uc ]
-"21
-[; ;tcs3200.c: 21:     LATAbits.LATA3 = 0;
+"24
+[; ;tcs3200.c: 24:     LATAbits.LATA3 = 0;
 [e = . . _LATAbits 0 3 -> -> 0 `i `uc ]
-"22
-[; ;tcs3200.c: 22: }
+"25
+[; ;tcs3200.c: 25: }
 [e :UE 1616 ]
 }
-"24
-[; ;tcs3200.c: 24: void filter_blue(void)
+"27
+[; ;tcs3200.c: 27: void filter_blue(void)
 [v _filter_blue `(v ~T0 @X0 1 ef ]
-"25
-[; ;tcs3200.c: 25: {
+"28
+[; ;tcs3200.c: 28: {
 {
 [e :U _filter_blue ]
 [f ]
-"26
-[; ;tcs3200.c: 26:     LATAbits.LATA2 = 0;
+"29
+[; ;tcs3200.c: 29:     LATAbits.LATA2 = 0;
 [e = . . _LATAbits 0 2 -> -> 0 `i `uc ]
-"27
-[; ;tcs3200.c: 27:     LATAbits.LATA3 = 1;
+"30
+[; ;tcs3200.c: 30:     LATAbits.LATA3 = 1;
 [e = . . _LATAbits 0 3 -> -> 1 `i `uc ]
-"28
-[; ;tcs3200.c: 28: }
+"31
+[; ;tcs3200.c: 31: }
 [e :UE 1617 ]
 }
-"30
-[; ;tcs3200.c: 30: void filter_green(void)
+"33
+[; ;tcs3200.c: 33: void filter_green(void)
 [v _filter_green `(v ~T0 @X0 1 ef ]
-"31
-[; ;tcs3200.c: 31: {
+"34
+[; ;tcs3200.c: 34: {
 {
 [e :U _filter_green ]
 [f ]
-"32
-[; ;tcs3200.c: 32:     LATAbits.LATA2 = 1;
+"35
+[; ;tcs3200.c: 35:     LATAbits.LATA2 = 1;
 [e = . . _LATAbits 0 2 -> -> 1 `i `uc ]
-"33
-[; ;tcs3200.c: 33:     LATAbits.LATA3 = 1;
+"36
+[; ;tcs3200.c: 36:     LATAbits.LATA3 = 1;
 [e = . . _LATAbits 0 3 -> -> 1 `i `uc ]
-"34
-[; ;tcs3200.c: 34: }
+"37
+[; ;tcs3200.c: 37: }
 [e :UE 1618 ]
 }
-"36
-[; ;tcs3200.c: 36: void filter_clear(void)
+"39
+[; ;tcs3200.c: 39: void filter_clear(void)
 [v _filter_clear `(v ~T0 @X0 1 ef ]
-"37
-[; ;tcs3200.c: 37: {
+"40
+[; ;tcs3200.c: 40: {
 {
 [e :U _filter_clear ]
 [f ]
-"38
-[; ;tcs3200.c: 38:     LATAbits.LATA2 = 1;
+"41
+[; ;tcs3200.c: 41:     LATAbits.LATA2 = 1;
 [e = . . _LATAbits 0 2 -> -> 1 `i `uc ]
-"39
-[; ;tcs3200.c: 39:     LATAbits.LATA3 = 0;
+"42
+[; ;tcs3200.c: 42:     LATAbits.LATA3 = 0;
 [e = . . _LATAbits 0 3 -> -> 0 `i `uc ]
-"40
-[; ;tcs3200.c: 40: }
+"43
+[; ;tcs3200.c: 43: }
 [e :UE 1619 ]
 }
-"42
-[; ;tcs3200.c: 42: uint16_t sample_reading(void)
+"45
+[; ;tcs3200.c: 45: uint16_t sample_reading(void)
 [v _sample_reading `(us ~T0 @X0 1 ef ]
-"43
-[; ;tcs3200.c: 43: {
+"46
+[; ;tcs3200.c: 46: {
 {
 [e :U _sample_reading ]
 [f ]
-"45
-[; ;tcs3200.c: 45:     while(!PORTBbits.RB0);
+"48
+[; ;tcs3200.c: 48:     while(!PORTBbits.RB0);
 [e $U 1621  ]
 [e :U 1622 ]
 [e :U 1621 ]
 [e $ ! != -> . . _PORTBbits 0 0 `i -> 0 `i 1622  ]
 [e :U 1623 ]
-"48
-[; ;tcs3200.c: 48:     while(PORTBbits.RB0);
+"51
+[; ;tcs3200.c: 51:     while(PORTBbits.RB0);
 [e $U 1624  ]
 [e :U 1625 ]
 [e :U 1624 ]
 [e $ != -> . . _PORTBbits 0 0 `i -> 0 `i 1625  ]
 [e :U 1626 ]
-"51
-[; ;tcs3200.c: 51:     while(!PORTBbits.RB0);
+"54
+[; ;tcs3200.c: 54:     while(!PORTBbits.RB0);
 [e $U 1627  ]
 [e :U 1628 ]
 [e :U 1627 ]
 [e $ ! != -> . . _PORTBbits 0 0 `i -> 0 `i 1628  ]
 [e :U 1629 ]
-"54
-[; ;tcs3200.c: 54:     Timer1_Write(0x0000);
+"57
+[; ;tcs3200.c: 57:     Timer1_Write(0x0000);
 [e ( _Timer1_Write (1 -> -> 0 `i `ui ]
-"55
-[; ;tcs3200.c: 55:     Timer1_Start();
-[e ( _Timer1_Start ..  ]
 "58
-[; ;tcs3200.c: 58:     while(PORTBbits.RB0);
+[; ;tcs3200.c: 58:     Timer1_Start();
+[e ( _Timer1_Start ..  ]
+"61
+[; ;tcs3200.c: 61:     while(PORTBbits.RB0);
 [e $U 1630  ]
 [e :U 1631 ]
 [e :U 1630 ]
 [e $ != -> . . _PORTBbits 0 0 `i -> 0 `i 1631  ]
 [e :U 1632 ]
-"59
-[; ;tcs3200.c: 59:     Timer1_Stop();
+"62
+[; ;tcs3200.c: 62:     Timer1_Stop();
 [e ( _Timer1_Stop ..  ]
-"60
-[; ;tcs3200.c: 60:     return Timer1_Read();
+"63
+[; ;tcs3200.c: 63:     return Timer1_Read();
 [e ) ( _Timer1_Read ..  ]
 [e $UE 1620  ]
-"61
-[; ;tcs3200.c: 61: }
+"64
+[; ;tcs3200.c: 64: }
 [e :UE 1620 ]
 }

@@ -5,11 +5,14 @@
 void sensor_init(){
     // TCS3200 Frequency Scale (12KHz)
     //2%
-    //LATAbits.LATA0 = 0; //S0
-    //LATAbits.LATA1 = 1; //S1
+    LATAbits.LATA0 = 0; //S0
+    LATAbits.LATA1 = 1; //S1
     //20%
-    LATAbits.LATA0 = 1; //S0
-    LATAbits.LATA1 = 0; //S1
+    //LATAbits.LATA0 = 1; //S0
+    //LATAbits.LATA1 = 0; //S1
+    //100%
+    //LATAbits.LATA0 = 1; //S0
+    //LATAbits.LATA1 = 1; //S1    
     //Enable the module
     LATBbits.LATB1 = 0;
        __delay_ms(3000);

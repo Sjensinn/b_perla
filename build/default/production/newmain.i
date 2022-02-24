@@ -20860,11 +20860,11 @@ char *tempnam(const char *, const char *);
 # 15 "newmain.c" 2
 
 # 1 "./litaflokkari.h" 1
-# 157 "./litaflokkari.h"
+# 160 "./litaflokkari.h"
 uint8_t yellow_bead, red_bead, green_bead, blue_bead, black_bead, white_bead, brown_bead, unsort_bead = 0;
-# 167 "./litaflokkari.h"
+# 170 "./litaflokkari.h"
 void PCA_Servo_Command(uint8_t servo_nr, uint8_t servo_on_off);
-# 187 "./litaflokkari.h"
+# 190 "./litaflokkari.h"
 void PCA_Servo_Pos(uint8_t pos);
 
 
@@ -20874,13 +20874,13 @@ void PCA_Servo_Pos(uint8_t pos);
 
 
 void print_welcome_message(void);
-# 204 "./litaflokkari.h"
+# 207 "./litaflokkari.h"
 void find_raw_color(uint16_t *red, uint16_t *green, uint16_t *blue, uint16_t *clear);
-# 213 "./litaflokkari.h"
+# 216 "./litaflokkari.h"
 uint8_t find_color(void);
-# 225 "./litaflokkari.h"
+# 228 "./litaflokkari.h"
 uint8_t color_compare_return(uint16_t red, uint16_t green, uint16_t blue, uint16_t clear);
-# 234 "./litaflokkari.h"
+# 237 "./litaflokkari.h"
 void print_color_quantity(void);
 
 
@@ -20891,6 +20891,8 @@ void print_color_quantity(void);
 void calibrate_bead_values(void);
 
 void find_print(void);
+
+void slide_to_mid(void);
 # 16 "newmain.c" 2
 
 # 1 "./PCA9685_driver.h" 1
@@ -21146,17 +21148,26 @@ void TCS3472_sample_beads(void);
 
 void TCS3472_sample_once_print(void);
 # 24 "newmain.c" 2
-# 72 "newmain.c"
+# 91 "newmain.c"
 void main(void){
     system_init();
-    I2C_init();
     uart_init();
-    TCS3472_Init(0x29, 1);
-
-
+    Timer1_Initialize();
+    I2C_init();
+    PCA_Init(130, 0x80);
+    sensor_init();
 
     while(1){
-        TCS3472_getId();
-        TCS3472_sample_beads();
+
+        for(int i = 0; i < 8; i++){
+            slide_to_mid();
+            _delay((unsigned long)((5000)*(16000000/4000.0)));
+            find_print();
+            _delay((unsigned long)((100)*(16000000/4000.0)));
+            PCA_Servo_Pos(i);
+            _delay((unsigned long)((500)*(16000000/4000.0)));
+
+        }
     }
+
 }

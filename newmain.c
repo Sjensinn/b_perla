@@ -69,6 +69,7 @@ void main(void){
 */
 
 //Test TCS3472
+/*
 void main(void){
     system_init();
     I2C_init();
@@ -82,22 +83,28 @@ void main(void){
         TCS3472_sample_beads();
     }
 }
+ * */
 
 
 //Main function to find min max mid values for servos
-/*
+
 void main(void){
     system_init();
+    uart_init();
+    Timer1_Initialize();
     I2C_init();
     PCA_Init(130, 0x80);
+    sensor_init();
     
     while(1){
-        PCA_Servo_Pos(0);
-        //__delay_ms(5000);
-        PCA_Servo_Pos(7);
-        //__delay_ms(10000);
+        
+        for(int i = 0; i < 8; i++){
+            slide_to_mid();
+            find_print(); //take measurements of the pearl
+            PCA_Servo_Pos(i);
+        }
     }
    
 }
-*/
+
 

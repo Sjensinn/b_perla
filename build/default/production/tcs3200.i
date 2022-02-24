@@ -20920,11 +20920,14 @@ void Timer1_Write(size_t timerVal);
 void sensor_init(){
 
 
+    LATAbits.LATA0 = 0;
+    LATAbits.LATA1 = 1;
 
 
 
-    LATAbits.LATA0 = 1;
-    LATAbits.LATA1 = 0;
+
+
+
 
     LATBbits.LATB1 = 0;
        _delay((unsigned long)((3000)*(16000000/4000.0)));

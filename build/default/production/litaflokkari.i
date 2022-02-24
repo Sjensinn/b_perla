@@ -20896,11 +20896,11 @@ void PCA_Write(uint8_t ChannelN, uint16_t on, uint16_t off);
 # 13 "litaflokkari.c" 2
 
 # 1 "./litaflokkari.h" 1
-# 157 "./litaflokkari.h"
+# 160 "./litaflokkari.h"
 uint8_t yellow_bead, red_bead, green_bead, blue_bead, black_bead, white_bead, brown_bead, unsort_bead = 0;
-# 167 "./litaflokkari.h"
+# 170 "./litaflokkari.h"
 void PCA_Servo_Command(uint8_t servo_nr, uint8_t servo_on_off);
-# 187 "./litaflokkari.h"
+# 190 "./litaflokkari.h"
 void PCA_Servo_Pos(uint8_t pos);
 
 
@@ -20910,13 +20910,13 @@ void PCA_Servo_Pos(uint8_t pos);
 
 
 void print_welcome_message(void);
-# 204 "./litaflokkari.h"
+# 207 "./litaflokkari.h"
 void find_raw_color(uint16_t *red, uint16_t *green, uint16_t *blue, uint16_t *clear);
-# 213 "./litaflokkari.h"
+# 216 "./litaflokkari.h"
 uint8_t find_color(void);
-# 225 "./litaflokkari.h"
+# 228 "./litaflokkari.h"
 uint8_t color_compare_return(uint16_t red, uint16_t green, uint16_t blue, uint16_t clear);
-# 234 "./litaflokkari.h"
+# 237 "./litaflokkari.h"
 void print_color_quantity(void);
 
 
@@ -20927,6 +20927,8 @@ void print_color_quantity(void);
 void calibrate_bead_values(void);
 
 void find_print(void);
+
+void slide_to_mid(void);
 # 14 "litaflokkari.c" 2
 
 # 1 "./tcs3200.h" 1
@@ -21148,6 +21150,7 @@ void print_welcome_message(void){
     _delay((unsigned long)((5000)*(16000000/4000.0)));
 }
 
+
 void find_raw_color(uint16_t *red, uint16_t *green, uint16_t *blue, uint16_t *clear){
 
     filter_red();
@@ -21298,8 +21301,6 @@ void print_color_quantity(){
 
 void calibrate_bead_values(void){
 
-
-
     uart_Write_String("Measure 10 pieces Yellow Bead now: \n\r");
     for(int i = 0; i < 10; i++){
         find_print();
@@ -21363,4 +21364,20 @@ void find_print(void){
         uart_Write_String(buffer);
         sprintf(buffer, "%d\n\r", clear);
         uart_Write_String(buffer);
+}
+
+void slide_to_mid(void){
+    uint16_t shake1 = 255 + 10;
+    uint16_t shake2 = 255 - 10;
+
+    PCA_Write(0, 0, 255);
+    _delay((unsigned long)((100)*(16000000/4000.0)));
+
+    PCA_Write(0, 0, shake1);
+    _delay((unsigned long)((100)*(16000000/4000.0)));
+    PCA_Write(0, 0, shake2);
+    _delay((unsigned long)((100)*(16000000/4000.0)));
+
+    PCA_Write(0, 0, 255);
+    _delay((unsigned long)((100)*(16000000/4000.0)));
 }

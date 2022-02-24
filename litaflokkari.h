@@ -63,6 +63,9 @@ extern "C" {
 #ifndef LFSMAX    //350 works for servo 1 and 2 bottom half
 #define LFSMAX  350 // This is the 'maximum' pulse length count (out of 4096)
 #endif
+#ifndef RAILMID
+#define RAILMID 255
+#endif
     
 //Yellow beat color ranges
 #define YELLOW_RED_MAX 4033
@@ -241,5 +244,8 @@ void print_color_quantity(void);
 void calibrate_bead_values(void);
 
 void find_print(void);
+
+void slide_to_mid(void);
+
 
 #endif

@@ -3,21 +3,30 @@ Version 4.0 HI-TECH Software Intermediate Code
 "31 ./system_init.h
 [; ;./system_init.h: 31: void system_init(void);
 [v _system_init `(v ~T0 @X0 0 ef ]
-"35 ./I2C_MSSP1_driver.h
-[; ;./I2C_MSSP1_driver.h: 35: void I2C_init(void);
-[v _I2C_init `(v ~T0 @X0 0 ef ]
 "22 ./uart.h
 [; ;./uart.h: 22: void uart_init(void);
 [v _uart_init `(v ~T0 @X0 0 ef ]
-"51 ./tcs3472.h
-[; ;./tcs3472.h: 51: void TCS3472_Init(uint8_t addr, uint8_t troubleshoot);
-[v _TCS3472_Init `(v ~T0 @X0 0 ef2`uc`uc ]
-"74
-[; ;./tcs3472.h: 74: void TCS3472_getId(void);
-[v _TCS3472_getId `(v ~T0 @X0 0 ef ]
-"76
-[; ;./tcs3472.h: 76: void TCS3472_sample_beads(void);
-[v _TCS3472_sample_beads `(v ~T0 @X0 0 ef ]
+"37 ./timer1.h
+[; ;./timer1.h: 37: void Timer1_Initialize(void);
+[v _Timer1_Initialize `(v ~T0 @X0 0 ef ]
+"35 ./I2C_MSSP1_driver.h
+[; ;./I2C_MSSP1_driver.h: 35: void I2C_init(void);
+[v _I2C_init `(v ~T0 @X0 0 ef ]
+"49 ./PCA9685_driver.h
+[; ;./PCA9685_driver.h: 49: void PCA_Init(uint8_t prescalar, uint8_t pca_addr);
+[v _PCA_Init `(v ~T0 @X0 0 ef2`uc`uc ]
+"52 ./tcs3200.h
+[; ;./tcs3200.h: 52: void sensor_init(void);
+[v _sensor_init `(v ~T0 @X0 0 ef ]
+"248 ./litaflokkari.h
+[; ;./litaflokkari.h: 248: void slide_to_mid(void);
+[v _slide_to_mid `(v ~T0 @X0 0 ef ]
+"246
+[; ;./litaflokkari.h: 246: void find_print(void);
+[v _find_print `(v ~T0 @X0 0 ef ]
+"190
+[; ;./litaflokkari.h: 190: void PCA_Servo_Pos(uint8_t pos);
+[v _PCA_Servo_Pos `(v ~T0 @X0 0 ef1`uc ]
 "55 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16F1xxxx_DFP/1.9.163/xc8\pic\include\proc\pic16f18877.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16F1xxxx_DFP/1.9.163/xc8\pic\include\proc\pic16f18877.h: 55: __asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
@@ -1653,8 +1662,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "36301
 [; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16F1xxxx_DFP/1.9.163/xc8\pic\include\proc\pic16f18877.h: 36301: __asm("TOSH equ 01FEFh");
 [; <" TOSH equ 01FEFh ;# ">
-"157 ./litaflokkari.h
-[; ;./litaflokkari.h: 157: uint8_t yellow_bead, red_bead, green_bead, blue_bead, black_bead, white_bead, brown_bead, unsort_bead = 0;
+"160 ./litaflokkari.h
+[; ;./litaflokkari.h: 160: uint8_t yellow_bead, red_bead, green_bead, blue_bead, black_bead, white_bead, brown_bead, unsort_bead = 0;
 [v _yellow_bead `uc ~T0 @X0 1 e ]
 [v _red_bead `uc ~T0 @X0 1 e ]
 [v _green_bead `uc ~T0 @X0 1 e ]
@@ -1729,41 +1738,66 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;./tcs3472.h: 43: uint8_t tcs_addr;
 [v _tcs_addr `uc ~T0 @X0 1 e ]
 [v $root$_main `(v ~T0 @X0 0 e ]
-"72 newmain.c
-[; ;newmain.c: 72: void main(void){
+"91 newmain.c
+[; ;newmain.c: 91: void main(void){
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"73
-[; ;newmain.c: 73:     system_init();
+"92
+[; ;newmain.c: 92:     system_init();
 [e ( _system_init ..  ]
-"74
-[; ;newmain.c: 74:     I2C_init();
-[e ( _I2C_init ..  ]
-"75
-[; ;newmain.c: 75:     uart_init();
+"93
+[; ;newmain.c: 93:     uart_init();
 [e ( _uart_init ..  ]
-"76
-[; ;newmain.c: 76:     TCS3472_Init(0x29, 1);
-[e ( _TCS3472_Init (2 , -> -> 41 `i `uc -> -> 1 `i `uc ]
-"80
-[; ;newmain.c: 80:     while(1){
+"94
+[; ;newmain.c: 94:     Timer1_Initialize();
+[e ( _Timer1_Initialize ..  ]
+"95
+[; ;newmain.c: 95:     I2C_init();
+[e ( _I2C_init ..  ]
+"96
+[; ;newmain.c: 96:     PCA_Init(130, 0x80);
+[e ( _PCA_Init (2 , -> -> 130 `i `uc -> -> 128 `i `uc ]
+"97
+[; ;newmain.c: 97:     sensor_init();
+[e ( _sensor_init ..  ]
+"99
+[; ;newmain.c: 99:     while(1){
 [e :U 1617 ]
 {
-"81
-[; ;newmain.c: 81:         TCS3472_getId();
-[e ( _TCS3472_getId ..  ]
-"82
-[; ;newmain.c: 82:         TCS3472_sample_beads();
-[e ( _TCS3472_sample_beads ..  ]
-"83
-[; ;newmain.c: 83:     }
+"101
+[; ;newmain.c: 101:         for(int i = 0; i < 8; i++){
+{
+[v _i `i ~T0 @X0 1 a ]
+[e = _i -> 0 `i ]
+[e $ < _i -> 8 `i 1619  ]
+[e $U 1620  ]
+[e :U 1619 ]
+{
+"102
+[; ;newmain.c: 102:             slide_to_mid();
+[e ( _slide_to_mid ..  ]
+"103
+[; ;newmain.c: 103:             find_print();
+[e ( _find_print ..  ]
+"104
+[; ;newmain.c: 104:             PCA_Servo_Pos(i);
+[e ( _PCA_Servo_Pos (1 -> _i `uc ]
+"105
+[; ;newmain.c: 105:         }
+}
+[e ++ _i -> 1 `i ]
+[e $ < _i -> 8 `i 1619  ]
+[e :U 1620 ]
+}
+"106
+[; ;newmain.c: 106:     }
 }
 [e :U 1616 ]
 [e $U 1617  ]
 [e :U 1618 ]
-"84
-[; ;newmain.c: 84: }
+"108
+[; ;newmain.c: 108: }
 [e :UE 1615 ]
 }

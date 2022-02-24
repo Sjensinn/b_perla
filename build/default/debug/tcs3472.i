@@ -21045,6 +21045,7 @@ void TCS3472_sample_beads(void){
         uart_Write_String(buffer);
         for(int i = 0; i < 10; i++){
          TCS3472_sample_once_print();
+
         }
 
         sprintf(buffer, "Red Bead - 10 samples");

@@ -103,6 +103,7 @@ void print_welcome_message(void){
     __delay_ms(5000);
 }
 
+//For tcs3200
 void find_raw_color(uint16_t *red, uint16_t *green, uint16_t *blue, uint16_t *clear){
     /*Sample the red filter*/
     filter_red();
@@ -252,8 +253,6 @@ void print_color_quantity(){
 }
 
 void calibrate_bead_values(void){
-
-    
     //Yellow
     uart_Write_String("Measure 10 pieces Yellow Bead now: \n\r");
     for(int i = 0; i < 10; i++){
@@ -319,4 +318,21 @@ void find_print(void){
         sprintf(buffer, "%d\n\r", clear);
         uart_Write_String(buffer);
 }
+
+void slide_to_mid(void){
+    uint16_t shake1 = RAILMID + 10;
+    uint16_t shake2 = RAILMID - 10;
+    
+    PCA_Write(0, 0, RAILMID); //Go to center
+    __delay_ms(100);
+    
+    PCA_Write(0, 0, shake1); //Do some shake
+    __delay_ms(100);
+    PCA_Write(0, 0, shake2); 
+    __delay_ms(100);
+    
+    PCA_Write(0, 0, RAILMID);
+    __delay_ms(100);
+}
+
 

@@ -21041,10 +21041,11 @@ void TCS3472_getId(void){
 void TCS3472_sample_beads(void){
         char buffer[50];
 
-        sprintf(buffer, "Yellow Bead - 10 samples");
+        sprintf(buffer, "Yellow Bead - 10 samples\n\r");
         uart_Write_String(buffer);
         for(int i = 0; i < 10; i++){
          TCS3472_sample_once_print();
+
         }
 
         sprintf(buffer, "Red Bead - 10 samples");

@@ -1,4 +1,4 @@
-# 1 "litaflokkari.c"
+# 1 "system_init.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,8 +6,61 @@
 # 1 "<built-in>" 2
 # 1 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16F1xxxx_DFP/1.9.163/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "litaflokkari.c" 2
-# 10 "litaflokkari.c"
+# 1 "system_init.c" 2
+
+
+
+
+
+
+
+# 1 "./system_init.h" 1
+# 20 "./system_init.h"
+# 1 "./config_bits.h" 1
+# 18 "./config_bits.h"
+#pragma config FEXTOSC = OFF
+#pragma config RSTOSC = HFINT32
+#pragma config CLKOUTEN = OFF
+#pragma config CSWEN = ON
+#pragma config FCMEN = ON
+
+
+#pragma config MCLRE = ON
+#pragma config PWRTE = OFF
+#pragma config LPBOREN = OFF
+#pragma config BOREN = ON
+#pragma config BORV = LO
+#pragma config ZCD = OFF
+#pragma config PPS1WAY = ON
+#pragma config STVREN = ON
+#pragma config DEBUG = OFF
+
+
+#pragma config WDTCPS = WDTCPS_31
+#pragma config WDTE = OFF
+#pragma config WDTCWS = WDTCWS_7
+#pragma config WDTCCS = SC
+
+
+#pragma config WRT = OFF
+#pragma config SCANE = available
+#pragma config LVP = ON
+
+
+#pragma config CP = OFF
+#pragma config CPD = OFF
+# 20 "./system_init.h" 2
+# 31 "./system_init.h"
+void system_init(void);
+# 42 "./system_init.h"
+void clock_init(void);
+# 53 "./system_init.h"
+void pin_init(void);
+# 62 "./system_init.h"
+void int_init(void);
+# 8 "system_init.c" 2
+
+
 # 1 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16F1xxxx_DFP/1.9.163/xc8\\pic\\include\\xc.h" 1 3
 # 18 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16F1xxxx_DFP/1.9.163/xc8\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -20717,667 +20770,122 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 29 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16F1xxxx_DFP/1.9.163/xc8\\pic\\include\\xc.h" 2 3
-# 10 "litaflokkari.c" 2
+# 10 "system_init.c" 2
 
-# 1 "C:\\Program Files\\Microchip\\pic\\include\\c99\\stdio.h" 1 3
-# 24 "C:\\Program Files\\Microchip\\pic\\include\\c99\\stdio.h" 3
-# 1 "C:\\Program Files\\Microchip\\pic\\include\\c99\\bits/alltypes.h" 1 3
 
-
-
-
-
-typedef void * va_list[1];
-
-
-
-
-typedef void * __isoc_va_list[1];
-# 137 "C:\\Program Files\\Microchip\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef long ssize_t;
-# 246 "C:\\Program Files\\Microchip\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef long long off_t;
-# 399 "C:\\Program Files\\Microchip\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef struct _IO_FILE FILE;
-# 24 "C:\\Program Files\\Microchip\\pic\\include\\c99\\stdio.h" 2 3
-# 52 "C:\\Program Files\\Microchip\\pic\\include\\c99\\stdio.h" 3
-typedef union _G_fpos64_t {
- char __opaque[16];
- double __align;
-} fpos_t;
-
-extern FILE *const stdin;
-extern FILE *const stdout;
-extern FILE *const stderr;
-
-
-
-
-
-FILE *fopen(const char *restrict, const char *restrict);
-FILE *freopen(const char *restrict, const char *restrict, FILE *restrict);
-int fclose(FILE *);
-
-int remove(const char *);
-int rename(const char *, const char *);
-
-int feof(FILE *);
-int ferror(FILE *);
-int fflush(FILE *);
-void clearerr(FILE *);
-
-int fseek(FILE *, long, int);
-long ftell(FILE *);
-void rewind(FILE *);
-
-int fgetpos(FILE *restrict, fpos_t *restrict);
-int fsetpos(FILE *, const fpos_t *);
-
-size_t fread(void *restrict, size_t, size_t, FILE *restrict);
-size_t fwrite(const void *restrict, size_t, size_t, FILE *restrict);
-
-int fgetc(FILE *);
-int getc(FILE *);
-int getchar(void);
-int ungetc(int, FILE *);
-
-int fputc(int, FILE *);
-int putc(int, FILE *);
-int putchar(int);
-
-char *fgets(char *restrict, int, FILE *restrict);
-
-char *gets(char *);
-
-
-int fputs(const char *restrict, FILE *restrict);
-int puts(const char *);
-
-#pragma printf_check(printf) const
-#pragma printf_check(vprintf) const
-#pragma printf_check(sprintf) const
-#pragma printf_check(snprintf) const
-#pragma printf_check(vsprintf) const
-#pragma printf_check(vsnprintf) const
-
-int printf(const char *restrict, ...);
-int fprintf(FILE *restrict, const char *restrict, ...);
-int sprintf(char *restrict, const char *restrict, ...);
-int snprintf(char *restrict, size_t, const char *restrict, ...);
-
-int vprintf(const char *restrict, __isoc_va_list);
-int vfprintf(FILE *restrict, const char *restrict, __isoc_va_list);
-int vsprintf(char *restrict, const char *restrict, __isoc_va_list);
-int vsnprintf(char *restrict, size_t, const char *restrict, __isoc_va_list);
-
-int scanf(const char *restrict, ...);
-int fscanf(FILE *restrict, const char *restrict, ...);
-int sscanf(const char *restrict, const char *restrict, ...);
-int vscanf(const char *restrict, __isoc_va_list);
-int vfscanf(FILE *restrict, const char *restrict, __isoc_va_list);
-int vsscanf(const char *restrict, const char *restrict, __isoc_va_list);
-
-void perror(const char *);
-
-int setvbuf(FILE *restrict, char *restrict, int, size_t);
-void setbuf(FILE *restrict, char *restrict);
-
-char *tmpnam(char *);
-FILE *tmpfile(void);
-
-
-
-
-FILE *fmemopen(void *restrict, size_t, const char *restrict);
-FILE *open_memstream(char **, size_t *);
-FILE *fdopen(int, const char *);
-FILE *popen(const char *, const char *);
-int pclose(FILE *);
-int fileno(FILE *);
-int fseeko(FILE *, off_t, int);
-off_t ftello(FILE *);
-int dprintf(int, const char *restrict, ...);
-int vdprintf(int, const char *restrict, __isoc_va_list);
-void flockfile(FILE *);
-int ftrylockfile(FILE *);
-void funlockfile(FILE *);
-int getc_unlocked(FILE *);
-int getchar_unlocked(void);
-int putc_unlocked(int, FILE *);
-int putchar_unlocked(int);
-ssize_t getdelim(char **restrict, size_t *restrict, int, FILE *restrict);
-ssize_t getline(char **restrict, size_t *restrict, FILE *restrict);
-int renameat(int, const char *, int, const char *);
-char *ctermid(char *);
-
-
-
-
-
-
-
-char *tempnam(const char *, const char *);
-# 11 "litaflokkari.c" 2
-
-# 1 "./I2C_MSSP1_driver.h" 1
-# 35 "./I2C_MSSP1_driver.h"
-void I2C_init(void);
-# 56 "./I2C_MSSP1_driver.h"
-void I2C_Start(void);
-# 65 "./I2C_MSSP1_driver.h"
-void I2C_Wait(void);
-# 86 "./I2C_MSSP1_driver.h"
-void I2C_Write(uint8_t data);
-
-
-
-
-
-
-void I2C_RepeatedStart();
-
-
-
-
-
-
-void I2C_Stop(void);
-# 134 "./I2C_MSSP1_driver.h"
-uint8_t I2C_Read(int8_t ackbit);
-# 12 "litaflokkari.c" 2
-
-# 1 "./PCA9685_driver.h" 1
-# 30 "./PCA9685_driver.h"
-    uint8_t pca_address;
-# 49 "./PCA9685_driver.h"
-void PCA_Init(uint8_t prescalar, uint8_t pca_addr);
-# 71 "./PCA9685_driver.h"
-void PCA_Write(uint8_t ChannelN, uint16_t on, uint16_t off);
-# 13 "litaflokkari.c" 2
-
-# 1 "./litaflokkari.h" 1
-# 160 "./litaflokkari.h"
-uint8_t yellow_bead, red_bead, green_bead, blue_bead, black_bead, white_bead, brown_bead, unsort_bead = 0;
-# 170 "./litaflokkari.h"
-void PCA_Servo_Command(uint8_t servo_nr, uint8_t servo_on_off);
-# 190 "./litaflokkari.h"
-void PCA_Servo_Pos(uint8_t pos);
-
-
-
-
-
-
-
-void print_welcome_message(void);
-# 207 "./litaflokkari.h"
-void find_raw_color(uint16_t *red, uint16_t *green, uint16_t *blue, uint16_t *clear);
-# 216 "./litaflokkari.h"
-uint8_t find_color(void);
-# 228 "./litaflokkari.h"
-uint8_t color_compare_return(uint16_t red, uint16_t green, uint16_t blue, uint16_t clear);
-# 237 "./litaflokkari.h"
-void print_color_quantity(void);
-
-
-
-
-
-
-void calibrate_bead_values(void);
-
-void find_print(void);
-
-void slide_to_mid(void);
-# 14 "litaflokkari.c" 2
-
-# 1 "./tcs3200.h" 1
-# 52 "./tcs3200.h"
-void sensor_init(void);
-
-
-
-
-
-
-void filter_red(void);
-
-
-
-
-
-
-void filter_blue(void);
-
-
-
-
-
-
-void filter_green(void);
-
-
-
-
-
-
-void filter_clear(void);
-
-
-
-
-
-
-
-uint16_t sample_reading(void);
-# 15 "litaflokkari.c" 2
-
-# 1 "./LCD.h" 1
-# 38 "./LCD.h"
-uint8_t lcd_address, RS;
-uint8_t BackLight_State = 0x08;
-# 48 "./LCD.h"
-void LCD_init(uint8_t lcd_addr);
-# 57 "./LCD.h"
-void IO_Expander(unsigned char data);
-# 66 "./LCD.h"
-void LCD_Write_4Bit(unsigned char Nibble);
-# 76 "./LCD.h"
-void LCD_CMD(unsigned char CMD);
-
-
-
-
-
-
-void LCD_write_char(char data);
-
-
-
-
-
-
-void LCD_write_string(char* str);
-
-
-
-
-
-
-
-void LCD_Set_Cursor(unsigned char ROW, unsigned char COL);
-
-
-
-
-
-
-void Backlight();
-
-
-
-
-
-
-void noBacklight();
-
-
-
-
-
-
-void LCD_SL();
-
-
-
-
-
-
-void LCD_SR();
-
-
-
-
-
-
-void LCD_Clear();
-# 16 "litaflokkari.c" 2
-
-# 1 "./uart.h" 1
-# 22 "./uart.h"
-void uart_init(void);
-
-
-
-
-
-
-void uart_Write(unsigned char data);
-
-
-
-
-
-
-void uart_Write_String(char* buf);
-# 17 "litaflokkari.c" 2
-
-
-void PCA_Servo_Command(uint8_t servo_nr, uint8_t servo_on_off){
-    uint8_t stateTest = servo_on_off;
-    if(stateTest == 0){
-        PCA_Write(servo_nr, 0x0, 160);
-    }
-
-    if(stateTest == 1){
-        PCA_Write(servo_nr, 0x0, 350);
-    }
-
-    else{
-        LATBbits.LATB2 = ~LATBbits.LATB2;
-        _delay((unsigned long)((50)*(16000000/4000.0)));
-    }
-
-    return;
-}
-
-void PCA_Servo_Pos(uint8_t pos){
-    switch(pos){
-        case 1:
-
-        PCA_Servo_Command(0, 0);
-        PCA_Servo_Command(1, 0);
-        PCA_Servo_Command(2, 1);
-        break;
-
-        case 2:
-
-        PCA_Servo_Command(0, 0);
-        PCA_Servo_Command(1, 1);
-        PCA_Servo_Command(2, 0);
-        break;
-
-        case 3:
-
-        PCA_Servo_Command(0, 0);
-        PCA_Servo_Command(1, 1);
-        PCA_Servo_Command(2, 1);
-        break;
-
-        case 4:
-
-        PCA_Servo_Command(0, 1);
-        PCA_Servo_Command(1, 0);
-        PCA_Servo_Command(2, 0);
-        break;
-
-        case 5:
-
-        PCA_Servo_Command(0, 1);
-        PCA_Servo_Command(1, 0);
-        PCA_Servo_Command(2, 1);
-        break;
-
-        case 6:
-
-        PCA_Servo_Command(0, 1);
-        PCA_Servo_Command(1, 1);
-        PCA_Servo_Command(2, 0);
-        break;
-
-        case 7:
-
-        PCA_Servo_Command(0, 1);
-        PCA_Servo_Command(1, 1);
-        PCA_Servo_Command(2, 1);
-        break;
-
-        default:
-
-        PCA_Servo_Command(0, 0);
-        PCA_Servo_Command(1, 0);
-        PCA_Servo_Command(2, 0);
-        break;
-    }
-}
-
-void print_welcome_message(void){
-
-    LCD_Set_Cursor(1,1);
-    LCD_write_string("Beads Color Sorter 2^3");
-    LCD_Set_Cursor(2,1);
-    LCD_write_string("Group : B");
-    _delay((unsigned long)((5000)*(16000000/4000.0)));
+void system_init(){
+    clock_init();
+    pin_init();
+    int_init();
 }
 
 
-void find_raw_color(uint16_t *red, uint16_t *green, uint16_t *blue, uint16_t *clear){
-
-    filter_red();
-    _delay((unsigned long)((10)*(16000000/4000.0)));
-    *red = sample_reading();
+void clock_init(){
 
 
-    filter_green();
-    _delay((unsigned long)((10)*(16000000/4000.0)));
-    *green = sample_reading();
+    OSCCON1 = 0x61;
+    OSCCON2 = 0x70;
 
+    OSCCON3 = 0x0;
 
-    filter_blue();
-    _delay((unsigned long)((10)*(16000000/4000.0)));
-    *blue = sample_reading();
+    OSCEN = 0x40;
 
+    OSCFRQ = 0x6;
 
-    filter_clear();
-    _delay((unsigned long)((10)*(16000000/4000.0)));
-    *clear = sample_reading();
+    OSCSTAT = 0x0;
+
+    OSCTUNE = 0x0;
 }
 
-uint8_t find_color(){
-
-    uint16_t red, green, blue, clear;
+void pin_init(){
 
 
-    filter_red();
-    _delay((unsigned long)((10)*(16000000/4000.0)));
-    red = sample_reading();
+
+    LATA = 0x0;
+    LATB = 0x0;
+    LATC = 0x18;
+    LATD = 0x0;
+    LATE = 0x0;
 
 
-    filter_green();
-    _delay((unsigned long)((10)*(16000000/4000.0)));
-    green = sample_reading();
 
 
-    filter_blue();
-    _delay((unsigned long)((10)*(16000000/4000.0)));
-    blue = sample_reading();
+    TRISA = 0x30;
+    TRISB = 0xF1;
+    TRISC = 0xBF;
+    TRISD = 0x0;
+    TRISE = 0x7;
 
 
-    filter_clear();
-    _delay((unsigned long)((10)*(16000000/4000.0)));
-    clear = sample_reading();
 
 
-    return (color_compare_return(red, green, blue, clear));
+    ANSELA = 0x30;
+    ANSELB = 0xF0;
+    ANSELC = 0x67;
+    ANSELD = 0x0;
+    ANSELE = 0x7;
+
+
+
+
+    WPUA = 0x0;
+    WPUB = 0x0;
+    WPUC = 0x0;
+    WPUD = 0x0;
+    WPUE = 0x0;
+# 82 "system_init.c"
+    ODCONA = 0x0;
+    ODCONB = 0x0;
+    ODCONC = 0x0;
+    ODCOND = 0x0;
+    ODCONE = 0x0;
+
+
+
+    SLRCONA = 0xFF;
+    SLRCONB = 0xFF;
+    SLRCONC = 0xFF;
+    SLRCOND = 0xFF;
+    SLRCONE = 0x7;
+
+
+
+    INLVLA = 0xFF;
+    INLVLB = 0xFF;
+    INLVLC = 0xFF;
+    INLVLD = 0xFF;
+    INLVLE = 0xF;
+
+
+
+
+    RXPPS = 0x17;
+    T1CKIPPS = 0x10;
+    T1GPPS = 0xD;
+    RC6PPS = 0x10;
+    SSP1CLKPPS = 0x13;
+    RC3PPS = 0x14;
+    SSP1DATPPS = 0x14;
+    RC4PPS = 0x15;
+
+
+
+
+    IOCAP = 0x0;
+    IOCAN = 0x0;
+    IOCAF = 0x0;
+    IOCBP = 0x0;
+    IOCBN = 0x0;
+    IOCBF = 0x0;
+    IOCCP = 0x0;
+    IOCCN = 0x0;
+    IOCCF = 0x0;
+    IOCEP = 0x0;
+    IOCEN = 0x0;
+    IOCEF = 0x0;
 }
 
-uint8_t color_compare_return(uint16_t red, uint16_t green, uint16_t blue, uint16_t clear){
-
-    uint8_t cVal = 0;
-    uint16_t a, b, c, d;
-
-
-    a = (red-1945)*(red-4033);
-    b = (green-3775)*(green-7171);
-    c = (blue-4159)*(blue-7129);
-    d = (clear-1075)*(blue-1969);
-    if(a <= 0 && b <= 0 && c <= 0 && d <= 0){
-        cVal = 1;
-        yellow_bead++;
-        return cVal;
-    }
-
-
-    a = (red-2551)*(red-4507);
-    b = (green-5743)*(green-8923);
-    c = (blue-4639)*(blue-7177);
-    d = (clear-1369)*(blue-2221);
-    if( a <= 0 && b <= 0 && c <= 0 && d <= 0){
-        cVal = 2;
-        red_bead++;
-        return cVal;
-    }
-
-
-    a = (red-4135)*(red-7033);
-    b = (green-6169)*(green-9985);
-    c = (blue-5527)*(blue-9343) ;
-    d = (clear-1795)*(blue-2791);
-    if(a <= 0 && b <= 0 && c <= 0 && d <= 0){
-        cVal = 3;
-        green_bead++;
-        return cVal;
-    }
-
-
-    a =(red-3409)*(red-6583);
-    b =(green-15323)*(green-9301);
-    c =(blue-4453)*(blue-7411);
-    d =(clear-1429)*(blue-2569) ;
-    if( a <= 0 && b <= 0 && c <= 0 && d <= 0){
-        cVal = 4;
-        blue_bead++;
-        return cVal;
-    }
-
-
-    a =(red-3271)*(red-5863);
-    b =(green-5419)*(green-9595);
-    c =(blue-4879)*(blue-8521);
-    d =(clear-1459)*(blue-2521);
-    if( a <= 0 && b <= 0 && c <= 0 && d <= 0){
-        cVal = 5;
-        black_bead++;
-        return cVal;
-    }
-
-
-    a =(red-2137)*(red-2725);
-    b =(green-5143)*(green-6901);
-    c = (blue-5143)*(blue-6070) ;
-    d =(clear-1220)*(blue-1570);
-    if(a <= 0 && b <= 0 && c <= 0 && d <= 0){
-        cVal = 6;
-        white_bead++;
-        return cVal;
-    }
-
-
-    a =(red-2130)*(red-4810) ;
-    b =(green-4110)*(green-7270) ;
-    c =(blue-3380)*(blue-5540);
-    d =(clear-1070)*(blue-1990);
-    if(a <= 0 && b <= 0 && c <= 0 && d <= 0){
-        cVal = 7;
-        brown_bead++;
-        return cVal;
-    }
-    else{
-        cVal = 0;
-        unsort_bead++;
-        return cVal;
-    }
-}
-
-void print_color_quantity(){
-    char strbuff[40];
-    LCD_Set_Cursor(1,1);
-    sprintf(strbuff, "Y%d R%d G%d BE%d", yellow_bead, red_bead, green_bead, blue_bead);
-    LCD_write_string(strbuff);
-    LCD_Set_Cursor(2,1);
-    sprintf(strbuff, "BK%d W%d BN%d U%d", black_bead, white_bead, brown_bead, unsort_bead);
-    LCD_write_string(strbuff);
-}
-
-void calibrate_bead_values(void){
-
-    uart_Write_String("Measure 10 pieces Yellow Bead now: \n\r");
-    for(int i = 0; i < 10; i++){
-        find_print();
-    }
-
-
-    uart_Write_String("Measure 10 pieces Red Bead now: \n\r");
-    for(int i = 0; i < 10; i++){
-
-    }
-
-    uart_Write_String("Measure 10 pieces Green Bead now: \n\r");
-    for(int i = 0; i < 10; i++){
-        find_print();
-    }
-
-    uart_Write_String("Measure 10 pieces Blue Bead now: \n\r");
-    for(int i = 0; i < 10; i++){
-        find_print();
-    }
-
-    uart_Write_String("Measure 10 pieces Black Bead now: \n\r");
-    for(int i = 0; i < 10; i++){
-        find_print();
-    }
-
-    uart_Write_String("Measure 10 pieces White Bead now: \n\r");
-    for(int i = 0; i < 10; i++){
-        find_print();
-    }
-
-    uart_Write_String("Measure 10 pieces Purple Bead now: \n\r");
-    for(int i = 0; i < 10; i++){
-        find_print();
-    }
-
-    uart_Write_String("Measure 10 pieces Pink Bead now: \n\r");
-    for(int i = 0; i < 10; i++){
-        find_print();
-    }
-
-    uart_Write_String("Measure 10 pieces Orange Bead now: \n\r");
-    for(int i = 0; i < 10; i++){
-        find_print();
-    }
-
-}
-
-void find_print(void){
-
-    uint16_t red, green, blue, clear;
-
-    char buffer[50];
-
-        find_raw_color(&red, &green, &blue, &clear);
-        sprintf(buffer, "%d\t", red);
-        uart_Write_String(buffer);
-        sprintf(buffer, "%d\t", green);
-        uart_Write_String(buffer);
-        sprintf(buffer, "%d\t", blue);
-        uart_Write_String(buffer);
-        sprintf(buffer, "%d\n\r", clear);
-        uart_Write_String(buffer);
-}
-
-void slide_to_mid(void){
-    uint16_t shake1 = 255 + 10;
-    uint16_t shake2 = 255 - 10;
-
-    PCA_Write(0, 0, 255);
-    _delay((unsigned long)((100)*(16000000/4000.0)));
-
-    PCA_Write(0, 0, shake1);
-    _delay((unsigned long)((100)*(16000000/4000.0)));
-    PCA_Write(0, 0, shake2);
-    _delay((unsigned long)((100)*(16000000/4000.0)));
-
-    PCA_Write(0, 0, 255);
-    _delay((unsigned long)((100)*(16000000/4000.0)));
+void int_init(void){
+    INTCONbits.GIE = 1;
+    INTCONbits.PEIE = 1;
 }
